@@ -17,9 +17,9 @@ CREATE TABLE IF NOT EXISTS address(
 
 CREATE TABLE IF NOT EXISTS customer (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
+    fullname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
-    telefone VARCHAR(20),
+    phone VARCHAR(20),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
@@ -46,13 +46,48 @@ CREATE TABLE IF NOT EXISTS company (
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );
 
+CREATE TABLE IF NOT EXISTS manager(
+    manager_id INT PRIMARY KEY AUTO_INCREMENT,
+    hire_date DATE,
+    manager_status BOOLEAN NOT NULL DEFAULT TRUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (manager_id) REFERENCES customer(id) ON DELETE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS branch (
+    branch_id INT PRIMARY KEY AUTO_INCREMENT,
+    branch_name VARCHAR(100) NOT NULL,
+    address_id INT NOT NULL,
+    manager_id INT NOT NULL,
+    open_date DATE,
+    FOREIGN KEY (address_id) REFERENCES branch_address(id),
+    FOREIGN KEY (manager_id) REFERENCES manager(manager_id)
+);
+
+CREATE TABLE IF NOT EXISTS branch_address(
+    address_id INT PRIMARY KEY,
+    branch_id INT PRIMARY KEY,
+    PRIMARY KEY(address_id, branch_id),
+    FOREIGN KEY(address_id) REFERENCES address(id) ON DELETE CASCADE,
+    FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE
+);
+
 CREATE TABLE IF NOT EXISTS account (
     id INT AUTO_INCREMENT PRIMARY KEY,
     branch VARCHAR(10) NOT NULL,
     account_number VARCHAR(20) NOT NULL UNIQUE,
     balance DECIMAL(15, 2) DEFAULT 0.00,
-    account_type VARCHAR(20) NOT NULL,
     customer_id INT NOT NULL,
+    account_type ENUM(
+        'Savings',
+        'Current',
+        'Wage',
+        'Digital',
+        'University',
+        'Business',
+        'Joint'
+    ) DEFAULT "Current",
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE

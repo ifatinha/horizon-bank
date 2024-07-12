@@ -32,8 +32,12 @@ class Address:
         self.created_at = datetime.now()
         self.updated_at = datetime.now()
 
-    def __repr__(self) -> str:
-        return f"{self.street}, {self.number}, {self.city} - {self.state}, {self.postal_code} ({self.address_type} - {self.notes})"
+    def __str__(self) -> str:
+        return (
+            f"{self.street} - {self.number}\n"
+            f"{self.city}, {self.postal_code} - {self.state}/{self.country}\n"
+            f"{self.notes}"
+        )
 
     def update(self, **kwargs):
         for key, value in kwargs.items():
