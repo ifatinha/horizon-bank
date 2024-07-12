@@ -1,8 +1,8 @@
 from database.DatabaseOperations import DatabaseOperations
 from connection.Connection import Connection
 
-# DatabaseOperations.create_table(table_address_query)
+# Connection.check_and_create_database("horizon_Bank")
+
 conn = Connection()
 conn.connect()
-conn.check_and_create_database("solaris")
 conn.close()

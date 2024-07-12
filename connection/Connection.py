@@ -33,29 +33,6 @@ class Connection:
             print(f"Erro ao conectar: {err}")
             return None
 
-    def check_and_create_database(self, db_name):
-        """Verifica se um banco de dados existe e, se não, cria-o."""
-        try:
-            self.cursor.execute(f"SHOW DATABASES LIKE {db_name};")
-            result = self.cursor.fetchone()
-
-            if result:
-                print(f"O bando de dados '{db_name}' já existe.")
-            else:
-                print(f"O banco de dados '{db_name}' não existe.")
-                print("Criando banco de dados.")
-                self.cursor.execute(f"CREATE DATABASE IF NOT EXISTS {db_name}")
-                print(f"Banco de dados {db_name} criado com sucesso!")
-        except Error as err:
-            if err.errno == mysql.connector.errorcode.ER_DB_CREATE_EXISTS:
-                print(f"Erro ao verificar/criar banco de dados: {err}.")
-            else:
-                print(f"Erro ao criar o banco de dados: {err}")
-        finally:
-            if self.cursor is not None:
-                self.cursor.close()
-                print(f"Cursor fechado.")
-
     def close(self):
         """Fecha a conexão com o servidor MySQL."""
         if self.connection is not None and self.connection.is_connected():
@@ -64,3 +41,30 @@ class Connection:
             print("Conexão fechada.")
         else:
             print("A conexão já estava fechada ou não foi estabelecida.")
+
+    @staticmethod
+    def check_and_create_database(db_name):
+        """Verifica se um banco de dados existe e, se não, cria-o."""
+        conn = mysql.connector.connect(user=user, password=password, host=host)
+        cursor = conn.cursor()
+        try:
+
+            cursor.execute(f"SHOW DATABASES LIKE '{db_name}';")
+            result = cursor.fetchone()
+
+            if result:
+                print(f"O bando de dados `'{db_name}'` já existe.")
+            else:
+                print(f"O banco de dados `'{db_name}'` não existe.")
+                print("Criando banco de dados.")
+                cursor.execute(f"CREATE DATABASE IF NOT EXISTS `{db_name}`;")
+                print(f"Banco de dados solaris criado com sucesso!")
+        except Error as err:
+            if err.errno == mysql.connector.errorcode.ER_DB_CREATE_EXISTS:
+                print(f"Erro ao verificar/criar banco de dados: {err}.")
+            else:
+                print(f"Erro ao criar o banco de dados: {err}")
+        finally:
+            if cursor is not None:
+                cursor.close()
+                print(f"Cursor fechado.")
