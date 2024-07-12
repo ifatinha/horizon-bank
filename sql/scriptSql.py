@@ -1,5 +1,3 @@
-from database.DatabaseOperations import DatabaseOperations
-
 table_address_query = """
 CREATE TABLE IF NOT EXISTS address(
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -57,9 +55,53 @@ CREATE TABLE IF NOT EXISTS company (
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );
 """
+table_account_query = """
+CREATE TABLE IF NOT EXISTS account (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    branch VARCHAR(10) NOT NULL,
+    account_number VARCHAR(20) NOT NULL UNIQUE,
+    balance DECIMAL(15, 2) DEFAULT 0.00,
+    account_type VARCHAR(20) NOT NULL,
+    customer_id INT NOT NULL,
+    FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
+)
+"""
 
-DatabaseOperations.create_table(table_address_query)
-DatabaseOperations.create_table(table_customer_query)
-DatabaseOperations.create_table(table_address_customer_query)
-DatabaseOperations.create_table(table_individual_query)
-DatabaseOperations.create_table(table_company_query)
+table_savigns_account_query = """
+CREATE TABLE IF NOT EXISTS savigns_account(
+    id INT PRIMARY KEY,
+    interest_rate DECIMAL(5, 4) DEFAULT 0.005,
+    FOREIGN KEY (id) REFERENCES account(id) ON DELETE CASCADE
+);
+"""
+
+table_current_account_query = """
+CREATE TABLE IF NOT EXISTS current_account(
+    id INT PRIMARY KEY,
+    overdraft_limit DECIMAL(15, 2) DEFAULT 500.00,
+    withdrawal_limit DECIMAL(15, 2) DEFAULT 1000.00,
+    transaction_limit INT DEFAULT 10,
+    FOREIGN KEY (id) REFERENCES account(id) ON DELETE CASCADE
+);
+"""
+
+table_historic_query = """
+CREATE TABLE IF NOT EXISTS historic(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_account INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_account) REFERENCES account(id)
+);
+"""
+
+table_transactions_query = """
+CREATE TABLE IF NOT EXISTS transactions(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    transaction_type VARCHAR(50) NOT NULL,
+    amount DECIMAL(15, 2) NOT NULL,
+    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    id_historic INT NOT NULL,
+    FOREIGN KEY(id_historic) REFERENCES historic(id)
+);
+"""

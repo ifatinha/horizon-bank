@@ -54,11 +54,12 @@ class Connection:
 
             if result:
                 print(f"O bando de dados `'{db_name}'` já existe.")
+                print(f"Estabelecendo conexão.")
             else:
                 print(f"O banco de dados `'{db_name}'` não existe.")
                 print("Criando banco de dados.")
                 cursor.execute(f"CREATE DATABASE IF NOT EXISTS `{db_name}`;")
-                print(f"Banco de dados solaris criado com sucesso!")
+                print(f"Banco de dados `'{db_name}'` criado com sucesso!")
         except Error as err:
             if err.errno == mysql.connector.errorcode.ER_DB_CREATE_EXISTS:
                 print(f"Erro ao verificar/criar banco de dados: {err}.")
