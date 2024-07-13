@@ -1,0 +1,6 @@
+2024-07-13 20:34:37,311 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-13 20:34:37,407 - INFO - package: mysql.connector.plugins
+2024-07-13 20:34:37,407 - INFO - plugin_name: caching_sha2_password
+2024-07-13 20:34:37,407 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-13 20:34:37,408 - INFO - Conexão bem-sucedida!
+2024-07-13 20:34:37,409 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000021CCC586690>

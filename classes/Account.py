@@ -54,7 +54,7 @@ class Account:
         return (
             f"Conta: {self.account_number} - {self.account_type}"
             f"Agência: {self.branch}"
-            f"Saldo: $ {self.balance:.2}"
+            f"Saldo: $ {self.balance:.2f}"
             f"Cliente: {self.customer}"
         )
 

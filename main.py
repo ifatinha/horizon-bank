@@ -19,7 +19,6 @@ from sql.scriptSql import (
 Connection.check_and_create_database("horizon_Bank")
 
 """Criando as tabelas do banco"""
-print("""Criando as tabelas do banco""")
 DatabaseOperations.create_table(table_address_query)
 DatabaseOperations.create_table(table_customer_query)
 DatabaseOperations.create_table(table_address_customer_query)
@@ -32,3 +31,10 @@ DatabaseOperations.create_table(table_current_account_query)
 DatabaseOperations.create_table(table_savigns_account_query)
 DatabaseOperations.create_table(table_historic_query)
 DatabaseOperations.create_table(table_transactions_query)
+
+
+# def main():
+#     print(f"{'Bem-Vindo:^8'}")
+
+
+# main()
