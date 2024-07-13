@@ -50,24 +50,22 @@ CREATE TABLE IF NOT EXISTS manager(
     manager_id INT PRIMARY KEY AUTO_INCREMENT,
     hire_date DATE,
     manager_status BOOLEAN NOT NULL DEFAULT TRUE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (manager_id) REFERENCES customer(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS branch (
     branch_id INT PRIMARY KEY AUTO_INCREMENT,
     branch_name VARCHAR(100) NOT NULL,
-    address_id INT NOT NULL,
     manager_id INT NOT NULL,
     open_date DATE,
-    FOREIGN KEY (address_id) REFERENCES branch_address(id),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (manager_id) REFERENCES manager(manager_id)
 );
 
 CREATE TABLE IF NOT EXISTS branch_address(
-    address_id INT PRIMARY KEY,
-    branch_id INT PRIMARY KEY,
+    address_id INT,
+    branch_id INT,
     PRIMARY KEY(address_id, branch_id),
     FOREIGN KEY(address_id) REFERENCES address(id) ON DELETE CASCADE,
     FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE
@@ -109,17 +107,18 @@ CREATE TABLE IF NOT EXISTS current_account(
 
 CREATE TABLE IF NOT EXISTS historic(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    id_account INT,
+    id_account INT NOT NULL UNIQUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (id_account) REFERENCES account(id)
+    FOREIGN KEY(id_account) REFERENCES account(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS transactions(
     id INT AUTO_INCREMENT PRIMARY KEY,
-    transaction_type VARCHAR(50) NOT NULL,
     amount DECIMAL(15, 2) NOT NULL,
-    transaction_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    id_historic INT NOT NULL,
-    FOREIGN KEY(id_historic) REFERENCES historic(id)
-)
+    transaction_type VARCHAR(50) NOT NULL,
+    historic_id INT NOT NULL UNIQUE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (historic_id) REFERENCES historic(id) ON DELETE CASCADE
+);

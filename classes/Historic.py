@@ -1,4 +1,13 @@
 class Historic:
 
-    def __init__(self) -> None:
-        pass
+    def __init__(self, account) -> None:
+        self.__id = None
+        self.__account = account
+
+    @property
+    def id(self):
+        return self.__id
+
+    @property
+    def account(self):
+        return self.__account
