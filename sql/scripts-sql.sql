@@ -58,17 +58,11 @@ CREATE TABLE IF NOT EXISTS branch (
     branch_name VARCHAR(100) NOT NULL,
     manager_id INT NOT NULL,
     open_date DATE,
+    address_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (manager_id) REFERENCES manager(manager_id)
-);
-
-CREATE TABLE IF NOT EXISTS branch_address(
-    address_id INT,
-    branch_id INT,
-    PRIMARY KEY(address_id, branch_id),
-    FOREIGN KEY(address_id) REFERENCES address(id) ON DELETE CASCADE,
-    FOREIGN KEY(branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE
+    FOREIGN KEY (manager_id) REFERENCES manager(manager_id),
+    FOREIGN KEY (address_id) REFERENCES address(id)
 );
 
 CREATE TABLE IF NOT EXISTS account (
