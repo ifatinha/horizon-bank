@@ -15,6 +15,8 @@ def manager_menu():
     [3] Listar Contas Cliente
     [4] Listar Contas do Banco
     [5] Listar Clientes
+    [6] Cadastrar Gerente
+    [7] Cadastrar Filial
     [0] Sair
     => """
 

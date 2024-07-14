@@ -14,13 +14,7 @@ address = Address(
     notes="Endereço residencial principal em Nova York",
 )
 
-print(address)
-
-address.update(
-    city="Los Angeles",
-    state="CA",
-    postal_code="90001",
-    notes="Mudança de endereço para Los Angeles.",
-)
 
 print(address)
+
+# last_address_id = cursor.lastrowid

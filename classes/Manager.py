@@ -4,9 +4,18 @@ from datetime import datetime
 
 class Manager(Customer):
 
-    def __init__(self, fullname, email, telephone, address, status=True) -> None:
+    def __init__(
+        self,
+        fullname,
+        email,
+        telephone,
+        address,
+        employee_number,
+        status=True,
+    ) -> None:
         super().__init__(fullname, email, telephone, address)
         self.hire_date = datetime.now()
+        self.employee_number = employee_number
         self.status = status
 
     def update(self, **kwargs):

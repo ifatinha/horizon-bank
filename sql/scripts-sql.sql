@@ -3,16 +3,20 @@ CREATE TABLE IF NOT EXISTS admin(
     password VARCHAR(100) NOT NULL DEFAULT "12345"
 );
 
+-- INSERT INTO
+--     admin(user, password)
+-- VALUES
+-- ('admin', '12345');
+
 CREATE TABLE IF NOT EXISTS address(
     id INT AUTO_INCREMENT PRIMARY KEY,
     number VARCHAR(20) NOT NULL DEFAULT 'S/N',
     street VARCHAR(255) NOT NULL,
+    postal_code VARCHAR(20) NOT NULL,
+    neighborhood VARCHAR(50) NOT NULL,
     city VARCHAR(100) NOT NULL,
     state VARCHAR(100) NOT NULL,
-    postal_code VARCHAR(20) NOT NULL,
     country VARCHAR(100) NOT NULL,
-    latitude DECIMAL(9, 6),
-    longitude DECIMAL(9, 6),
     address_type ENUM('Residential', 'Business', 'Shipping', 'Billing') DEFAULT 'Residential',
     is_primary BOOLEAN DEFAULT FALSE,
     notes TEXT,
@@ -53,6 +57,7 @@ CREATE TABLE IF NOT EXISTS company (
 
 CREATE TABLE IF NOT EXISTS manager(
     manager_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_number VARCHAR(100) NOT NULL UNIQUE,
     hire_date DATE,
     manager_status BOOLEAN NOT NULL DEFAULT TRUE,
     FOREIGN KEY (manager_id) REFERENCES customer(id) ON DELETE CASCADE

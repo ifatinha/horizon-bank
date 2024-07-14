@@ -17,6 +17,8 @@ from sql.scriptSql import (
     table_transactions_query,
 )
 
+from util.ReturnObjetc import return_address
+
 """Criando o banco de dados, caso ele não exista"""
 # Connection.check_and_create_database("horizon_Bank")
 
@@ -45,8 +47,69 @@ def main():
         if option == "1":
             cl_option = client_menu()
 
+            if cl_option == "1":
+                """Cadastrar nova conta"""
+
+            elif cl_option == "2":
+                """Depositar"""
+
+            elif cl_option == "3":
+                """Sacar"""
+
+            elif cl_option == "4":
+                """Estrato"""
+
+            elif cl_option == "5":
+                """Contas Cadastradas"""
+
+            elif cl_option == "0":
+                break
+
+            else:
+                print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+
         elif option == "2":
-            mg_option = manager_menu()
+            user = input("Usuário: ")
+            password = input("Password: ")
+
+            status = DatabaseOperations.login_admin(user=user, passowrd=password)
+
+            if len(status):
+
+                mg_option = manager_menu()
+
+                if mg_option == "1":
+                    """Cadastrar Novo Cliente"""
+
+                elif mg_option == "2":
+                    """Cadastrar Nova Conta"""
+
+                elif mg_option == "3":
+                    """Listar Contas Cadastradas"""
+
+                elif mg_option == "4":
+                    """Listar Contas do Banco"""
+
+                elif mg_option == "5":
+                    """Listar Clientes"""
+
+                elif mg_option == "6":
+                    """Cadastrar Gerente"""
+
+                    print("Informe os dados abaixo para cadastar um novo gerente")
+
+                    # address = return_address()
+                    # last_address = DatabaseOperations.insert_address(address)
+                elif mg_option == "7":
+                    """Cadastrar Filial"""
+
+                elif mg_option == "0":
+                    break
+
+                else:
+                    print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+            else:
+                print("@@@ Usuário ou senha inválidos @@@")
 
         elif option == "0":
             break
