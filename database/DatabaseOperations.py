@@ -27,7 +27,7 @@ class DatabaseOperations:
             conn = DatabaseOperations.getConnect()
             conn.connect()
             conn.cursor.execute(table_creation_query)
-            logging.info("Tabela Criado!")
+            logging.info("Tabela Criada!")
         except Error as err:
             logging.error(f"Erro ao criar a tabela: {err}")
         finally:

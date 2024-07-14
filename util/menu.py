@@ -1,21 +1,21 @@
 def main_menu():
     menu = """################ MENU ################
-    [c] Cliente
-    [m] Gerente
-    [s] Sair
+    [1] Cliente
+    [2] Admin
+    [0] Sair
     => """
 
     return input(menu)
 
 
-def menu_manager():
+def manager_menu():
     menu = """################ MENU ################
-    [c] Novo Cliente
-    [n] Nova Conta
-    [l] Listar Contas Cliente
-    [m] Listar Contas do Banco
-    [p] Listar Clientes
-    [q] Sair
+    [1] Novo Cliente
+    [2] Nova Conta
+    [3] Listar Contas Cliente
+    [4] Listar Contas do Banco
+    [5] Listar Clientes
+    [0] Sair
     => """
 
     return input(menu)
@@ -23,12 +23,12 @@ def menu_manager():
 
 def client_menu():
     menu = """################ MENU ################
-    [d] Depositar
-    [s] Sacar
-    [e] Extrato
-    [n] Nova Conta
-    [l] Listar Contas
-    [q] Sair
+    [1] Nova Conta
+    [2] Depositar
+    [3] Sacar
+    [4] Extrato
+    [5] Listar Contas
+    [0] Sair
     => """
 
     return input(menu)

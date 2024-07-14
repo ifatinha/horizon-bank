@@ -1,3 +1,10 @@
+table_admin_query = """
+CREATE TABLE IF NOT EXISTS admin(
+    user VARCHAR(100) NOT NULL PRIMARY KEY DEFAULT "admin",
+    password VARCHAR(100) NOT NULL DEFAULT "12345"
+);
+"""
+
 table_address_query = """
 CREATE TABLE IF NOT EXISTS address(
     id INT AUTO_INCREMENT PRIMARY KEY,
