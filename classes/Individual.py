@@ -13,3 +13,6 @@ class Individual(Customer):
 
     def __str__(self) -> str:
         return super().__str__() + f"SSN: {self.ssn}" f"Birthday: {self.date_of_birth}"
+
+    def to_tuple(self):
+        return (self.ssn, self.date_of_birth)
