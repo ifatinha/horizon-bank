@@ -20,7 +20,8 @@ CREATE TABLE IF NOT EXISTS address(
     notes TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-);"""
+);
+"""
 
 table_customer_query = """
 CREATE TABLE IF NOT EXISTS customer (
@@ -32,12 +33,13 @@ CREATE TABLE IF NOT EXISTS customer (
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );"""
 
-table_address_customer_query = """CREATE TABLE IF NOT EXISTS address_customer(
-    id_adress INT NOT NULL,
-    code_customer INT NOT NULL,
-    PRIMARY KEY(id_adress, code_customer),
-    FOREIGN KEY (id_adress) REFERENCES address(id) ON DELETE CASCADE,
-    FOREIGN KEY (code_customer) REFERENCES customer(id) ON DELETE CASCADE
+table_address_customer_query = """
+CREATE TABLE IF NOT EXISTS address_customer(
+    id_address INT NOT NULL,
+    id_customer INT NOT NULL,
+    PRIMARY KEY(id_address, id_customer),
+    FOREIGN KEY (id_address) REFERENCES address(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_customer) REFERENCES customer(id) ON DELETE CASCADE
 );"""
 
 table_individual_query = """
@@ -59,6 +61,7 @@ CREATE TABLE IF NOT EXISTS company (
 table_manager_query = """
 CREATE TABLE IF NOT EXISTS manager(
     manager_id INT PRIMARY KEY AUTO_INCREMENT,
+    employee_number VARCHAR(100) NOT NULL UNIQUE,
     hire_date DATE,
     manager_status BOOLEAN NOT NULL DEFAULT TRUE,
     FOREIGN KEY (manager_id) REFERENCES customer(id) ON DELETE CASCADE

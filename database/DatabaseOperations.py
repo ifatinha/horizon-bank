@@ -52,6 +52,7 @@ class DatabaseOperations:
                 conn.close()
                 logging.info("Conexão fechada!")
 
+    @staticmethod
     def insert_address(address):
         query = "INSERT INTO address(number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
         try:
@@ -60,6 +61,52 @@ class DatabaseOperations:
             cursor.execute(query, address.to_tuple())
             conn.commit()
             return cursor.lastrowid
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_customer(customer):
+        query = "INSERT INTO customer(fullname, email, phone) VALUES(%s, %s, %s)"
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, customer)
+            conn.commit()
+            return cursor.lastrowid
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_manager(manager, manager_id):
+        query = "INSERT INTO manager(manager_id, employee_number, hire_date, manager_status) VALUES(%s, %s, %s, %s)"
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, ((manager_id,) + manager.to_tuple()))
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_address_customer(id_address, id_customer):
+        query = "INSERT INTO address_customer(id_address, id_customer) VALUES(%s, %s)"
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (id_address, id_customer))
+            conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
         finally:

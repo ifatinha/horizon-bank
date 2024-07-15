@@ -3,11 +3,11 @@ from datetime import datetime
 
 class Customer:
 
-    def __init__(self, fullname, email, telephone, address) -> None:
+    def __init__(self, fullname, email, phone, address) -> None:
         self.id = None
         self.fullname = fullname
         self.email = email
-        self.telephone = telephone
+        self.phone = phone
         self.address = address
         self.created_at = datetime.now()
         self.updated_ate = datetime.now()
@@ -20,9 +20,12 @@ class Customer:
 
     def __str__(self) -> str:
         return (
-            f"Nome: {self.nome}\n"
+            f"Nome: {self.fullname}\n"
             f"Email: {self.email}\n"
-            f"Telefone: {self.telephone}\n"
+            f"Telefone: {self.phone}\n"
             f"Endereço\n"
             f"{self.address}"
         )
+
+    def to_tuple(self):
+        return (self.fullname, self.email, self.phone)

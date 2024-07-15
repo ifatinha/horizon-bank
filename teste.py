@@ -1,20 +1,7 @@
-from classes.Address import Address
+from classes.Customer import Customer
+from classes.Manager import Manager
 
-address = Address(
-    number="1",
-    street="Main St",
-    city="New York",
-    state="NY",
-    postal_code="10001",
-    country="USA",
-    latitude=40.712776,
-    longitude=-74.005974,
-    address_type="Residential",
-    is_primary=True,
-    notes="Endereço residencial principal em Nova York",
-)
+manager = Manager("John Doe", "johndoe@email.com", "8398153-5656", None, 1, True)
 
-
-print(address)
-
-# last_address_id = cursor.lastrowid
+print(manager.to_tuple())
+print(manager.super_to_tuple())

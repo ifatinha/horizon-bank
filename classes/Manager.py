@@ -8,14 +8,14 @@ class Manager(Customer):
         self,
         fullname,
         email,
-        telephone,
+        phone,
         address,
         employee_number,
         status=True,
     ) -> None:
-        super().__init__(fullname, email, telephone, address)
-        self.hire_date = datetime.now()
+        super().__init__(fullname, email, phone, address)
         self.employee_number = employee_number
+        self.hire_date = datetime.now()
         self.status = status
 
     def update(self, **kwargs):
@@ -23,6 +23,12 @@ class Manager(Customer):
 
     def __str__(self) -> str:
         return (
-            super().__str__() + f"Hire Date: {self.hire_date}\n"
+            super().__str__() + f"\nHire Date: {self.hire_date}\n"
             f"Status: {self.status}\n"
         )
+
+    def to_tuple(self):
+        return (self.employee_number, self.hire_date, self.status)
+
+    def customer_to_tuple(self):
+        return super().to_tuple()

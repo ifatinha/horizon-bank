@@ -17,25 +17,25 @@ from sql.scriptSql import (
     table_transactions_query,
 )
 
-from util.ReturnObjetc import return_address
+from util.ReturnObjetc import return_address, return_manager
 
 """Criando o banco de dados, caso ele não exista"""
-# Connection.check_and_create_database("horizon_Bank")
+Connection.check_and_create_database("horizon_Bank")
 
 """Criando as tabelas do banco"""
-# DatabaseOperations.create_table(table_admin_query)
-# DatabaseOperations.create_table(table_address_query)
-# DatabaseOperations.create_table(table_customer_query)
-# DatabaseOperations.create_table(table_address_customer_query)
-# DatabaseOperations.create_table(table_individual_query)
-# DatabaseOperations.create_table(table_company_query)
-# DatabaseOperations.create_table(table_manager_query)
-# DatabaseOperations.create_table(table_branch_query)
-# DatabaseOperations.create_table(table_account_query)
-# DatabaseOperations.create_table(table_current_account_query)
-# DatabaseOperations.create_table(table_savigns_account_query)
-# DatabaseOperations.create_table(table_historic_query)
-# DatabaseOperations.create_table(table_transactions_query)
+DatabaseOperations.create_table(table_admin_query)
+DatabaseOperations.create_table(table_address_query)
+DatabaseOperations.create_table(table_customer_query)
+DatabaseOperations.create_table(table_address_customer_query)
+DatabaseOperations.create_table(table_individual_query)
+DatabaseOperations.create_table(table_company_query)
+DatabaseOperations.create_table(table_manager_query)
+DatabaseOperations.create_table(table_branch_query)
+DatabaseOperations.create_table(table_account_query)
+DatabaseOperations.create_table(table_current_account_query)
+DatabaseOperations.create_table(table_savigns_account_query)
+DatabaseOperations.create_table(table_historic_query)
+DatabaseOperations.create_table(table_transactions_query)
 
 
 def main():
@@ -97,9 +97,14 @@ def main():
                     """Cadastrar Gerente"""
 
                     print("Informe os dados abaixo para cadastar um novo gerente")
+                    manager = return_manager()
+                    id_customer = DatabaseOperations.insert_customer(
+                        manager.customer_to_tuple()
+                    )
+                    id_address = DatabaseOperations.insert_address(manager.address)
+                    DatabaseOperations.insert_manager(manager, id_customer)
+                    DatabaseOperations.insert_address_customer(id_address, id_customer)
 
-                    # address = return_address()
-                    # last_address = DatabaseOperations.insert_address(address)
                 elif mg_option == "7":
                     """Cadastrar Filial"""
 

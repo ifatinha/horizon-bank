@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS admin(
 --     admin(user, password)
 -- VALUES
 -- ('admin', '12345');
-
 CREATE TABLE IF NOT EXISTS address(
     id INT AUTO_INCREMENT PRIMARY KEY,
     number VARCHAR(20) NOT NULL DEFAULT 'S/N',
@@ -29,16 +28,17 @@ CREATE TABLE IF NOT EXISTS customer (
     fullname VARCHAR(255) NOT NULL,
     email VARCHAR(255) NOT NULL UNIQUE,
     phone VARCHAR(20),
+    employee_number VARCHAR(50) NOT NULL UNIQUE,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 
 CREATE TABLE IF NOT EXISTS address_customer(
-    id_adress INT NOT NULL,
-    code_customer INT NOT NULL,
-    PRIMARY KEY(id_adress, code_customer),
-    FOREIGN KEY (id_adress) REFERENCES address(id) ON DELETE CASCADE,
-    FOREIGN KEY (code_customer) REFERENCES customer(id) ON DELETE CASCADE
+    id_address INT NOT NULL,
+    id_customer INT NOT NULL,
+    PRIMARY KEY(id_address, id_customer),
+    FOREIGN KEY (id_address) REFERENCES address(id) ON DELETE CASCADE,
+    FOREIGN KEY (id_customer) REFERENCES customer(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS individual (

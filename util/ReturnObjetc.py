@@ -1,7 +1,9 @@
 from classes.Address import Address
+from classes.Manager import Manager
 
 
 def return_address():
+    print("### Endereço ###")
     street = input("Rua: ")
     number = input("Número: ")
     postal_code = input("CEP: ")
@@ -47,5 +49,13 @@ def return_address():
     )
 
 
-def return_customer():
-    pass
+def return_manager():
+    print("### Dados Pessoais ###")
+    fullname = input("Nome Completo: ")
+    email = input("Email: ")
+    phone = input("Phone: ")
+    employee_number = input("Número de Registro: ")
+    address = return_address()
+
+    manager = Manager(fullname, email, phone, address, employee_number)
+    return manager
