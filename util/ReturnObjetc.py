@@ -75,34 +75,8 @@ def find_manager_bd():
 
     manager_id, fullname, email, phone, employee_number, manager_status = result
 
-    (
-        number,
-        street,
-        postal_code,
-        neighborhood,
-        city,
-        state,
-        country,
-        address_type,
-        is_primary,
-        notes,
-    ) = DatabaseOperations.find_address(manager_id)
-
-    address = Address(
-        number,
-        street,
-        postal_code,
-        neighborhood,
-        city,
-        state,
-        country,
-        address_type,
-        is_primary,
-        notes,
-    )
-
     manager = Manager(
-        fullname, email, phone, address, employee_number, status=manager_status
+        fullname, email, phone, None, employee_number, status=manager_status
     )
 
     return manager, manager_id
