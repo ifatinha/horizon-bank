@@ -17,25 +17,25 @@ from sql.scriptSql import (
     table_transactions_query,
 )
 
-from util.ReturnObjetc import return_address, return_manager
+from util.ReturnObjetc import return_manager, return_branch
 
-"""Criando o banco de dados, caso ele não exista"""
-Connection.check_and_create_database("horizon_Bank")
+# """Criando o banco de dados, caso ele não exista"""
+# Connection.check_and_create_database("horizon_Bank")
 
-"""Criando as tabelas do banco"""
-DatabaseOperations.create_table(table_admin_query)
-DatabaseOperations.create_table(table_address_query)
-DatabaseOperations.create_table(table_customer_query)
-DatabaseOperations.create_table(table_address_customer_query)
-DatabaseOperations.create_table(table_individual_query)
-DatabaseOperations.create_table(table_company_query)
-DatabaseOperations.create_table(table_manager_query)
-DatabaseOperations.create_table(table_branch_query)
-DatabaseOperations.create_table(table_account_query)
-DatabaseOperations.create_table(table_current_account_query)
-DatabaseOperations.create_table(table_savigns_account_query)
-DatabaseOperations.create_table(table_historic_query)
-DatabaseOperations.create_table(table_transactions_query)
+# """Criando as tabelas do banco"""
+# DatabaseOperations.create_table(table_admin_query)
+# DatabaseOperations.create_table(table_address_query)
+# DatabaseOperations.create_table(table_customer_query)
+# DatabaseOperations.create_table(table_address_customer_query)
+# DatabaseOperations.create_table(table_individual_query)
+# DatabaseOperations.create_table(table_company_query)
+# DatabaseOperations.create_table(table_manager_query)
+# DatabaseOperations.create_table(table_branch_query)
+# DatabaseOperations.create_table(table_account_query)
+# DatabaseOperations.create_table(table_current_account_query)
+# DatabaseOperations.create_table(table_savigns_account_query)
+# DatabaseOperations.create_table(table_historic_query)
+# DatabaseOperations.create_table(table_transactions_query)
 
 
 def main():
@@ -107,7 +107,7 @@ def main():
 
                 elif mg_option == "7":
                     """Cadastrar Filial"""
-
+                    return_branch()
                 elif mg_option == "0":
                     break
 

@@ -69,6 +69,23 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
+    def find_address(manager_id):
+        query = "SELECT a.id, number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes from address a JOIN address_customer ac on ac.id_address = a.id JOIN customer c on c.id = ac.id_customer and c.id = %s;"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (manager_id,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
     def insert_customer(customer):
         query = "INSERT INTO customer(fullname, email, phone) VALUES(%s, %s, %s)"
         try:
@@ -107,6 +124,22 @@ class DatabaseOperations:
             cursor = conn.cursor()
             cursor.execute(query, (id_address, id_customer))
             conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_manager(manager_id):
+        query = "SELECT manager_id, fullname, email, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id"
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (manager_id,))
+            resultado = cursor.fetchone()
+            return resultado
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
         finally:

@@ -71,8 +71,8 @@ table_branch_query = """
 CREATE TABLE IF NOT EXISTS branch (
     branch_id INT PRIMARY KEY AUTO_INCREMENT,
     branch_name VARCHAR(100) NOT NULL,
-    manager_id INT NOT NULL,
     open_date DATE,
+    manager_id INT NOT NULL,
     address_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
