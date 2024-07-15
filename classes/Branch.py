@@ -3,8 +3,9 @@ from datetime import datetime
 
 class Branch:
 
-    def __init__(self, name, address, manager) -> None:
+    def __init__(self, number_branch, name, address, manager) -> None:
         self.id = None
+        self.number_branch = number_branch
         self.branch_name = name
         self.address = address
         self.manager = manager
@@ -19,4 +20,9 @@ class Branch:
         )
 
     def to_tuple(self):
-        return (self.branch_name, self.open_date)
+        return (
+            self.number_branch,
+            self.branch_name,
+            self.open_date,
+            self.manager.customer_id,
+        )

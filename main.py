@@ -107,7 +107,9 @@ def main():
 
                 elif mg_option == "7":
                     """Cadastrar Filial"""
-                    return_branch()
+                    branch = return_branch()
+                    id_address = DatabaseOperations.insert_address(branch.address)
+                    DatabaseOperations.insert_branch(branch.to_tuple() + (id_address,))
                 elif mg_option == "0":
                     break
 

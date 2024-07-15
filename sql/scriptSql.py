@@ -70,6 +70,7 @@ CREATE TABLE IF NOT EXISTS manager(
 table_branch_query = """
 CREATE TABLE IF NOT EXISTS branch (
     branch_id INT PRIMARY KEY AUTO_INCREMENT,
+    branch_number INT NOT NULL UNIQUE,
     branch_name VARCHAR(100) NOT NULL,
     open_date DATE,
     manager_id INT NOT NULL,

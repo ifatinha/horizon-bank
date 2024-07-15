@@ -8,8 +8,8 @@ def return_address():
     print("### Endereço ###")
     street = input("Rua: ")
     number = input("Número: ")
-    postal_code = input("CEP: ")
     neighborhood = input("Bairro: ")
+    postal_code = input("CEP: ")
     city = input("Cidade: ")
     state = input("Estado: ")
     country = input("Pais: ")
@@ -78,17 +78,19 @@ def find_manager_bd():
     manager = Manager(
         fullname, email, phone, None, employee_number, status=manager_status
     )
+    manager.customer_id = manager_id
 
-    return manager, manager_id
+    return manager
 
 
 def return_branch():
 
     print("### Informe os dados abaixo para cadastrar uma nova filial ###")
+    branch_number = int(input("Número: "))
     branch_name = input("Nome: ")
 
-    brancha_address = return_address()
-    manager, manager_id = find_manager_bd()
+    branch_address = return_address()
+    manager = find_manager_bd()
 
-    branch = Branch(branch_name, brancha_address, manager)
-    return branch, manager_id
+    branch = Branch(branch_number, branch_name, branch_address, manager)
+    return branch

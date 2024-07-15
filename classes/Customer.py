@@ -4,13 +4,21 @@ from datetime import datetime
 class Customer:
 
     def __init__(self, fullname, email, phone, address) -> None:
-        self.id = None
+        self.__customer_id = None
         self.fullname = fullname
         self.email = email
         self.phone = phone
         self.address = address
         self.created_at = datetime.now()
         self.updated_ate = datetime.now()
+
+    @property
+    def customer_id(self):
+        return self.__customer_id
+
+    @customer_id.setter
+    def customer_id(self, id_customer):
+        self.__customer_id = id_customer
 
     def update(self, **kwargs):
         for key, value in kwargs.items():
