@@ -63,13 +63,7 @@ def return_manager():
     return manager
 
 
-def return_branch():
-
-    print("### Informe os dados abaixo para cadastrar uma nova filial ###")
-    branch_name = input("Nome: ")
-
-    brancha_address = return_address()
-
+def find_manager_bd():
     print("### Gerente ###")
     manager_id = int(input("Digite o codigo do gerente: "))
     result = DatabaseOperations.find_manager(manager_id)
@@ -111,5 +105,16 @@ def return_branch():
         fullname, email, phone, address, employee_number, status=manager_status
     )
 
+    return manager, manager_id
+
+
+def return_branch():
+
+    print("### Informe os dados abaixo para cadastrar uma nova filial ###")
+    branch_name = input("Nome: ")
+
+    brancha_address = return_address()
+    manager, manager_id = find_manager_bd()
+
     branch = Branch(branch_name, brancha_address, manager)
-    print(branch.to_tuple() + (manager_id, 4))
+    return branch, manager_id

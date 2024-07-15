@@ -70,7 +70,7 @@ class DatabaseOperations:
 
     @staticmethod
     def find_address(manager_id):
-        query = "SELECT a.id, number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes from address a JOIN address_customer ac on ac.id_address = a.id JOIN customer c on c.id = ac.id_customer and c.id = %s;"
+        query = "SELECT number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes from address a JOIN address_customer ac on ac.id_address = a.id JOIN customer c on c.id = ac.id_customer and c.id = %s;"
 
         try:
             conn = DatabaseOperations.getConnect().connect()
