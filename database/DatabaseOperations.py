@@ -149,11 +149,29 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_branch(branch):
-        query = "INSERT INTO branch(branch_number, branch_name, open_date, manager_id, address_id) VALUES(%s, %s, %s, %s, %s)"
+        query = "INSERT INTO branch(number, name, phone, open_date, manager_id, address_id) VALUES(%s, %s, %s, %s, %s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
             cursor.execute(query, branch)
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_invidual(individual, id_customer):
+        query = (
+            "INSERT INTO individual(customer_id, ssn, date_of_birth) VALUES(%s, %s, %s)"
+        )
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, ((id_customer,) + individual.to_tuple()))
             conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")

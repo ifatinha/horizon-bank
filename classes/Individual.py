@@ -3,8 +3,8 @@ from classes.Customer import Customer
 
 class Individual(Customer):
 
-    def __init__(self, fullname, email, telephone, ssn, date_of_birth) -> None:
-        super().__init__(fullname, email, telephone)
+    def __init__(self, fullname, email, phone, address, ssn, date_of_birth) -> None:
+        super().__init__(fullname, email, phone, address)
         self.ssn = ssn
         self.date_of_birth = date_of_birth
 
@@ -16,3 +16,6 @@ class Individual(Customer):
 
     def to_tuple(self):
         return (self.ssn, self.date_of_birth)
+
+    def customer_to_tuple(self):
+        return super().to_tuple()

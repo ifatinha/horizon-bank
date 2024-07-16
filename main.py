@@ -17,7 +17,7 @@ from sql.scriptSql import (
     table_transactions_query,
 )
 
-from util.ReturnObjetc import return_manager, return_branch
+from util.ReturnObjetc import return_manager, return_branch, return_individual
 
 # """Criando o banco de dados, caso ele não exista"""
 # Connection.check_and_create_database("horizon_Bank")
@@ -80,6 +80,13 @@ def main():
 
                 if mg_option == "1":
                     """Cadastrar Novo Cliente"""
+                    individual = return_individual()
+                    id_customer = DatabaseOperations.insert_customer(
+                        individual.customer_to_tuple()
+                    )
+                    id_address = DatabaseOperations.insert_address(individual.address)
+                    DatabaseOperations.insert_invidual(individual, id_customer)
+                    DatabaseOperations.insert_address_customer(id_address, id_customer)
 
                 elif mg_option == "2":
                     """Cadastrar Nova Conta"""

@@ -2,6 +2,8 @@ from database.DatabaseOperations import DatabaseOperations
 from classes.Address import Address
 from classes.Manager import Manager
 from classes.Branch import Branch
+from classes.Individual import Individual
+from datetime import datetime
 
 
 def return_address():
@@ -88,9 +90,25 @@ def return_branch():
     print("### Informe os dados abaixo para cadastrar uma nova filial ###")
     branch_number = int(input("Número: "))
     branch_name = input("Nome: ")
+    branch_phone = input("Telefone: ")
 
     branch_address = return_address()
     manager = find_manager_bd()
 
-    branch = Branch(branch_number, branch_name, branch_address, manager)
+    branch = Branch(branch_number, branch_name, branch_phone, branch_address, manager)
     return branch
+
+
+def return_individual():
+    print("### Dados Pessoais ###")
+    fullname = input("Nome Completo: ")
+    email = input("Email: ")
+    phone = input("Phone: ")
+    ssn = input("SSN: ")
+    birth = input("Data de Nascimento (dd/mm/yyyy): ")
+    address = return_address()
+
+    birth = datetime.strptime(birth, "%d/%m/%Y")
+    individual = Individual(fullname, email, phone, address, ssn, birth)
+
+    return individual
