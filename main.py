@@ -77,7 +77,7 @@ def main():
             user = input("Usuário: ")
             password = input("Password: ")
 
-            status = DatabaseOperations.login_admin(user=user, passowrd=password)
+            status = DatabaseOperations.login_admin(user=user, password=password)
 
             if len(status):
 
@@ -142,9 +142,11 @@ def main():
                         manager.customer_to_tuple()
                     )
                     id_address = DatabaseOperations.insert_address(manager.address)
-                    DatabaseOperations.insert_manager(manager, id_customer)
                     DatabaseOperations.insert_address_customer(id_address, id_customer)
-
+                    DatabaseOperations.insert_admin(
+                        manager.employee_number, manager.password
+                    )
+                    DatabaseOperations.insert_manager(manager, id_customer)
                 elif mg_option == "7":
                     """Cadastrar Filial"""
                     branch = return_branch()

@@ -8,12 +8,13 @@ class Manager(Customer):
         self,
         fullname,
         email,
+        password,
         phone,
         address,
         employee_number,
         status=True,
     ) -> None:
-        super().__init__(fullname, email, phone, address)
+        super().__init__(fullname, email, password, phone, address)
         self.employee_number = employee_number
         self.hire_date = datetime.now()
         self.status = status

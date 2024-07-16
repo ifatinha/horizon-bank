@@ -3,10 +3,11 @@ from datetime import datetime
 
 class Customer:
 
-    def __init__(self, fullname, email, phone, address) -> None:
+    def __init__(self, fullname, email, password, phone, address) -> None:
         self.__customer_id = None
         self.fullname = fullname
         self.email = email
+        self.password = password
         self.phone = phone
         self.address = address
         self.created_at = datetime.now()
@@ -36,4 +37,4 @@ class Customer:
         )
 
     def to_tuple(self):
-        return (self.fullname, self.email, self.phone)
+        return (self.fullname, self.email, self.password, self.phone)

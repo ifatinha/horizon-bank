@@ -37,12 +37,27 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def login_admin(user, passowrd):
+    def insert_admin(user, password):
+        query = f"INSERT INTO admin (user, password) VALUES(%s, %s)"
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (user, password))
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def login_admin(user, password):
         query = f"SELECT * FROM admin WHERE user = %s AND password = %s"
         try:
             conn = DatabaseOperations.getConnect()
             conn.connect()
-            conn.cursor.execute(query, (user, passowrd))
+            conn.cursor.execute(query, (user, password))
             resultado = conn.cursor.fetchall()
             return resultado
         except Error as err:
@@ -87,7 +102,7 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_customer(customer):
-        query = "INSERT INTO customer(fullname, email, phone) VALUES(%s, %s, %s)"
+        query = "INSERT INTO customer(fullname, email, password, phone) VALUES(%s, %s, %s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()

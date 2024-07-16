@@ -11,7 +11,6 @@ class Address:
         neighborhood,
         city,
         state,
-        country,
         address_type="Residential",
         notes="",
         is_primary=True,
@@ -23,7 +22,7 @@ class Address:
         self.neighborhood = neighborhood
         self.city = city
         self.state = state
-        self.country = country
+        self.country = "Brasil"
         self.address_type = address_type
         self.notes = notes
         self.is_primary = is_primary

@@ -3,8 +3,10 @@ from classes.Customer import Customer
 
 class Company(Customer):
 
-    def __init__(self, fullname, email, phone, address, ein, legal_name) -> None:
-        super().__init__(fullname, email, phone, address)
+    def __init__(
+        self, fullname, email, password, phone, address, ein, legal_name
+    ) -> None:
+        super().__init__(fullname, email, password, phone, address)
         self.ein = ein
         self.legal_name = legal_name
 

@@ -9,13 +9,12 @@ from datetime import datetime
 
 def return_address():
     print("### Endereço ###")
-    street = input("Rua: ")
+    street = input("Endereço: ")
     number = input("Número: ")
     neighborhood = input("Bairro: ")
     postal_code = input("CEP: ")
     city = input("Cidade: ")
     state = input("Estado: ")
-    country = input("Pais: ")
 
     while True:
         type_address = int(
@@ -48,7 +47,6 @@ def return_address():
         neighborhood,
         city,
         state,
-        country,
         address_type,
         notes,
     )
@@ -58,11 +56,12 @@ def return_manager():
     print("### Dados Pessoais ###")
     fullname = input("Nome Completo: ")
     email = input("Email: ")
+    password = input("Senha: ")
     phone = input("Phone: ")
     employee_number = input("Número de Registro: ")
     address = return_address()
 
-    manager = Manager(fullname, email, phone, address, employee_number)
+    manager = Manager(fullname, email, password, phone, address, employee_number)
     return manager
 
 
@@ -104,13 +103,14 @@ def return_individual():
     print("### Dados Pessoais ###")
     fullname = input("Nome Completo: ")
     email = input("Email: ")
+    password = input("Senha: ")
     phone = input("Phone: ")
     ssn = input("SSN: ")
     birth = input("Data de Nascimento (dd/mm/yyyy): ")
     address = return_address()
 
     birth = datetime.strptime(birth, "%d/%m/%Y")
-    individual = Individual(fullname, email, phone, address, ssn, birth)
+    individual = Individual(fullname, email, password, phone, address, ssn, birth)
 
     return individual
 
@@ -119,11 +119,12 @@ def return_company():
     print("### Dados da Empresa ###")
     fullname = input("Nome: ")
     email = input("Email: ")
+    password = input("Senha: ")
     phone = input("Phone: ")
     ein = input("EIN: ")
     legal_name = input("Nome Fantasia: ")
     address = return_address()
 
-    company = Company(fullname, email, phone, address, ein, legal_name)
+    company = Company(fullname, email, password, phone, address, ein, legal_name)
 
     return company
