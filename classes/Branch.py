@@ -12,6 +12,10 @@ class Branch:
         self.manager = manager
         self.open_date = datetime.now()
 
+    @property
+    def id(self):
+        return self.id
+
     def __str__(self) -> str:
         return (
             f"Filial: {self.name}\n"

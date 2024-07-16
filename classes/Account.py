@@ -5,7 +5,7 @@ from classes.Historic import Historic
 class Account:
 
     def __init__(
-        self, branch, number, password, customer, account_type="Current"
+        self, number, password, branch, customer, account_type="Current"
     ) -> None:
         self.__id = None
         self.__number = number
@@ -70,7 +70,14 @@ class Account:
         )
 
     def to_tuple(self):
-        return (self.number, self.password, self.balance, self.account_type)
+        return (
+            self.number,
+            self.password,
+            self.balance,
+            self.account_type,
+            self.branch.id,
+            self.customer.customer_id,
+        )
 
     def withdraw(self, value):
         exceeded_balance = value > self.balance
