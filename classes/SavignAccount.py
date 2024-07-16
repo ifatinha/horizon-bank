@@ -3,8 +3,8 @@ from classes.Account import Account
 
 class SavignAccount(Account):
 
-    def __init__(self, branch, number, customer, account_type="Current") -> None:
-        super().__init__(branch, number, customer, account_type)
+    def __init__(self, branch, number, customer) -> None:
+        super().__init__(branch, number, customer, account_type="Savings")
         self.__interest_rate = 0.005
 
     @property

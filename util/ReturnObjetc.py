@@ -6,6 +6,8 @@ from classes.Individual import Individual
 from classes.Company import Company
 from classes.Account import Account
 from classes.Customer import Customer
+from classes.CurrentAccount import CurrentAccount
+from classes.SavignAccount import SavignAccount
 
 from datetime import datetime
 
@@ -177,9 +179,7 @@ def return_account():
             """Tipo de Conta: 
             [1] Savings
             [2] Current
-            [3] Digital 
-            [4] University
-            [5] Business
+            [3] Business
             => """
         )
 

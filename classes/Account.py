@@ -77,9 +77,7 @@ class Account:
         accounts_type = {
             "1": "Savings",
             "2": "Current",
-            "3": "Digital",
-            "4": "University",
-            "5": "Business",
+            "3": "Business",
         }
 
         return accounts_type

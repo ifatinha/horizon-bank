@@ -8,12 +8,16 @@ class CurrentAccount(Account):
         branch,
         number,
         customer,
-        account_type="Current",
         overdraft_limit=500,
         withdrawal_limit=1000,
         transaction_limit=10,
     ) -> None:
-        super().__init__(branch, number, customer, account_type)
+        super().__init__(
+            branch,
+            number,
+            customer,
+            account_type="Current",
+        )
         self.__overdraft_limit = overdraft_limit
         self.__withdrawal_limit = withdrawal_limit
         self.__transaction_limit = transaction_limit

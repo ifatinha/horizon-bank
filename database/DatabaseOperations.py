@@ -254,6 +254,7 @@ class DatabaseOperations:
             cursor = conn.cursor()
             cursor.execute(query, account)
             conn.commit()
+            return cursor.lastrowid
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
         finally:
