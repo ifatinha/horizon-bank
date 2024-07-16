@@ -79,10 +79,9 @@ CREATE TABLE IF NOT EXISTS branch (
 
 CREATE TABLE IF NOT EXISTS account (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    branch VARCHAR(10) NOT NULL,
-    account_number VARCHAR(20) NOT NULL UNIQUE,
+    number VARCHAR(20) NOT NULL UNIQUE,
+    password INT(6) NOT NULL,
     balance DECIMAL(15, 2) DEFAULT 0.00,
-    customer_id INT NOT NULL,
     account_type ENUM(
         'Savings',
         'Current',
@@ -92,6 +91,8 @@ CREATE TABLE IF NOT EXISTS account (
         'Business',
         'Joint'
     ) DEFAULT "Current",
+    branch VARCHAR(10) NOT NULL,
+    customer_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE

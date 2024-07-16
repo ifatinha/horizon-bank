@@ -4,12 +4,15 @@ from classes.Historic import Historic
 
 class Account:
 
-    def __init__(self, branch, number, customer, account_type="Current") -> None:
+    def __init__(
+        self, branch, number, password, customer, account_type="Current"
+    ) -> None:
         self.__id = None
         self.__branch = branch
         self.__account_number = number
-        self.__balance = float()
+        self.__password = password
         self.__customer = customer
+        self.__balance = float()
         self.__account_type = account_type
         self.__created_at = datetime.now()
         self.__update_at = datetime.now()
@@ -25,6 +28,14 @@ class Account:
     @property
     def account_number(self):
         return self.__account_number
+
+    @property
+    def password(self):
+        return self.__password
+
+    @password.setter
+    def password(self, password):
+        self.__password = password
 
     @property
     def balance(self):
