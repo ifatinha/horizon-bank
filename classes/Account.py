@@ -62,7 +62,7 @@ class Account:
         return self.__update_at
 
     @staticmethod
-    def generate_us_account_number():
+    def generate_account_number():
 
         return f"{random.randint(1000000000, 9999999999)}"
 
