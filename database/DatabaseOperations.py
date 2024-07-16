@@ -148,7 +148,7 @@ class DatabaseOperations:
 
     @staticmethod
     def find_manager(manager_id):
-        query = "SELECT manager_id, fullname, email, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id"
+        query = "SELECT manager_id, fullname, email, password, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -203,6 +203,56 @@ class DatabaseOperations:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
             cursor.execute(query, ((id_customer,) + company.to_tuple()))
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_branch(branch_number):
+        query = "SELECT branch_id, number, name FROM branch WHERE number = %s"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (branch_number,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_customer(id_customer):
+        query = "SELECT id, fullname FROM customer WHERE id = %s"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (id_customer,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_account(account):
+        query = "INSERT INTO account(number, password, balance, account_type, branch_id, customer_id) VALUES(%s, %s, %s, %s, %s, %s)"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, account)
             conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")

@@ -4,6 +4,9 @@ from classes.Manager import Manager
 from classes.Branch import Branch
 from classes.Individual import Individual
 from classes.Company import Company
+from classes.Account import Account
+from classes.Customer import Customer
+
 from datetime import datetime
 
 
@@ -75,10 +78,12 @@ def find_manager_bd():
         manager_id = int(input("Codigo do gerente: "))
         result = DatabaseOperations.find_manager(manager_id)
 
-    manager_id, fullname, email, phone, employee_number, manager_status = result
+    manager_id, fullname, email, password, phone, employee_number, manager_status = (
+        result
+    )
 
     manager = Manager(
-        fullname, email, phone, None, employee_number, status=manager_status
+        fullname, email, password, phone, None, employee_number, status=manager_status
     )
     manager.customer_id = manager_id
 
@@ -94,8 +99,10 @@ def return_branch():
 
     branch_address = return_address()
     manager = find_manager_bd()
+    print(manager)
 
     branch = Branch(branch_number, branch_name, branch_phone, branch_address, manager)
+
     return branch
 
 
@@ -104,7 +111,7 @@ def return_individual():
     fullname = input("Nome Completo: ")
     email = input("Email: ")
     password = input("Senha: ")
-    phone = input("Phone: ")
+    phone = input("Telefone: ")
     ssn = input("SSN: ")
     birth = input("Data de Nascimento (dd/mm/yyyy): ")
     address = return_address()
@@ -117,10 +124,10 @@ def return_individual():
 
 def return_company():
     print("### Dados da Empresa ###")
-    fullname = input("Nome: ")
+    fullname = input("Razão Social: ")
     email = input("Email: ")
     password = input("Senha: ")
-    phone = input("Phone: ")
+    phone = input("Telefone: ")
     ein = input("EIN: ")
     legal_name = input("Nome Fantasia: ")
     address = return_address()
@@ -128,3 +135,60 @@ def return_company():
     company = Company(fullname, email, password, phone, address, ein, legal_name)
 
     return company
+
+
+def find_branch_bd():
+    branch_id = int(input("Código da Agéncia: "))
+    result = DatabaseOperations.find_branch(branch_id)
+
+    while result is None:
+        print("@@@ Nenhuma Agência Encontrada. @@@")
+        branch_id = int(input("Código da Agéncia: "))
+        result = DatabaseOperations.find_branch(branch_id)
+
+    id_branch, number, name = result
+    branch = Branch(number, name, None, None, None)
+    branch.id_branch = id_branch
+    return branch
+
+
+def find_customer_bd():
+    customer_id = int(input("Codigo do Cliente: "))
+    result = DatabaseOperations.find_customer(customer_id)
+
+    while result is None:
+        print("@@@ Nenhum Cliente Encontrado. @@@")
+        customer_id = int(input("Codigo do Cliente: "))
+        result = DatabaseOperations.find_customer(customer_id)
+
+    id_customer, fullname = result
+    customer = Customer(fullname, None, None, None, None)
+    customer.customer_id = id_customer
+    return customer
+
+
+def return_account():
+
+    password = input("Senha: ")
+    account_type = None
+
+    while account_type is None:
+        option = input(
+            """Tipo de Conta: 
+            [1] Savings
+            [2] Current
+            [3] Digital 
+            [4] University
+            [5] Business
+            => """
+        )
+
+        account_type = Account.return_type_account().get(option)
+
+        if account_type is None:
+            print("@@@ Chave Inválida. Tente novamente. @@@")
+
+    branch = find_branch_bd()
+    customer = find_customer_bd()
+    account = Account(password, branch, customer, account_type)
+    return account.to_tuple()

@@ -72,6 +72,18 @@ class Account:
             f"\nCliente: {self.customer}"
         )
 
+    @staticmethod
+    def return_type_account():
+        accounts_type = {
+            "1": "Savings",
+            "2": "Current",
+            "3": "Digital",
+            "4": "University",
+            "5": "Business",
+        }
+
+        return accounts_type
+
     def to_tuple(self):
         return (
             self.number,

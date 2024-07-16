@@ -22,6 +22,7 @@ from util.ReturnObjetc import (
     return_branch,
     return_individual,
     return_company,
+    return_account,
 )
 
 # """Criando o banco de dados, caso ele não exista"""
@@ -123,7 +124,8 @@ def main():
 
                 elif mg_option == "2":
                     """Cadastrar Nova Conta"""
-
+                    account = return_account()
+                    DatabaseOperations.insert_account(account)
                 elif mg_option == "3":
                     """Listar Contas Cadastradas"""
 
