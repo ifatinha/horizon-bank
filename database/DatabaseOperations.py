@@ -179,3 +179,19 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_company(id_customer, company):
+        query = "INSERT INTO company(customer_id, ein, legal_name) VALUES(%s, %s, %s)"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, ((id_customer,) + company.to_tuple()))
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")

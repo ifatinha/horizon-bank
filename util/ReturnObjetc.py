@@ -3,6 +3,7 @@ from classes.Address import Address
 from classes.Manager import Manager
 from classes.Branch import Branch
 from classes.Individual import Individual
+from classes.Company import Company
 from datetime import datetime
 
 
@@ -112,3 +113,17 @@ def return_individual():
     individual = Individual(fullname, email, phone, address, ssn, birth)
 
     return individual
+
+
+def return_company():
+    print("### Dados da Empresa ###")
+    fullname = input("Nome: ")
+    email = input("Email: ")
+    phone = input("Phone: ")
+    ein = input("EIN: ")
+    legal_name = input("Nome Fantasia: ")
+    address = return_address()
+
+    company = Company(fullname, email, phone, address, ein, legal_name)
+
+    return company

@@ -34,3 +34,13 @@ def client_menu():
     => """
 
     return input(menu)
+
+
+def menu_type_customer():
+    menu = """################ MENU ################
+    [1] Pessoa Física
+    [2] Pessoa Juridica
+    [0] Sair
+    => """
+
+    return input(menu)

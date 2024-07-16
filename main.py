@@ -1,6 +1,6 @@
 from database.DatabaseOperations import DatabaseOperations
 from connection.Connection import Connection
-from util.menu import main_menu, manager_menu, client_menu
+from util.menu import main_menu, manager_menu, client_menu, menu_type_customer
 from sql.scriptSql import (
     table_admin_query,
     table_address_query,
@@ -17,7 +17,12 @@ from sql.scriptSql import (
     table_transactions_query,
 )
 
-from util.ReturnObjetc import return_manager, return_branch, return_individual
+from util.ReturnObjetc import (
+    return_manager,
+    return_branch,
+    return_individual,
+    return_company,
+)
 
 # """Criando o banco de dados, caso ele não exista"""
 # Connection.check_and_create_database("horizon_Bank")
@@ -80,13 +85,41 @@ def main():
 
                 if mg_option == "1":
                     """Cadastrar Novo Cliente"""
-                    individual = return_individual()
-                    id_customer = DatabaseOperations.insert_customer(
-                        individual.customer_to_tuple()
-                    )
-                    id_address = DatabaseOperations.insert_address(individual.address)
-                    DatabaseOperations.insert_invidual(individual, id_customer)
-                    DatabaseOperations.insert_address_customer(id_address, id_customer)
+
+                    while True:
+                        tp_option = menu_type_customer()
+
+                        if tp_option == "1":
+                            """Pessoa Fisica"""
+                            individual = return_individual()
+                            id_customer = DatabaseOperations.insert_customer(
+                                individual.customer_to_tuple()
+                            )
+                            id_address = DatabaseOperations.insert_address(
+                                individual.address
+                            )
+                            DatabaseOperations.insert_address_customer(
+                                id_address, id_customer
+                            )
+                            DatabaseOperations.insert_invidual(individual, id_customer)
+                        elif tp_option == "2":
+                            """Pessoa Juridica"""
+                            company = return_company()
+                            id_customer = DatabaseOperations.insert_customer(
+                                company.customer_to_tuple()
+                            )
+                            id_address = DatabaseOperations.insert_address(
+                                company.address
+                            )
+                            DatabaseOperations.insert_address_customer(
+                                id_address, id_customer
+                            )
+                            DatabaseOperations.insert_company(id_customer, company)
+                        elif tp_option == "0":
+                            break
+
+                        else:
+                            print("@@@ Opção inválida @@@")
 
                 elif mg_option == "2":
                     """Cadastrar Nova Conta"""

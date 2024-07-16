@@ -51,7 +51,7 @@ CREATE TABLE IF NOT EXISTS individual (
 CREATE TABLE IF NOT EXISTS company (
     customer_id INT PRIMARY KEY,
     ein VARCHAR(18) NOT NULL UNIQUE COMMENT 'Employer Identification Number',
-    legal_name VARCHAR(255) NOT NULL,
+    legal_name VARCHAR(255) NOT NULL UNIQUE,
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );
 
