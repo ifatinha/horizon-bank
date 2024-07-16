@@ -12,7 +12,9 @@ class Individual(Customer):
         return super().update(**kwargs)
 
     def __str__(self) -> str:
-        return super().__str__() + f"SSN: {self.ssn}" f"Birthday: {self.date_of_birth}"
+        return (
+            super().__str__() + f"\nSSN: {self.ssn}" f"\nBirthday: {self.date_of_birth}"
+        )
 
     def to_tuple(self):
         return (self.ssn, self.date_of_birth)

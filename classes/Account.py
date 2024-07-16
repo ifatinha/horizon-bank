@@ -4,11 +4,9 @@ import random
 
 class Account:
 
-    def __init__(
-        self, number, password, branch, customer, account_type="Current"
-    ) -> None:
+    def __init__(self, password, branch, customer, account_type="Current") -> None:
         self.__id = None
-        self.__number = number
+        self.__number = Account.generate_account_number()
         self.__password = password
         self.__balance = float()
         self.__branch = branch
@@ -68,10 +66,10 @@ class Account:
 
     def __str__(self) -> str:
         return (
-            f"Conta: {self.account_number} - {self.account_type}"
-            f"Agência: {self.branch}"
-            f"Saldo: $ {self.balance:.2f}"
-            f"Cliente: {self.customer}"
+            f"Conta: {self.number} - {self.account_type}"
+            f"\nAgência: {self.branch}"
+            f"\nSaldo: $ {self.balance:.2f}"
+            f"\nCliente: {self.customer}"
         )
 
     def to_tuple(self):
@@ -80,7 +78,7 @@ class Account:
             self.password,
             self.balance,
             self.account_type,
-            self.branch.id,
+            self.branch.id_branch,
             self.customer.customer_id,
         )
 

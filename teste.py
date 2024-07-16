@@ -1,23 +1,16 @@
-from classes.Customer import Customer
+from classes.Account import Account
+from classes.Branch import Branch
 from classes.Manager import Manager
-from datetime import datetime
-import random
+from classes.Individual import Individual
 
+manager = Manager("John Doe", "", "", None, "4784")
+manager.customer_id = 1
 
-def generate_account_number():
-    now = datetime.now()
-    date_str = now.strftime("%Y%m%d%H%M%S")
-    random_number = random.randint(1, 1000)
-    return f"{date_str}{random_number}"
+branch = Branch(2015, "Agência Itaporanga", "83 4001-3200", None, manager)
+branch.id_branch = 2
 
+client = Individual("Jane Doe", "", "", None, "1245", "14/10/1994")
+client.customer_id = 3
 
-def generate_us_account_number():
-
-    # Número da conta – 10 dígitos
-    account_number = f"{random.randint(1000000000, 9999999999)}"
-
-    return account_number
-
-
-print(generate_account_number())
-print(generate_us_account_number())
+account = Account("123456", branch, client)
+print(account.to_tuple())

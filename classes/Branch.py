@@ -4,7 +4,7 @@ from datetime import datetime
 class Branch:
 
     def __init__(self, number, name, phone, address, manager) -> None:
-        self.id = None
+        self.__id_branch = None
         self.number = number
         self.name = name
         self.phone = phone
@@ -13,8 +13,12 @@ class Branch:
         self.open_date = datetime.now()
 
     @property
-    def id(self):
-        return self.id
+    def id_branch(self):
+        return self.__id_branch
+
+    @id_branch.setter
+    def id_branch(self, id_branch):
+        self.__id_branch = id_branch
 
     def __str__(self) -> str:
         return (
