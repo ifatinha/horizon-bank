@@ -1,5 +1,5 @@
 from datetime import datetime
-from classes.Historic import Historic
+import random
 
 
 class Account:
@@ -60,6 +60,11 @@ class Account:
     @property
     def update_at(self):
         return self.__update_at
+
+    @staticmethod
+    def generate_us_account_number():
+
+        return f"{random.randint(1000000000, 9999999999)}"
 
     def __str__(self) -> str:
         return (
