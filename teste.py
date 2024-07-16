@@ -1,11 +1,14 @@
 from classes.Customer import Customer
 from classes.Manager import Manager
 from datetime import datetime
+import random
 
-##manager = Manager("John Doe", "johndoe@email.com", "8398153-5656", None, 1, True)
-customer = Customer("Jane Doe", "janedoe@email.com", "83 9856-8956", None)
 
-customer.customer_id = 1
-print(customer.customer_id)
+def generate_account_number():
+    now = datetime.now()
+    date_str = now.strftime("%Y%m%d%H%M%S")
+    random_number = random.randint(1, 1000)
+    return f"{date_str}{random_number}"
 
-print(datetime.now())
+
+print(generate_account_number())
