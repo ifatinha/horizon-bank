@@ -8,11 +8,11 @@ class Account:
         self, branch, number, password, customer, account_type="Current"
     ) -> None:
         self.__id = None
-        self.__branch = branch
-        self.__account_number = number
+        self.__number = number
         self.__password = password
-        self.__customer = customer
         self.__balance = float()
+        self.__branch = branch
+        self.__customer = customer
         self.__account_type = account_type
         self.__created_at = datetime.now()
         self.__update_at = datetime.now()
@@ -22,12 +22,8 @@ class Account:
         return self.__id
 
     @property
-    def branch(self):
-        return self.__branch
-
-    @property
-    def account_number(self):
-        return self.__account_number
+    def number(self):
+        return self.__number
 
     @property
     def password(self):
@@ -44,6 +40,10 @@ class Account:
     @balance.setter
     def balance(self, value):
         self.__balance = value
+
+    @property
+    def branch(self):
+        return self.__branch
 
     @property
     def customer(self):
@@ -69,9 +69,8 @@ class Account:
             f"Cliente: {self.customer}"
         )
 
-    @classmethod
-    def new_account(cls, branch, number, customer, account_type):
-        return cls(branch, number, customer, account_type)
+    def to_tuple(self):
+        return (self.number, self.password, self.balance, self.account_type)
 
     def withdraw(self, value):
         exceeded_balance = value > self.balance

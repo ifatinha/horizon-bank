@@ -96,10 +96,11 @@ CREATE TABLE IF NOT EXISTS account (
         'Business',
         'Joint'
     ) DEFAULT "Current",
-    branch VARCHAR(10) NOT NULL,
+    branch_id INT NOT NULL,
     customer_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (branch_id) REFERENCES branch(branch_id) ON DELETE CASCADE,
     FOREIGN KEY (customer_id) REFERENCES customer(id) ON DELETE CASCADE
 );"""
 
