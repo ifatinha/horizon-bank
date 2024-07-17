@@ -65,8 +65,8 @@ CREATE TABLE IF NOT EXISTS manager(
 
 CREATE TABLE IF NOT EXISTS branch (
     branch_id INT PRIMARY KEY AUTO_INCREMENT,
-    number INT NOT NULL UNIQUE,
-    name VARCHAR(100) NOT NULL,
+    branch_number INT NOT NULL UNIQUE,
+    branch_name VARCHAR(100) NOT NULL,
     phone VARCHAR(20) NOT NULL,
     open_date DATE,
     manager_id INT NOT NULL,

@@ -208,6 +208,10 @@ def main():
                             DatabaseOperations.insert_branch(
                                 branch.to_tuple() + (id_address,)
                             )
+
+                            DatabaseOperations.update_status_manager(
+                                branch.manager.customer_id
+                            )
                         elif op_branch == "0":
                             break
                         else:

@@ -3,10 +3,10 @@ from datetime import datetime
 
 class Branch:
 
-    def __init__(self, number, name, phone, address, manager) -> None:
+    def __init__(self, number, phone, address, manager) -> None:
         self.__id_branch = None
         self.number = number
-        self.name = name
+        self.name = "Horizon Bank"
         self.phone = phone
         self.address = address
         self.manager = manager

@@ -14,7 +14,7 @@ from datetime import datetime
 
 
 def return_address():
-    print("### Endereço ###")
+    print("### Informações de Endereço ###")
     street = input("Endereço: ")
     number = input("Número: ")
     neighborhood = input("Bairro: ")
@@ -97,14 +97,13 @@ def return_branch():
 
     print("### Informe os dados abaixo para cadastrar uma nova filial ###")
     branch_number = int(input("Número: "))
-    branch_name = input("Nome: ")
     branch_phone = input("Telefone: ")
 
     branch_address = return_address()
     manager = find_manager_bd()
     print(manager)
 
-    branch = Branch(branch_number, branch_name, branch_phone, branch_address, manager)
+    branch = Branch(branch_number, branch_phone, branch_address, manager)
 
     return branch
 

@@ -148,7 +148,7 @@ class DatabaseOperations:
 
     @staticmethod
     def find_manager(manager_id):
-        query = "SELECT manager_id, fullname, email, password, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id"
+        query = "SELECT manager_id, fullname, email, password, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id where m.manager_status = True"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -164,7 +164,7 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_branch(branch):
-        query = "INSERT INTO branch(number, name, phone, open_date, manager_id, address_id) VALUES(%s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO branch(branch_number, branch_name, phone, open_date, manager_id, address_id) VALUES(%s, %s, %s, %s, %s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -302,6 +302,22 @@ class DatabaseOperations:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
             cursor.execute(query, historic.to_tuple())
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def update_status_manager(manager_id):
+        query = "UPDATE manager SET manager_status = False where manager_id = %s"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (manager_id,))
             conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
