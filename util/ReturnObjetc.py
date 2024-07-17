@@ -169,11 +169,30 @@ def find_customer_bd():
     return customer
 
 
-def return_account(account_type):
-    print("### Dados da Conta ###")
+def return_account():
+    print("### Conta Empresárial ###")
     password = input("Senha: ")
 
     branch = find_branch_bd()
     customer = find_customer_bd()
-    account = Account(password, branch, customer, account_type)
+    account = Account(password, branch, customer)
     return account.to_tuple()
+
+
+def return_savign_account():
+    print("### Conta Poupança ###")
+    password = input("Senha: ")
+
+    branch = find_branch_bd()
+    customer = find_customer_bd()
+    savign = SavignAccount(password, branch, customer)
+    return savign
+
+
+def return_current_account():
+    print("### Conta Poupança ###")
+    password = input("Senha: ")
+
+    branch = find_branch_bd()
+    customer = find_customer_bd()
+    return CurrentAccount(password, branch, customer)

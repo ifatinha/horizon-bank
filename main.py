@@ -29,6 +29,8 @@ from util.ReturnObjetc import (
     return_individual,
     return_company,
     return_account,
+    return_savign_account,
+    return_current_account,
 )
 
 # """Criando o banco de dados, caso ele não exista"""
@@ -133,27 +135,34 @@ def main():
 
                     while True:
                         menu_option = menu_type_account()
-                        account_type = ""
+
                         if menu_option == "1":
                             """Conta Poupança"""
-                            account_type = "Savings"
+                            savign_account = return_savign_account()
+                            print(savign_account.super_to_tuple())
+                            print(savign_account.to_tuple())
+                            # id_account = DatabaseOperations.insert_account(
+                            #     savign_account.super_to_tuple()
+                            # )
 
                         elif menu_option == "2":
                             """Conta Corrente"""
-                            account_type = "Current"
+                            current_account = return_current_account()
+                            print(current_account.super_to_tuple())
+                            print(current_account.to_tuple())
+                            # id_account = DatabaseOperations.insert_account(
+                            #     current_account.super_to_tuple()
+                            # )
 
                         elif menu_option == "3":
                             """Conta Empresárial"""
-                            account_type = "Business"
-
+                            account = return_account()
+                            DatabaseOperations.insert_account(account)
                         elif menu_option == "0":
                             break
 
                         else:
                             print("@@@ Opção Inválida! Tente novamente. @@@")
-
-                        account = return_account(account_type)
-                        id_account = DatabaseOperations.insert_account(account)
 
                 elif mg_option == "3":
                     """Listar Contas Cadastradas"""

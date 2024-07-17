@@ -5,19 +5,14 @@ class CurrentAccount(Account):
 
     def __init__(
         self,
+        password,
         branch,
-        number,
         customer,
         overdraft_limit=500,
         withdrawal_limit=1000,
         transaction_limit=10,
     ) -> None:
-        super().__init__(
-            branch,
-            number,
-            customer,
-            account_type="Current",
-        )
+        super().__init__(password, branch, customer, "Current")
         self.__overdraft_limit = overdraft_limit
         self.__withdrawal_limit = withdrawal_limit
         self.__transaction_limit = transaction_limit
@@ -53,3 +48,6 @@ class CurrentAccount(Account):
             self.withdrawal_limit,
             self.transaction_limit,
         )
+
+    def super_to_tuple():
+        return super().to_tuple()

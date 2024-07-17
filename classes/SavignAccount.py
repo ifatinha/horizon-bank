@@ -3,9 +3,9 @@ from classes.Account import Account
 
 class SavignAccount(Account):
 
-    def __init__(self, branch, number, customer) -> None:
-        super().__init__(branch, number, customer, account_type="Savings")
-        self.__interest_rate = 0.005
+    def __init__(self, password, branch, customer) -> None:
+        super().__init__(password, branch, customer, account_type="Current")
+        self.__interest_rate = 0.0050
 
     @property
     def interest_rate(self):
@@ -20,3 +20,6 @@ class SavignAccount(Account):
 
     def to_tuple(self):
         return (super().id_account, self.interest_rate)
+
+    def super_to_tuple():
+        return super().to_tuple()

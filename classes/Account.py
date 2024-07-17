@@ -4,7 +4,7 @@ import random
 
 class Account:
 
-    def __init__(self, password, branch, customer, account_type="Current") -> None:
+    def __init__(self, password, branch, customer, account_type="Business") -> None:
         self.__id_account = None
         self.__number = Account.generate_account_number()
         self.__password = password
