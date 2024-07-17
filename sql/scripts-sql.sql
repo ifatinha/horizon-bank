@@ -85,11 +85,7 @@ CREATE TABLE IF NOT EXISTS account (
     account_type ENUM(
         'Savings',
         'Current',
-        'Wage',
-        'Digital',
-        'University',
-        'Business',
-        'Joint'
+        'Business'
     ) DEFAULT "Current",
     branch_id INT NOT NULL,
     customer_id INT NOT NULL,
