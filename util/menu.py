@@ -9,7 +9,7 @@ def main_menu():
 
 
 def manager_menu():
-    menu = """################ MENU ################
+    menu = """################ MENU GERENTE ################
     [1] Novo Cliente
     [2] Nova Conta
     [3] Listar Contas Cliente
@@ -24,7 +24,7 @@ def manager_menu():
 
 
 def client_menu():
-    menu = """################ MENU ################
+    menu = """################ MENU CLIENTE ################
     [1] Nova Conta
     [2] Depositar
     [3] Sacar
@@ -37,10 +37,21 @@ def client_menu():
 
 
 def menu_type_customer():
-    menu = """################ MENU ################
+    menu = """################ TIPO DE CLIENTE ################
     [1] Pessoa Física
     [2] Pessoa Juridica
     [0] Sair
     => """
+
+    return input(menu)
+
+
+def menu_type_account():
+    menu = """################ TIPOS DE CONTAS ################
+        [1] Savings
+        [2] Current
+        [3] Business
+        [0] Sair
+        => """
 
     return input(menu)

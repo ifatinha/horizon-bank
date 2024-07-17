@@ -1,6 +1,12 @@
 from database.DatabaseOperations import DatabaseOperations
 from connection.Connection import Connection
-from util.menu import main_menu, manager_menu, client_menu, menu_type_customer
+from util.menu import (
+    main_menu,
+    manager_menu,
+    client_menu,
+    menu_type_customer,
+    menu_type_account,
+)
 from sql.scriptSql import (
     table_admin_query,
     table_address_query,
@@ -124,8 +130,31 @@ def main():
 
                 elif mg_option == "2":
                     """Cadastrar Nova Conta"""
-                    account = return_account()
-                    DatabaseOperations.insert_account(account)
+
+                    while True:
+                        menu_option = menu_type_account()
+                        account_type = ""
+                        if menu_option == "1":
+                            """Conta Poupança"""
+                            account_type = "Savings"
+
+                        elif menu_option == "2":
+                            """Conta Corrente"""
+                            account_type = "Current"
+
+                        elif menu_option == "3":
+                            """Conta Empresárial"""
+                            account_type = "Business"
+
+                        elif menu_option == "0":
+                            break
+
+                        else:
+                            print("@@@ Opção Inválida! Tente novamente. @@@")
+
+                        account = return_account(account_type)
+                        id_account = DatabaseOperations.insert_account(account)
+
                 elif mg_option == "3":
                     """Listar Contas Cadastradas"""
 

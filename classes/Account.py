@@ -5,7 +5,7 @@ import random
 class Account:
 
     def __init__(self, password, branch, customer, account_type="Current") -> None:
-        self.__id = None
+        self.__id_account = None
         self.__number = Account.generate_account_number()
         self.__password = password
         self.__balance = float()
@@ -16,8 +16,12 @@ class Account:
         self.__update_at = datetime.now()
 
     @property
-    def id(self):
-        return self.__id
+    def id_account(self):
+        return self.__id_account
+
+    @id_account.setter
+    def id_account(self, id_account):
+        self.__id_account = id_account
 
     @property
     def number(self):

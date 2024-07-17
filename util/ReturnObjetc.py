@@ -169,24 +169,9 @@ def find_customer_bd():
     return customer
 
 
-def return_account():
-
+def return_account(account_type):
+    print("### Dados da Conta ###")
     password = input("Senha: ")
-    account_type = None
-
-    while account_type is None:
-        option = input(
-            """Tipo de Conta: 
-            [1] Savings
-            [2] Current
-            [3] Business
-            => """
-        )
-
-        account_type = Account.return_type_account().get(option)
-
-        if account_type is None:
-            print("@@@ Chave Inválida. Tente novamente. @@@")
 
     branch = find_branch_bd()
     customer = find_customer_bd()

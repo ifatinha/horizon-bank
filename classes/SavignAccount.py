@@ -17,3 +17,6 @@ class SavignAccount(Account):
 
     def calculate_monthly_interest(self):
         pass
+
+    def to_tuple(self):
+        return (super().id_account, self.interest_rate)

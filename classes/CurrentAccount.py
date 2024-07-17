@@ -45,3 +45,11 @@ class CurrentAccount(Account):
     @transaction_limit.setter
     def transaction_limit(self, value):
         self.__transaction_limit = value
+
+    def to_tuple(self):
+        return (
+            super().id_account,
+            self.overdraft_limit,
+            self.withdrawal_limit,
+            self.transaction_limit,
+        )
