@@ -11,3 +11,6 @@ class Historic:
     @property
     def account(self):
         return self.__account
+
+    def to_tuple(self):
+        return (self.account.id_account,)

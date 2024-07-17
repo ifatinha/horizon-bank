@@ -21,5 +21,5 @@ class SavignAccount(Account):
     def to_tuple(self):
         return (super().id_account, self.interest_rate)
 
-    def super_to_tuple():
+    def super_to_tuple(self):
         return super().to_tuple()

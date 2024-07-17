@@ -49,5 +49,5 @@ class CurrentAccount(Account):
             self.transaction_limit,
         )
 
-    def super_to_tuple():
+    def super_to_tuple(self):
         return super().to_tuple()

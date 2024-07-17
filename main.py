@@ -31,6 +31,7 @@ from util.ReturnObjetc import (
     return_account,
     return_savign_account,
     return_current_account,
+    return_historic,
 )
 
 # """Criando o banco de dados, caso ele não exista"""
@@ -139,25 +140,41 @@ def main():
                         if menu_option == "1":
                             """Conta Poupança"""
                             savign_account = return_savign_account()
-                            print(savign_account.super_to_tuple())
-                            print(savign_account.to_tuple())
-                            # id_account = DatabaseOperations.insert_account(
-                            #     savign_account.super_to_tuple()
-                            # )
+                            id_account = DatabaseOperations.insert_account(
+                                savign_account.super_to_tuple()
+                            )
+
+                            savign_account.id_account = id_account
+                            DatabaseOperations.insert_savign_account(
+                                savign_account.to_tuple()
+                            )
+
+                            historic = return_historic(savign_account)
+                            DatabaseOperations.insert_historic(historic)
 
                         elif menu_option == "2":
                             """Conta Corrente"""
                             current_account = return_current_account()
-                            print(current_account.super_to_tuple())
-                            print(current_account.to_tuple())
-                            # id_account = DatabaseOperations.insert_account(
-                            #     current_account.super_to_tuple()
-                            # )
+                            id_account = DatabaseOperations.insert_account(
+                                current_account.super_to_tuple()
+                            )
+                            current_account.id_account = id_account
 
+                            DatabaseOperations.insert_current_account(
+                                current_account.to_tuple()
+                            )
+                            historic = return_historic(current_account)
+                            DatabaseOperations.insert_historic(historic)
                         elif menu_option == "3":
                             """Conta Empresárial"""
+
                             account = return_account()
-                            DatabaseOperations.insert_account(account)
+                            id_account = DatabaseOperations.insert_account(
+                                account.to_tuple()
+                            )
+                            account.id_account = id_account
+                            historic = return_historic(account)
+                            DatabaseOperations.insert_historic(historic)
                         elif menu_option == "0":
                             break
 

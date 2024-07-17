@@ -8,6 +8,7 @@ from classes.Account import Account
 from classes.Customer import Customer
 from classes.CurrentAccount import CurrentAccount
 from classes.SavignAccount import SavignAccount
+from classes.Historic import Historic
 
 from datetime import datetime
 
@@ -176,7 +177,7 @@ def return_account():
     branch = find_branch_bd()
     customer = find_customer_bd()
     account = Account(password, branch, customer)
-    return account.to_tuple()
+    return account
 
 
 def return_savign_account():
@@ -196,3 +197,9 @@ def return_current_account():
     branch = find_branch_bd()
     customer = find_customer_bd()
     return CurrentAccount(password, branch, customer)
+
+
+def return_historic(account):
+    historic = Historic(account)
+
+    return historic

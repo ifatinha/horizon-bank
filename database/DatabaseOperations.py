@@ -261,3 +261,51 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_savign_account(savign_account):
+        query = "INSERT INTO savigns_account(id, interest_rate) VALUES(%s, %s)"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, savign_account)
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_current_account(current_account):
+        query = "INSERT INTO current_account(id, overdraft_limit, withdrawal_limit, transaction_limit) VALUES(%s, %s, %s, %s)"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, current_account)
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_historic(historic):
+        query = "INSERT INTO historic(id_account) VALUES(%s)"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, historic.to_tuple())
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
