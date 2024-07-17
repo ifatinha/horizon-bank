@@ -1067,3 +1067,32 @@
 2024-07-17 08:50:51,198 - INFO - Conexão bem-sucedida!
 2024-07-17 08:50:51,198 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001F84647BF80>
 2024-07-17 08:50:51,253 - INFO - Conexão fechada!
+2024-07-17 09:09:25,852 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-17 09:09:26,109 - INFO - Conexão bem-sucedida!
+2024-07-17 09:09:26,110 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001983CE384A0>
+2024-07-17 09:09:26,111 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-17 09:09:26,111 - INFO - Conexão fechada.
+2024-07-17 09:09:26,111 - INFO - close retornou: None
+2024-07-17 09:09:26,111 - INFO - Conexão fechada!
+2024-07-17 09:10:57,939 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-17 09:10:57,965 - INFO - Conexão bem-sucedida!
+2024-07-17 09:10:57,965 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001983CE384D0>
+2024-07-17 09:10:57,981 - ERROR - Erro ao executar SQL: 1054 (42S22): Unknown column 'password' in 'field list'
+2024-07-17 09:10:57,981 - INFO - Conexão fechada!
+2024-07-17 09:10:57,982 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-17 09:10:58,012 - INFO - Conexão bem-sucedida!
+2024-07-17 09:10:58,012 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001983CE3AFC0>
+2024-07-17 09:10:58,083 - INFO - Conexão fechada!
+2024-07-17 09:10:58,084 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-17 09:10:58,117 - INFO - Conexão bem-sucedida!
+2024-07-17 09:10:58,117 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001983CE3AFC0>
+2024-07-17 09:10:58,118 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'id_customer' cannot be null
+2024-07-17 09:10:58,119 - INFO - Conexão fechada!
+2024-07-17 09:10:58,119 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-17 09:10:58,140 - INFO - Conexão bem-sucedida!
+2024-07-17 09:10:58,140 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001983CE3AFC0>
+2024-07-17 09:10:58,176 - INFO - Conexão fechada!
+2024-07-17 09:10:58,177 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-17 09:10:58,229 - INFO - Conexão bem-sucedida!
+2024-07-17 09:10:58,229 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001983CE3AFC0>
+2024-07-17 09:10:58,266 - INFO - Conexão fechada!

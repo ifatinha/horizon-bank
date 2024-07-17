@@ -55,3 +55,21 @@ def menu_type_account():
         => """
 
     return input(menu)
+
+
+def menu_create_manager():
+    menu = """################ CADASTRAR GERENTE ################
+        [1] Novo Gerente
+        [0] Sair
+        => """
+
+    return input(menu)
+
+
+def menu_create_branch():
+    menu = """################ CADASTRAR FILIAL ################
+        [1] Nova Filial
+        [0] Sair
+        => """
+
+    return input(menu)

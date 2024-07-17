@@ -1,26 +1,14 @@
 from database.DatabaseOperations import DatabaseOperations
-from connection.Connection import Connection
+from sql.script_create_tables import create_database, create_tables
+
 from util.menu import (
     main_menu,
     manager_menu,
     client_menu,
     menu_type_customer,
     menu_type_account,
-)
-from sql.scriptSql import (
-    table_admin_query,
-    table_address_query,
-    table_customer_query,
-    table_address_customer_query,
-    table_individual_query,
-    table_company_query,
-    table_manager_query,
-    table_branch_query,
-    table_account_query,
-    table_savigns_account_query,
-    table_current_account_query,
-    table_historic_query,
-    table_transactions_query,
+    menu_create_manager,
+    menu_create_branch,
 )
 
 from util.ReturnObjetc import (
@@ -34,26 +22,11 @@ from util.ReturnObjetc import (
     return_historic,
 )
 
-# """Criando o banco de dados, caso ele não exista"""
-# Connection.check_and_create_database("horizon_Bank")
-
-# """Criando as tabelas do banco"""
-# DatabaseOperations.create_table(table_admin_query)
-# DatabaseOperations.create_table(table_address_query)
-# DatabaseOperations.create_table(table_customer_query)
-# DatabaseOperations.create_table(table_address_customer_query)
-# DatabaseOperations.create_table(table_individual_query)
-# DatabaseOperations.create_table(table_company_query)
-# DatabaseOperations.create_table(table_manager_query)
-# DatabaseOperations.create_table(table_branch_query)
-# DatabaseOperations.create_table(table_account_query)
-# DatabaseOperations.create_table(table_current_account_query)
-# DatabaseOperations.create_table(table_savigns_account_query)
-# DatabaseOperations.create_table(table_historic_query)
-# DatabaseOperations.create_table(table_transactions_query)
-
 
 def main():
+
+    # create_database()
+    # create_tables()
 
     while True:
 
@@ -193,22 +166,53 @@ def main():
                 elif mg_option == "6":
                     """Cadastrar Gerente"""
 
-                    print("Informe os dados abaixo para cadastar um novo gerente")
-                    manager = return_manager()
-                    id_customer = DatabaseOperations.insert_customer(
-                        manager.customer_to_tuple()
-                    )
-                    id_address = DatabaseOperations.insert_address(manager.address)
-                    DatabaseOperations.insert_address_customer(id_address, id_customer)
-                    DatabaseOperations.insert_admin(
-                        manager.employee_number, manager.password
-                    )
-                    DatabaseOperations.insert_manager(manager, id_customer)
+                    while True:
+                        op_manager = menu_create_manager()
+
+                        if op_manager == "1":
+                            print(
+                                "Informe os dados abaixo para cadastar um novo gerente"
+                            )
+                            manager = return_manager()
+                            id_customer = DatabaseOperations.insert_customer(
+                                manager.customer_to_tuple()
+                            )
+                            id_address = DatabaseOperations.insert_address(
+                                manager.address
+                            )
+                            DatabaseOperations.insert_address_customer(
+                                id_address, id_customer
+                            )
+                            DatabaseOperations.insert_admin(
+                                manager.employee_number, manager.password
+                            )
+                            DatabaseOperations.insert_manager(manager, id_customer)
+
+                        elif op_manager == "0":
+                            break
+
+                        else:
+                            print("@@@ Opção Inválida! Tente novamente. @@@")
+
                 elif mg_option == "7":
                     """Cadastrar Filial"""
-                    branch = return_branch()
-                    id_address = DatabaseOperations.insert_address(branch.address)
-                    DatabaseOperations.insert_branch(branch.to_tuple() + (id_address,))
+
+                    while True:
+                        op_branch = menu_create_branch()
+
+                        if op_branch == "1":
+                            branch = return_branch()
+                            id_address = DatabaseOperations.insert_address(
+                                branch.address
+                            )
+                            DatabaseOperations.insert_branch(
+                                branch.to_tuple() + (id_address,)
+                            )
+                        elif op_branch == "0":
+                            break
+                        else:
+                            print("@@@ Opção Inválida! Tente novamente. @@@")
+
                 elif mg_option == "0":
                     break
 
