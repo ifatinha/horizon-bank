@@ -65,6 +65,14 @@ def return_manager():
     password = input("Senha: ")
     phone = input("Phone: ")
     employee_number = input("Número de Registro: ")
+
+    is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
+
+    while is_exist is not None:
+        print("@@@ Já existe um gerente com esse número. @@@")
+        employee_number = input("Número de Registro: ")
+        is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
+
     address = return_address()
 
     manager = Manager(fullname, email, password, phone, address, employee_number)
@@ -74,12 +82,12 @@ def return_manager():
 def find_manager_bd():
     print("### Gerente ###")
     manager_id = int(input("Digite o codigo do gerente: "))
-    result = DatabaseOperations.find_manager(manager_id)
+    result = DatabaseOperations.find_manager_id(manager_id)
 
     while result is None:
         print("@@@ Nenhum Gerente Encontrado. @@@")
         manager_id = int(input("Codigo do gerente: "))
-        result = DatabaseOperations.find_manager(manager_id)
+        result = DatabaseOperations.find_manager_id(manager_id)
 
     manager_id, fullname, email, password, phone, employee_number, manager_status = (
         result
@@ -140,13 +148,13 @@ def return_company():
 
 
 def find_branch_bd():
-    branch_id = int(input("Código da Agéncia: "))
-    result = DatabaseOperations.find_branch(branch_id)
+    branch_number = int(input("Código da Agéncia: "))
+    result = DatabaseOperations.find_branch(branch_number)
 
     while result is None:
         print("@@@ Nenhuma Agência Encontrada. @@@")
-        branch_id = int(input("Código da Agéncia: "))
-        result = DatabaseOperations.find_branch(branch_id)
+        branch_number = int(input("Código da Agéncia: "))
+        result = DatabaseOperations.find_branch(branch_number)
 
     id_branch, number, name = result
     branch = Branch(number, name, None, None, None)

@@ -34,5 +34,5 @@ class Branch:
             self.name,
             self.phone,
             self.open_date,
-            self.manager.customer_id,
+            self.manager.employee_number,
         )

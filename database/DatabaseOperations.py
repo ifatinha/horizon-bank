@@ -147,7 +147,7 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def find_manager(manager_id):
+    def find_manager_id(manager_id):
         query = "SELECT manager_id, fullname, email, password, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id where m.manager_status = True"
         try:
             conn = DatabaseOperations.getConnect().connect()
@@ -319,6 +319,59 @@ class DatabaseOperations:
             cursor = conn.cursor()
             cursor.execute(query, (manager_id,))
             conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_manager_employee_number(employee_number):
+        query = (
+            "SELECT manager_id, employee_number FROM manager WHERE employee_number = %s"
+        )
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (employee_number,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_individual_ssn(ssn_number):
+        query = "SELECT ssn FROM INDIVIDUAL WHERE ssn = %s"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (ssn_number,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_company_ein(ein_number):
+        query = "SELECT ein FROM company WHERE ein = %s"
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (ein_number,))
+            resultado = cursor.fetchone()
+            return resultado
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
         finally:

@@ -75,13 +75,13 @@ CREATE TABLE IF NOT EXISTS branch (
     branch_name VARCHAR(100) NOT NULL,
     phone VARCHAR(20) NOT NULL,
     open_date DATE,
-    manager_id INT NOT NULL,
+    manager_employee_number VARCHAR(100) NOT NULL UNIQUE,
     address_id INT NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (manager_id) REFERENCES manager(manager_id),
+    FOREIGN KEY (manager_employee_number) REFERENCES manager(employee_number),
     FOREIGN KEY (address_id) REFERENCES address(id)
-)"""
+);"""
 
 table_account_query = """
 CREATE TABLE IF NOT EXISTS account (
