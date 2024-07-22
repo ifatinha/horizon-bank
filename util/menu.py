@@ -48,9 +48,9 @@ def menu_type_customer():
 
 def menu_type_account():
     menu = """################ TIPOS DE CONTAS ################
-        [1] Savings
-        [2] Current
-        [3] Business
+        [1] Poupança
+        [2] Corrente
+        [3] Empresarial
         [0] Sair
         => """
 

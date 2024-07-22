@@ -150,6 +150,14 @@ def return_company():
     password = input("Senha: ")
     phone = input("Telefone: ")
     ein = input("EIN: ")
+
+    is_exist = DatabaseOperations.find_company_ein(ein)
+
+    while is_exist is not None:
+        print("@@@ Já existe uma empresa com o ein. @@@")
+        ein = input("EIN: ")
+        is_exist = DatabaseOperations.find_company_ein(ein)
+
     legal_name = input("Nome Fantasia: ")
     address = return_address()
 
@@ -167,9 +175,10 @@ def find_branch_bd():
         branch_number = int(input("Código da Agéncia: "))
         result = DatabaseOperations.find_branch(branch_number)
 
-    id_branch, number, name = result
-    branch = Branch(number, name, None, None, None)
-    branch.id_branch = id_branch
+    branch_id, branch_number, branch_name = result
+    branch = Branch(branch_number, None, None)
+    branch.name = branch_name
+    branch.id_branch = branch_id
     return branch
 
 

@@ -6,7 +6,7 @@ class Branch:
     def __init__(self, number, address, manager) -> None:
         self.__id_branch = None
         self.number = number
-        self.name = "Horizon Bank"
+        self.__name = "Horizon Bank"
         self.phone = "0800-123-3001"
         self.address = address
         self.manager = manager
@@ -19,6 +19,14 @@ class Branch:
     @id_branch.setter
     def id_branch(self, id_branch):
         self.__id_branch = id_branch
+
+    @property
+    def name(self):
+        return self.__name
+
+    @name.setter
+    def name(self, name):
+        self.__name = name
 
     def __str__(self) -> str:
         return (

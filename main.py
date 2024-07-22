@@ -25,8 +25,8 @@ from util.ReturnObjetc import (
 
 def main():
 
-    create_database()
-    create_tables()
+    # create_database()
+    # create_tables()
 
     while True:
 
