@@ -12,7 +12,7 @@ def manager_menu():
     menu = """################ MENU GERENTE ################
     [1] Novo Cliente
     [2] Nova Conta
-    [3] Listar Contas Cliente
+    [3] Contas Cliente
     [4] Listar Clientes
     [5] Cadastrar Gerente
     [6] Cadastrar Filial

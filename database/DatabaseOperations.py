@@ -429,3 +429,53 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_accounts_individual(ssn):
+        query = """
+            SELECT customer.fullname, individual.ssn, account.number as 'Account number', account.account_type 
+            FROM customer
+            INNER JOIN individual
+            ON customer.id = individual.customer_id
+            INNER JOIN account
+            ON account.customer_id = customer.id
+            WHERE individual.ssn = %s;
+        """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (ssn,))
+            resultado = cursor.fetchall()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_accounts_company(ein):
+        query = """
+            SELECT customer.fullname, company.ein, account.number as 'Account number', account.account_type 
+            FROM customer
+            INNER JOIN company
+            ON customer.id = company.customer_id
+            INNER JOIN account
+            ON account.customer_id = customer.id
+            where company.ein = %s;
+        """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (ein,))
+            resultado = cursor.fetchall()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")

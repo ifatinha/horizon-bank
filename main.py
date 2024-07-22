@@ -158,6 +158,39 @@ def main():
                 elif mg_option == "3":
                     """Contas Cliente"""
 
+                    while True:
+                        option = menu_type_customer()
+
+                        if option == "1":
+                            ssn = input("SSN: ")
+                            result = DatabaseOperations.find_accounts_individual(ssn)
+
+                            if len(result) > 0:
+                                print(result)
+                            else:
+                                print(
+                                    "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
+                                )
+
+                        elif option == "2":
+                            ein = input("EIN: ")
+
+                            result = DatabaseOperations.find_accounts_company(ein)
+
+                            if len(result) > 0:
+                                print(result)
+                            else:
+                                print(
+                                    "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
+                                )
+
+                        elif option == "0":
+                            print("@@@ Retornando ao menu principal. @@@")
+                            break
+
+                        else:
+                            print("@@@ Opção Inválida! @@@")
+
                 elif mg_option == "4":
                     """Listar Clientes"""
 
