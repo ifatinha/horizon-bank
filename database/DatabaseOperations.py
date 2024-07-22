@@ -148,7 +148,7 @@ class DatabaseOperations:
 
     @staticmethod
     def find_manager_id(manager_id):
-        query = "SELECT manager_id, fullname, email, password, phone, employee_number, manager_status FROM manager m JOIN customer c on m.manager_id = %s AND m.manager_id = c.id where m.manager_status = True"
+        query = "SELECT C.ID, C.FULLNAME, M.employee_number, M.manager_status FROM customer C JOIN manager M ON C.ID = M.manager_id AND M.employee_number = %s AND M.manager_status = TRUE"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -164,7 +164,7 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_branch(branch):
-        query = "INSERT INTO branch(branch_number, branch_name, phone, open_date, manager_id, address_id) VALUES(%s, %s, %s, %s, %s, %s)"
+        query = "INSERT INTO branch(branch_number, branch_name, phone, open_date, manager_employee_number, address_id) VALUES(%s, %s, %s, %s, %s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -213,7 +213,7 @@ class DatabaseOperations:
 
     @staticmethod
     def find_branch(branch_number):
-        query = "SELECT branch_id, number, name FROM branch WHERE number = %s"
+        query = "SELECT branch_id, branch_number, branch_name FROM branch WHERE branch_number = %s"
 
         try:
             conn = DatabaseOperations.getConnect().connect()

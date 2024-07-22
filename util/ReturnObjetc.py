@@ -81,7 +81,7 @@ def return_manager():
 
 def find_manager_bd():
     print("### Gerente ###")
-    manager_id = int(input("Digite o codigo do gerente: "))
+    manager_id = int(input("Número do gerente: "))
     result = DatabaseOperations.find_manager_id(manager_id)
 
     while result is None:
@@ -89,12 +89,10 @@ def find_manager_bd():
         manager_id = int(input("Codigo do gerente: "))
         result = DatabaseOperations.find_manager_id(manager_id)
 
-    manager_id, fullname, email, password, phone, employee_number, manager_status = (
-        result
-    )
+    manager_id, fullname, employee_number, manager_status = result
 
     manager = Manager(
-        fullname, email, password, phone, None, employee_number, status=manager_status
+        fullname, None, None, None, None, employee_number, status=manager_status
     )
     manager.customer_id = manager_id
 
@@ -105,13 +103,18 @@ def return_branch():
 
     print("### Informe os dados abaixo para cadastrar uma nova filial ###")
     branch_number = int(input("Número: "))
-    branch_phone = input("Telefone: ")
+    result = DatabaseOperations.find_branch(branch_number)
+
+    while result is not None:
+        print("@@@ Já existe uma agência cadastrada com esse número. @@@")
+        branch_number = int(input("Novo Número: "))
+        result = DatabaseOperations.find_branch(branch_number)
 
     branch_address = return_address()
     manager = find_manager_bd()
     print(manager)
 
-    branch = Branch(branch_number, branch_phone, branch_address, manager)
+    branch = Branch(branch_number, branch_address, manager)
 
     return branch
 

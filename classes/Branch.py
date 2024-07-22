@@ -3,11 +3,11 @@ from datetime import datetime
 
 class Branch:
 
-    def __init__(self, number, phone, address, manager) -> None:
+    def __init__(self, number, address, manager) -> None:
         self.__id_branch = None
         self.number = number
         self.name = "Horizon Bank"
-        self.phone = phone
+        self.phone = "0800-123-3001"
         self.address = address
         self.manager = manager
         self.open_date = datetime.now()
