@@ -9,6 +9,7 @@ from util.menu import (
     menu_type_account,
     menu_create_manager,
     menu_create_branch,
+    menu_typle_customers,
 )
 
 from util.ReturnObjetc import (
@@ -155,15 +156,35 @@ def main():
                             print("@@@ Opção Inválida! Tente novamente. @@@")
 
                 elif mg_option == "3":
-                    """Listar Contas Cadastradas"""
+                    """Contas Clientes"""
 
                 elif mg_option == "4":
-                    """Listar Contas do Banco"""
-
-                elif mg_option == "5":
                     """Listar Clientes"""
 
-                elif mg_option == "6":
+                    while True:
+                        option = menu_typle_customers()
+
+                        if option == "1":
+                            print("##### PESSOAS FÍSICAS #####")
+                            result = DatabaseOperations.list_individual_customers()
+
+                            for client in result:
+                                print(client + "\n")
+
+                        elif option == "2":
+                            print("##### PESSOAS JURIDICAS #####")
+                            result = DatabaseOperations.list_company_customers()
+
+                            for client in result:
+                                print(client + "\n")
+
+                        elif option == "0":
+                            print("### Retornando ao menu principal. ###")
+                            break
+                        else:
+                            print("@@@ Opção Inválida. @@@")
+
+                elif mg_option == "5":
                     """Cadastrar Gerente"""
 
                     while True:
@@ -194,7 +215,7 @@ def main():
                         else:
                             print("@@@ Opção Inválida! Tente novamente. @@@")
 
-                elif mg_option == "7":
+                elif mg_option == "6":
                     """Cadastrar Filial"""
 
                     while True:

@@ -13,10 +13,9 @@ def manager_menu():
     [1] Novo Cliente
     [2] Nova Conta
     [3] Listar Contas Cliente
-    [4] Listar Contas do Banco
-    [5] Listar Clientes
-    [6] Cadastrar Gerente
-    [7] Cadastrar Filial
+    [4] Listar Clientes
+    [5] Cadastrar Gerente
+    [6] Cadastrar Filial
     [0] Sair
     => """
 
@@ -69,6 +68,17 @@ def menu_create_manager():
 def menu_create_branch():
     menu = """################ CADASTRAR FILIAL ################
         [1] Nova Filial
+        [0] Sair
+        => """
+
+    return input(menu)
+
+
+def menu_typle_customers():
+    menu = """################ CLIENTES CADASTRADOS ################
+        [1] Pessoas Fisicas
+        [2] Pessoas Juridicas
+        [3] Pessoas Juridicas
         [0] Sair
         => """
 

@@ -378,3 +378,54 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def list_individual_customers():
+        query = """
+            SELECT c.fullname, c.email, c.phone, i.ssn, i.date_of_birth, a.street, a.number, a.neighborhood, a.postal_code, a.city, a.state, a.country, a.address_type 
+            FROM customer c
+            INNER JOIN individual i
+            on c.id = i.customer_id
+            INNER JOIN address_customer ad
+            on ad.id_customer = c.id
+            INNER JOIN address a
+            on a.id = ad.id_address;
+        """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query)
+            resultado = cursor.fetchall()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def list_company_customers():
+        query = """
+            SELECT c.fullname, c.email, c.phone, co.ein, co.legal_name, a.street, a.number, a.neighborhood, a.postal_code, a.city, a.state, a.country, a.address_type FROM customer c
+            INNER JOIN company co
+            on c.id = co.customer_id
+            INNER JOIN address_customer ad
+            on ad.id_customer = c.id
+            INNER JOIN address a
+            on a.id = ad.id_address;
+        """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query)
+            resultado = cursor.fetchall()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
