@@ -156,7 +156,7 @@ def main():
                             print("@@@ Opção Inválida! Tente novamente. @@@")
 
                 elif mg_option == "3":
-                    """Contas Clientes"""
+                    """Contas Cliente"""
 
                 elif mg_option == "4":
                     """Listar Clientes"""
