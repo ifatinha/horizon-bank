@@ -126,6 +126,14 @@ def return_individual():
     password = input("Senha: ")
     phone = input("Telefone: ")
     ssn = input("SSN: ")
+
+    result = DatabaseOperations.find_individual_ssn(ssn)
+
+    while result is not None:
+        print("@@@ Já existe uma pessoa cadastrada com esse ssn. @@@")
+        ssn = input("SSN: ")
+        result = DatabaseOperations.find_individual_ssn(ssn)
+
     birth = input("Data de Nascimento (dd/mm/yyyy): ")
     address = return_address()
 
