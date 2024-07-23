@@ -81,13 +81,13 @@ def return_manager():
 
 def find_manager_bd():
     print("### Gerente ###")
-    manager_id = int(input("Número do gerente: "))
-    result = DatabaseOperations.find_manager_status(manager_id)
+    employee_number = int(input("Número do gerente: "))
+    result = DatabaseOperations.find_manager_status(employee_number)
 
     while result is None:
         print("@@@ Nenhum Gerente Encontrado. @@@")
-        manager_id = int(input("Codigo do gerente: "))
-        result = DatabaseOperations.find_manager_status(manager_id)
+        employee_number = int(input("Codigo do gerente: "))
+        result = DatabaseOperations.find_manager_status(employee_number)
 
     manager_id, fullname, employee_number, manager_status = result
 
