@@ -1,5 +1,5 @@
 from database.DatabaseOperations import DatabaseOperations
-from sql.script_create_tables import create_database, create_tables
+from sql.script_create_tables import create_database, create_tables, insert_default_user
 
 from util.menu import (
     main_menu,
@@ -26,8 +26,9 @@ from util.ReturnObjetc import (
 
 def main():
 
-    create_database()
-    create_tables()
+    # create_database()
+    # create_tables()
+    # insert_default_user()
 
     while True:
 
@@ -72,7 +73,7 @@ def main():
             user = input("Token: ")
             password = input("Senha: ")
 
-            status = DatabaseOperations.login_admin(user=user, password=password)
+            status = DatabaseOperations.login_user(user=user, password=password)
 
             if len(status):
 
@@ -96,7 +97,7 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_users(
+                            DatabaseOperations.insert_user(
                                 individual.token, individual.password
                             )
                             DatabaseOperations.insert_invidual(
@@ -114,7 +115,7 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_users(
+                            DatabaseOperations.insert_user(
                                 company.token, company.password
                             )
 
@@ -266,7 +267,7 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_users(
+                            DatabaseOperations.insert_user(
                                 manager.token, manager.password
                             )
                             DatabaseOperations.insert_manager(

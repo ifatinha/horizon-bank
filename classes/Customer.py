@@ -47,7 +47,7 @@ class Customer:
         )
 
     def to_tuple(self):
-        return (self.fullname, self.email, self.token, self.password, self.phone)
+        return (self.fullname, self.email, self.password, self.token, self.phone)
 
     @staticmethod
     def generate_token(length=8):

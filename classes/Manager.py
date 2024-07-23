@@ -33,3 +33,8 @@ class Manager(Customer):
 
     def customer_to_tuple(self):
         return super().to_tuple()
+
+    @staticmethod
+    def generate_email(fullname):
+        names = fullname.split(" ")
+        return f"{names[0].lower()}.{names[1].lower()}@horizon.com"

@@ -1,460 +1,265 @@
-2024-07-22 19:31:58,653 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:31:58,749 - INFO - package: mysql.connector.plugins
-2024-07-22 19:31:58,749 - INFO - plugin_name: caching_sha2_password
-2024-07-22 19:31:58,749 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 19:31:58,750 - INFO - Conexão bem-sucedida!
-2024-07-22 19:31:58,750 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001C04E8FBE60>
-2024-07-22 19:31:58,752 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 19:31:58,752 - INFO - Conexão fechada.
-2024-07-22 19:31:58,752 - INFO - close retornou: None
-2024-07-22 19:31:58,752 - INFO - Conexão fechada!
-2024-07-22 19:32:04,268 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:32:04,312 - INFO - Conexão bem-sucedida!
-2024-07-22 19:32:04,312 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001C04E8CE060>
-2024-07-22 19:32:04,315 - INFO - Conexão fechada!
-2024-07-22 19:32:05,748 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:32:05,791 - INFO - Conexão bem-sucedida!
-2024-07-22 19:32:05,791 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001C04EDF8740>
-2024-07-22 19:32:05,792 - INFO - Conexão fechada!
-2024-07-22 19:32:05,795 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:32:05,835 - INFO - Conexão bem-sucedida!
-2024-07-22 19:32:05,835 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001C04EF134D0>
-2024-07-22 19:32:05,836 - ERROR - Erro ao executar SQL: 1265 (01000): Data truncated for column 'account_type' at row 1
-2024-07-22 19:32:05,837 - INFO - Conexão fechada!
-2024-07-22 19:32:05,837 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:32:05,874 - INFO - Conexão bem-sucedida!
-2024-07-22 19:32:05,874 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001C04EF134D0>
-2024-07-22 19:32:05,875 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'id' cannot be null
-2024-07-22 19:32:05,875 - INFO - Conexão fechada!
-2024-07-22 19:32:05,876 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:32:05,916 - INFO - Conexão bem-sucedida!
-2024-07-22 19:32:05,917 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001C04EF133B0>
-2024-07-22 19:32:05,918 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'id_account' cannot be null
-2024-07-22 19:32:05,918 - INFO - Conexão fechada!
-2024-07-22 19:34:30,988 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:31,134 - INFO - package: mysql.connector.plugins
-2024-07-22 19:34:31,134 - INFO - plugin_name: caching_sha2_password
-2024-07-22 19:34:31,134 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 19:34:31,135 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:31,135 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A239CBE60>
-2024-07-22 19:34:31,136 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 19:34:31,136 - INFO - Conexão fechada.
-2024-07-22 19:34:31,136 - INFO - close retornou: None
-2024-07-22 19:34:31,136 - INFO - Conexão fechada!
-2024-07-22 19:34:43,084 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:43,127 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:43,127 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A2418D8E0>
-2024-07-22 19:34:43,129 - INFO - Conexão fechada!
-2024-07-22 19:34:45,197 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:45,237 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:45,237 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A2416BD40>
-2024-07-22 19:34:45,238 - INFO - Conexão fechada!
-2024-07-22 19:34:46,908 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:46,946 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:46,946 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A241F3860>
-2024-07-22 19:34:46,947 - INFO - Conexão fechada!
-2024-07-22 19:34:46,948 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:46,983 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:46,983 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24212B70>
-2024-07-22 19:34:46,992 - INFO - Conexão fechada!
-2024-07-22 19:34:46,992 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:47,027 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:47,027 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213320>
-2024-07-22 19:34:47,032 - INFO - Conexão fechada!
-2024-07-22 19:34:47,032 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:34:47,067 - INFO - Conexão bem-sucedida!
-2024-07-22 19:34:47,067 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213890>
-2024-07-22 19:34:47,071 - INFO - Conexão fechada!
-2024-07-22 19:35:02,804 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:02,848 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:02,848 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A241689E0>
-2024-07-22 19:35:02,850 - INFO - Conexão fechada!
-2024-07-22 19:35:04,308 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:04,352 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:04,352 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213980>
-2024-07-22 19:35:04,353 - INFO - Conexão fechada!
-2024-07-22 19:35:04,353 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:04,390 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:04,390 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213890>
-2024-07-22 19:35:04,396 - INFO - Conexão fechada!
-2024-07-22 19:35:04,397 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:04,431 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:04,431 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213950>
-2024-07-22 19:35:04,434 - INFO - Conexão fechada!
-2024-07-22 19:35:04,434 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:04,469 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:04,469 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A242139B0>
-2024-07-22 19:35:04,472 - INFO - Conexão fechada!
-2024-07-22 19:35:24,604 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:24,645 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:24,645 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A242134D0>
-2024-07-22 19:35:24,646 - INFO - Conexão fechada!
-2024-07-22 19:35:32,828 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:32,871 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:32,871 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213B30>
-2024-07-22 19:35:32,872 - INFO - Conexão fechada!
-2024-07-22 19:35:32,872 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:32,911 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:32,911 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213B60>
-2024-07-22 19:35:32,920 - INFO - Conexão fechada!
-2024-07-22 19:35:32,921 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:35:32,955 - INFO - Conexão bem-sucedida!
-2024-07-22 19:35:32,955 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000016A24213890>
-2024-07-22 19:35:32,961 - INFO - Conexão fechada!
-2024-07-22 19:42:35,300 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 19:42:35,499 - INFO - package: mysql.connector.plugins
-2024-07-22 19:42:35,499 - INFO - plugin_name: caching_sha2_password
-2024-07-22 19:42:35,499 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 19:42:35,503 - INFO - Conexão bem-sucedida!
-2024-07-22 19:42:35,503 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001A69EC08320>
-2024-07-22 19:42:35,503 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 19:42:35,504 - INFO - Conexão fechada.
-2024-07-22 19:42:35,504 - INFO - close retornou: None
-2024-07-22 19:42:35,504 - INFO - Conexão fechada!
-2024-07-22 20:08:44,302 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:08:44,533 - INFO - package: mysql.connector.plugins
-2024-07-22 20:08:44,533 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:08:44,533 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:08:44,536 - INFO - Conexão bem-sucedida!
-2024-07-22 20:08:44,536 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000264F6CA01D0>
-2024-07-22 20:08:44,537 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:08:44,537 - INFO - Conexão fechada.
-2024-07-22 20:08:44,537 - INFO - close retornou: None
-2024-07-22 20:08:44,537 - INFO - Conexão fechada!
-2024-07-22 20:08:48,190 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:08:48,231 - INFO - Conexão bem-sucedida!
-2024-07-22 20:08:48,232 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000264F6CA01D0>
-2024-07-22 20:08:48,234 - INFO - Conexão fechada!
-2024-07-22 20:10:02,061 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:10:02,146 - INFO - package: mysql.connector.plugins
-2024-07-22 20:10:02,146 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:10:02,146 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:10:02,148 - INFO - Conexão bem-sucedida!
-2024-07-22 20:10:02,148 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000012A4E8508C0>
-2024-07-22 20:10:02,153 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:10:02,154 - INFO - Conexão fechada.
-2024-07-22 20:10:02,154 - INFO - close retornou: None
-2024-07-22 20:10:02,154 - INFO - Conexão fechada!
-2024-07-22 20:10:05,446 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:10:05,494 - INFO - Conexão bem-sucedida!
-2024-07-22 20:10:05,494 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000012A4E774860>
-2024-07-22 20:10:05,497 - INFO - Conexão fechada!
-2024-07-22 20:11:07,909 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:11:08,012 - INFO - package: mysql.connector.plugins
-2024-07-22 20:11:08,012 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:11:08,012 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:11:08,014 - INFO - Conexão bem-sucedida!
-2024-07-22 20:11:08,014 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001DD40EDFE30>
-2024-07-22 20:11:08,014 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:11:08,015 - INFO - Conexão fechada.
-2024-07-22 20:11:08,015 - INFO - close retornou: None
-2024-07-22 20:11:08,015 - INFO - Conexão fechada!
-2024-07-22 20:11:10,454 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:11:10,515 - INFO - Conexão bem-sucedida!
-2024-07-22 20:11:10,516 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001DD40EDFE30>
-2024-07-22 20:11:10,517 - INFO - Conexão fechada!
-2024-07-22 20:11:56,221 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:11:56,296 - INFO - package: mysql.connector.plugins
-2024-07-22 20:11:56,296 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:11:56,297 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:11:56,298 - INFO - Conexão bem-sucedida!
-2024-07-22 20:11:56,298 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000019313C24B90>
-2024-07-22 20:11:56,299 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:11:56,299 - INFO - Conexão fechada.
-2024-07-22 20:11:56,299 - INFO - close retornou: None
-2024-07-22 20:11:56,299 - INFO - Conexão fechada!
-2024-07-22 20:11:58,949 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:11:58,991 - INFO - Conexão bem-sucedida!
-2024-07-22 20:11:58,991 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000193131C9EE0>
-2024-07-22 20:11:58,992 - INFO - Conexão fechada!
-2024-07-22 20:15:18,293 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:15:18,428 - INFO - package: mysql.connector.plugins
-2024-07-22 20:15:18,428 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:15:18,428 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:15:18,431 - INFO - Conexão bem-sucedida!
-2024-07-22 20:15:18,431 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002AA6D1ECC50>
-2024-07-22 20:15:18,432 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:15:18,432 - INFO - Conexão fechada.
-2024-07-22 20:15:18,432 - INFO - close retornou: None
-2024-07-22 20:15:18,432 - INFO - Conexão fechada!
-2024-07-22 20:15:24,470 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:15:24,513 - INFO - Conexão bem-sucedida!
-2024-07-22 20:15:24,513 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002AA6CA21190>
-2024-07-22 20:15:24,516 - INFO - Conexão fechada!
-2024-07-22 20:34:44,535 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:34:44,685 - INFO - package: mysql.connector.plugins
-2024-07-22 20:34:44,685 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:34:44,685 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:34:44,686 - INFO - Conexão bem-sucedida!
-2024-07-22 20:34:44,686 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000207B1A7B020>
-2024-07-22 20:34:44,687 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:34:44,687 - INFO - Conexão fechada.
-2024-07-22 20:34:44,687 - INFO - close retornou: None
-2024-07-22 20:34:44,687 - INFO - Conexão fechada!
-2024-07-22 20:35:05,610 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:35:05,648 - INFO - Conexão bem-sucedida!
-2024-07-22 20:35:05,648 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000207B1A7B020>
-2024-07-22 20:35:05,654 - INFO - Conexão fechada!
-2024-07-22 20:35:16,783 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:35:16,827 - INFO - Conexão bem-sucedida!
-2024-07-22 20:35:16,827 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000207B0F281D0>
-2024-07-22 20:35:16,829 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:35:16,829 - INFO - Conexão fechada.
-2024-07-22 20:35:16,829 - INFO - close retornou: None
-2024-07-22 20:35:16,829 - INFO - Conexão fechada!
-2024-07-22 20:35:24,782 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:35:24,824 - INFO - Conexão bem-sucedida!
-2024-07-22 20:35:24,824 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000207B0F281D0>
-2024-07-22 20:35:24,826 - INFO - Conexão fechada!
-2024-07-22 20:35:47,862 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:35:47,913 - INFO - Conexão bem-sucedida!
-2024-07-22 20:35:47,913 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000207B1928920>
-2024-07-22 20:35:47,919 - INFO - Conexão fechada!
-2024-07-22 20:37:22,743 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:37:22,952 - INFO - package: mysql.connector.plugins
-2024-07-22 20:37:22,952 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:37:22,952 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:37:22,954 - INFO - Conexão bem-sucedida!
-2024-07-22 20:37:22,954 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001DCED03B020>
-2024-07-22 20:37:22,955 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:37:22,955 - INFO - Conexão fechada.
-2024-07-22 20:37:22,955 - INFO - close retornou: None
-2024-07-22 20:37:22,955 - INFO - Conexão fechada!
-2024-07-22 20:37:27,262 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:37:27,315 - INFO - Conexão bem-sucedida!
-2024-07-22 20:37:27,315 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001DCED03B020>
-2024-07-22 20:37:27,316 - INFO - Conexão fechada!
-2024-07-22 20:37:31,398 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:37:31,446 - INFO - Conexão bem-sucedida!
-2024-07-22 20:37:31,446 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001DCED03B020>
-2024-07-22 20:37:31,448 - INFO - Conexão fechada!
-2024-07-22 20:38:40,030 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:38:40,121 - INFO - package: mysql.connector.plugins
-2024-07-22 20:38:40,121 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:38:40,121 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:38:40,123 - INFO - Conexão bem-sucedida!
-2024-07-22 20:38:40,123 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002D65E7C2360>
-2024-07-22 20:38:40,124 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:38:40,124 - INFO - Conexão fechada.
-2024-07-22 20:38:40,124 - INFO - close retornou: None
-2024-07-22 20:38:40,124 - INFO - Conexão fechada!
-2024-07-22 20:38:44,750 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:38:44,798 - INFO - Conexão bem-sucedida!
-2024-07-22 20:38:44,798 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002D65E7C2360>
-2024-07-22 20:38:44,799 - INFO - Conexão fechada!
-2024-07-22 20:39:12,439 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:39:12,530 - INFO - package: mysql.connector.plugins
-2024-07-22 20:39:12,531 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:39:12,531 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:39:12,532 - INFO - Conexão bem-sucedida!
-2024-07-22 20:39:12,533 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001A94C765B50>
-2024-07-22 20:39:12,534 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:39:12,535 - INFO - Conexão fechada.
-2024-07-22 20:39:12,535 - INFO - close retornou: None
-2024-07-22 20:39:12,535 - INFO - Conexão fechada!
-2024-07-22 20:39:16,007 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:39:16,047 - INFO - Conexão bem-sucedida!
-2024-07-22 20:39:16,047 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001A94C705DF0>
-2024-07-22 20:39:16,049 - INFO - Conexão fechada!
-2024-07-22 20:39:19,559 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:39:19,603 - INFO - Conexão bem-sucedida!
-2024-07-22 20:39:19,603 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001A94C765B50>
-2024-07-22 20:39:19,605 - INFO - Conexão fechada!
-2024-07-22 20:44:29,086 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:44:29,285 - INFO - package: mysql.connector.plugins
-2024-07-22 20:44:29,285 - INFO - plugin_name: caching_sha2_password
-2024-07-22 20:44:29,285 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
-2024-07-22 20:44:29,288 - INFO - Conexão bem-sucedida!
-2024-07-22 20:44:29,288 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001D1539D9550>
-2024-07-22 20:44:29,289 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-22 20:44:29,289 - INFO - Conexão fechada.
-2024-07-22 20:44:29,289 - INFO - close retornou: None
-2024-07-22 20:44:29,289 - INFO - Conexão fechada!
-2024-07-22 20:44:32,647 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:44:32,685 - INFO - Conexão bem-sucedida!
-2024-07-22 20:44:32,685 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001D1539D9550>
-2024-07-22 20:44:32,689 - INFO - Conexão fechada!
-2024-07-22 20:44:36,134 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-22 20:44:36,182 - INFO - Conexão bem-sucedida!
-2024-07-22 20:44:36,182 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000001D153969280>
-2024-07-22 20:44:36,187 - INFO - Conexão fechada!
-2024-07-23 07:49:32,099 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:49:32,424 - INFO - Conexão bem-sucedida!
-2024-07-23 07:49:32,425 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236877F4AA0>
-2024-07-23 07:49:32,426 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 07:49:32,426 - INFO - Conexão fechada.
-2024-07-23 07:49:32,426 - INFO - close retornou: None
-2024-07-23 07:49:32,426 - INFO - Conexão fechada!
-2024-07-23 07:52:26,736 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:52:26,754 - INFO - Conexão bem-sucedida!
-2024-07-23 07:52:26,754 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002368719C470>
-2024-07-23 07:52:26,757 - INFO - Conexão fechada!
-2024-07-23 07:53:08,663 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:53:08,679 - INFO - Conexão bem-sucedida!
-2024-07-23 07:53:08,679 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC4D0>
-2024-07-23 07:53:08,752 - INFO - Conexão fechada!
-2024-07-23 07:53:08,752 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:53:08,805 - INFO - Conexão bem-sucedida!
-2024-07-23 07:53:08,805 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC4D0>
-2024-07-23 07:53:08,904 - INFO - Conexão fechada!
-2024-07-23 07:53:08,905 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:53:08,937 - INFO - Conexão bem-sucedida!
-2024-07-23 07:53:08,938 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236877F6270>
-2024-07-23 07:53:09,019 - INFO - Conexão fechada!
-2024-07-23 07:53:09,019 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:53:09,049 - INFO - Conexão bem-sucedida!
-2024-07-23 07:53:09,049 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002368510A780>
-2024-07-23 07:53:09,119 - INFO - Conexão fechada!
-2024-07-23 07:53:48,975 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:53:48,987 - INFO - Conexão bem-sucedida!
-2024-07-23 07:53:48,987 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236877F6270>
-2024-07-23 07:53:48,988 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 07:53:48,989 - INFO - Conexão fechada.
-2024-07-23 07:53:48,990 - INFO - close retornou: None
-2024-07-23 07:53:48,990 - INFO - Conexão fechada!
-2024-07-23 07:54:04,375 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:54:04,387 - INFO - Conexão bem-sucedida!
-2024-07-23 07:54:04,387 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236877F5970>
-2024-07-23 07:54:04,388 - INFO - Conexão fechada!
-2024-07-23 07:54:17,647 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:54:17,657 - INFO - Conexão bem-sucedida!
-2024-07-23 07:54:17,657 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236877F5CD0>
-2024-07-23 07:54:17,658 - INFO - Conexão fechada!
-2024-07-23 07:54:17,659 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:54:17,670 - INFO - Conexão bem-sucedida!
-2024-07-23 07:54:17,671 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC470>
-2024-07-23 07:54:17,720 - INFO - Conexão fechada!
-2024-07-23 07:54:17,721 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:54:17,733 - INFO - Conexão bem-sucedida!
-2024-07-23 07:54:17,733 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC6E0>
-2024-07-23 07:54:17,812 - INFO - Conexão fechada!
-2024-07-23 07:55:12,390 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:55:12,403 - INFO - Conexão bem-sucedida!
-2024-07-23 07:55:12,403 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC740>
-2024-07-23 07:55:12,404 - INFO - Conexão fechada!
-2024-07-23 07:55:16,485 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:55:16,495 - INFO - Conexão bem-sucedida!
-2024-07-23 07:55:16,496 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC590>
-2024-07-23 07:55:16,498 - INFO - Conexão fechada!
-2024-07-23 07:55:16,498 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:55:16,512 - INFO - Conexão bem-sucedida!
-2024-07-23 07:55:16,513 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC4D0>
-2024-07-23 07:55:16,581 - INFO - Conexão fechada!
-2024-07-23 07:55:16,581 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:55:16,593 - INFO - Conexão bem-sucedida!
-2024-07-23 07:55:16,593 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC4A0>
-2024-07-23 07:55:16,663 - INFO - Conexão fechada!
-2024-07-23 07:55:16,664 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:55:16,695 - INFO - Conexão bem-sucedida!
-2024-07-23 07:55:16,695 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000236878AC680>
-2024-07-23 07:55:16,766 - INFO - Conexão fechada!
-2024-07-23 07:56:39,117 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:39,542 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:39,542 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD49CE7E0>
-2024-07-23 07:56:39,543 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 07:56:39,544 - INFO - Conexão fechada.
-2024-07-23 07:56:39,544 - INFO - close retornou: None
-2024-07-23 07:56:39,544 - INFO - Conexão fechada!
-2024-07-23 07:56:47,357 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:47,368 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:47,368 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD48D9A30>
-2024-07-23 07:56:47,369 - INFO - Conexão fechada!
-2024-07-23 07:56:49,188 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:49,199 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:49,199 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD447F8C0>
-2024-07-23 07:56:49,200 - INFO - Conexão fechada!
-2024-07-23 07:56:57,700 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:57,711 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:57,711 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD2ACB620>
-2024-07-23 07:56:57,713 - INFO - Conexão fechada!
-2024-07-23 07:56:57,713 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:57,724 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:57,725 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD2714470>
-2024-07-23 07:56:57,776 - INFO - Conexão fechada!
-2024-07-23 07:56:57,777 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:57,793 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:57,794 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD2ACAC60>
-2024-07-23 07:56:57,870 - INFO - Conexão fechada!
-2024-07-23 07:56:57,870 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:56:57,886 - INFO - Conexão bem-sucedida!
-2024-07-23 07:56:57,886 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD4A77CB0>
-2024-07-23 07:56:57,927 - INFO - Conexão fechada!
-2024-07-23 07:57:07,933 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:57:07,945 - INFO - Conexão bem-sucedida!
-2024-07-23 07:57:07,945 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD4A77CB0>
-2024-07-23 07:57:07,946 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 07:57:07,947 - INFO - Conexão fechada.
-2024-07-23 07:57:07,947 - INFO - close retornou: None
-2024-07-23 07:57:07,947 - INFO - Conexão fechada!
-2024-07-23 07:57:13,541 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:57:13,553 - INFO - Conexão bem-sucedida!
-2024-07-23 07:57:13,553 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x0000022CD4A77E90>
-2024-07-23 07:57:13,554 - INFO - Conexão fechada!
-2024-07-23 07:58:21,651 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:58:22,005 - INFO - Conexão bem-sucedida!
-2024-07-23 07:58:22,006 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001A539E7E6C0>
-2024-07-23 07:58:22,007 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 07:58:22,007 - INFO - Conexão fechada.
-2024-07-23 07:58:22,007 - INFO - close retornou: None
-2024-07-23 07:58:22,008 - INFO - Conexão fechada!
-2024-07-23 07:58:26,691 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:58:26,703 - INFO - Conexão bem-sucedida!
-2024-07-23 07:58:26,703 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001A539859970>
-2024-07-23 07:58:26,705 - INFO - Conexão fechada!
-2024-07-23 07:58:30,667 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 07:58:30,681 - INFO - Conexão bem-sucedida!
-2024-07-23 07:58:30,681 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001A537BA4470>
-2024-07-23 07:58:30,684 - INFO - Conexão fechada!
-2024-07-23 08:00:00,659 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:00:01,012 - INFO - Conexão bem-sucedida!
-2024-07-23 08:00:01,013 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000235A4CEC560>
-2024-07-23 08:00:01,014 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 08:00:01,014 - INFO - Conexão fechada.
-2024-07-23 08:00:01,014 - INFO - close retornou: None
-2024-07-23 08:00:01,014 - INFO - Conexão fechada!
-2024-07-23 08:00:04,794 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:00:04,805 - INFO - Conexão bem-sucedida!
-2024-07-23 08:00:04,805 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000235A4CEC560>
-2024-07-23 08:00:04,807 - INFO - Conexão fechada!
-2024-07-23 08:43:08,039 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:43:08,374 - INFO - Conexão bem-sucedida!
-2024-07-23 08:43:08,375 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B20DAC0>
-2024-07-23 08:43:08,376 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 08:43:08,376 - INFO - Conexão fechada.
-2024-07-23 08:43:08,377 - INFO - close retornou: None
-2024-07-23 08:43:08,377 - INFO - Conexão fechada!
-2024-07-23 08:50:56,511 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:50:56,557 - INFO - Conexão bem-sucedida!
-2024-07-23 08:50:56,557 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000265992509B0>
-2024-07-23 08:50:56,559 - INFO - Conexão fechada!
-2024-07-23 08:58:18,250 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:58:18,265 - INFO - Conexão bem-sucedida!
-2024-07-23 08:58:18,265 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18FE30>
-2024-07-23 08:58:18,338 - INFO - Conexão fechada!
-2024-07-23 08:58:18,338 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:58:18,349 - INFO - Conexão bem-sucedida!
-2024-07-23 08:58:18,350 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18F830>
-2024-07-23 08:58:18,447 - INFO - Conexão fechada!
-2024-07-23 08:58:18,448 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:58:18,484 - INFO - Conexão bem-sucedida!
-2024-07-23 08:58:18,485 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18FE30>
-2024-07-23 08:58:18,571 - INFO - Conexão fechada!
-2024-07-23 08:58:18,572 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:58:18,591 - INFO - Conexão bem-sucedida!
-2024-07-23 08:58:18,592 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18F830>
-2024-07-23 08:58:18,674 - INFO - Conexão fechada!
-2024-07-23 08:58:26,964 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 08:58:26,976 - INFO - Conexão bem-sucedida!
-2024-07-23 08:58:26,976 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18FE30>
-2024-07-23 08:58:26,977 - INFO - Chamando close com args: (), kwargs: {}
-2024-07-23 08:58:26,977 - INFO - Conexão fechada.
-2024-07-23 08:58:26,978 - INFO - close retornou: None
-2024-07-23 08:58:26,978 - INFO - Conexão fechada!
-2024-07-23 09:02:09,682 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 09:02:09,699 - INFO - Conexão bem-sucedida!
-2024-07-23 09:02:09,699 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18FE30>
-2024-07-23 09:02:09,702 - INFO - Conexão fechada!
-2024-07-23 09:02:27,960 - INFO - Chamando connect com args: (), kwargs: {}
-2024-07-23 09:02:27,977 - INFO - Conexão bem-sucedida!
-2024-07-23 09:02:27,977 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002659B18FE30>
-2024-07-23 09:02:27,981 - INFO - Conexão fechada!
+2024-07-23 11:09:10,446 - INFO - Chamando check_and_create_database com args: (), kwargs: {}
+2024-07-23 11:09:10,599 - INFO - O bando de dados `'horizon_Bank'` já existe.
+2024-07-23 11:09:10,599 - INFO - Estabelecendo conexão.
+2024-07-23 11:09:10,599 - INFO - Cursor fechado.
+2024-07-23 11:09:10,600 - INFO - check_and_create_database retornou: None
+2024-07-23 11:09:10,600 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:10,610 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:10,610 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:10,973 - INFO - Tabela Criada!
+2024-07-23 11:09:10,973 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:10,975 - INFO - Conexão fechada.
+2024-07-23 11:09:10,975 - INFO - close retornou: None
+2024-07-23 11:09:10,975 - INFO - Conexão fechada!
+2024-07-23 11:09:10,976 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:11,010 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:11,011 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:12,144 - INFO - Tabela Criada!
+2024-07-23 11:09:12,145 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:12,146 - INFO - Conexão fechada.
+2024-07-23 11:09:12,146 - INFO - close retornou: None
+2024-07-23 11:09:12,146 - INFO - Conexão fechada!
+2024-07-23 11:09:12,146 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:12,166 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:12,166 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:12,996 - INFO - Tabela Criada!
+2024-07-23 11:09:12,996 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:12,997 - INFO - Conexão fechada.
+2024-07-23 11:09:12,997 - INFO - close retornou: None
+2024-07-23 11:09:12,997 - INFO - Conexão fechada!
+2024-07-23 11:09:12,998 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:13,018 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:13,018 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:13,451 - INFO - Tabela Criada!
+2024-07-23 11:09:13,451 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:13,452 - INFO - Conexão fechada.
+2024-07-23 11:09:13,452 - INFO - close retornou: None
+2024-07-23 11:09:13,453 - INFO - Conexão fechada!
+2024-07-23 11:09:13,453 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:13,472 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:13,473 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:13,813 - INFO - Tabela Criada!
+2024-07-23 11:09:13,813 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:13,814 - INFO - Conexão fechada.
+2024-07-23 11:09:13,815 - INFO - close retornou: None
+2024-07-23 11:09:13,815 - INFO - Conexão fechada!
+2024-07-23 11:09:13,815 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:13,826 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:13,826 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:14,422 - INFO - Tabela Criada!
+2024-07-23 11:09:14,422 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:14,425 - INFO - Conexão fechada.
+2024-07-23 11:09:14,425 - INFO - close retornou: None
+2024-07-23 11:09:14,426 - INFO - Conexão fechada!
+2024-07-23 11:09:14,426 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:14,457 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:14,458 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:15,154 - INFO - Tabela Criada!
+2024-07-23 11:09:15,155 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:15,157 - INFO - Conexão fechada.
+2024-07-23 11:09:15,157 - INFO - close retornou: None
+2024-07-23 11:09:15,158 - INFO - Conexão fechada!
+2024-07-23 11:09:15,158 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:15,195 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:15,196 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:16,184 - INFO - Tabela Criada!
+2024-07-23 11:09:16,184 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:16,186 - INFO - Conexão fechada.
+2024-07-23 11:09:16,187 - INFO - close retornou: None
+2024-07-23 11:09:16,188 - INFO - Conexão fechada!
+2024-07-23 11:09:16,189 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:16,220 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:16,220 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:16,911 - INFO - Tabela Criada!
+2024-07-23 11:09:16,911 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:16,912 - INFO - Conexão fechada.
+2024-07-23 11:09:16,912 - INFO - close retornou: None
+2024-07-23 11:09:16,912 - INFO - Conexão fechada!
+2024-07-23 11:09:16,912 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:16,927 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:16,927 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:17,285 - INFO - Tabela Criada!
+2024-07-23 11:09:17,285 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:17,286 - INFO - Conexão fechada.
+2024-07-23 11:09:17,286 - INFO - close retornou: None
+2024-07-23 11:09:17,286 - INFO - Conexão fechada!
+2024-07-23 11:09:17,286 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:17,302 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:17,302 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:17,628 - INFO - Tabela Criada!
+2024-07-23 11:09:17,628 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:17,629 - INFO - Conexão fechada.
+2024-07-23 11:09:17,630 - INFO - close retornou: None
+2024-07-23 11:09:17,630 - INFO - Conexão fechada!
+2024-07-23 11:09:17,631 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:17,663 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:17,663 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:18,593 - INFO - Tabela Criada!
+2024-07-23 11:09:18,593 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:18,594 - INFO - Conexão fechada.
+2024-07-23 11:09:18,594 - INFO - close retornou: None
+2024-07-23 11:09:18,595 - INFO - Conexão fechada!
+2024-07-23 11:09:18,595 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:18,611 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:18,611 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:19,352 - INFO - Tabela Criada!
+2024-07-23 11:09:19,353 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:19,355 - INFO - Conexão fechada.
+2024-07-23 11:09:19,355 - INFO - close retornou: None
+2024-07-23 11:09:19,356 - INFO - Conexão fechada!
+2024-07-23 11:09:19,357 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:19,392 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:19,392 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57B7F0740>
+2024-07-23 11:09:19,507 - INFO - Conexão fechada!
+2024-07-23 11:09:35,841 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:35,854 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:35,854 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B579B503B0>
+2024-07-23 11:09:35,855 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:09:35,856 - INFO - Conexão fechada.
+2024-07-23 11:09:35,856 - INFO - close retornou: None
+2024-07-23 11:09:35,856 - INFO - Conexão fechada!
+2024-07-23 11:09:57,793 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:09:57,805 - INFO - Conexão bem-sucedida!
+2024-07-23 11:09:57,805 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B579B503B0>
+2024-07-23 11:09:57,807 - INFO - Conexão fechada!
+2024-07-23 11:11:25,496 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:11:25,508 - INFO - Conexão bem-sucedida!
+2024-07-23 11:11:25,508 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEC9B50>
+2024-07-23 11:11:25,587 - INFO - Conexão fechada!
+2024-07-23 11:11:25,587 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:11:25,598 - INFO - Conexão bem-sucedida!
+2024-07-23 11:11:25,598 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEAE330>
+2024-07-23 11:11:25,647 - INFO - Conexão fechada!
+2024-07-23 11:11:25,647 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:11:25,657 - INFO - Conexão bem-sucedida!
+2024-07-23 11:11:25,657 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEAE330>
+2024-07-23 11:11:25,720 - INFO - Conexão fechada!
+2024-07-23 11:11:25,720 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:11:25,731 - INFO - Conexão bem-sucedida!
+2024-07-23 11:11:25,731 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEAD730>
+2024-07-23 11:11:25,780 - INFO - Conexão fechada!
+2024-07-23 11:11:25,781 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:11:25,812 - INFO - Conexão bem-sucedida!
+2024-07-23 11:11:25,812 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEAE330>
+2024-07-23 11:11:25,843 - INFO - Conexão fechada!
+2024-07-23 11:12:23,487 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:12:23,506 - INFO - Conexão bem-sucedida!
+2024-07-23 11:12:23,506 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEADBB0>
+2024-07-23 11:12:23,508 - INFO - Conexão fechada!
+2024-07-23 11:12:31,774 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:12:31,787 - INFO - Conexão bem-sucedida!
+2024-07-23 11:12:31,787 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEAD730>
+2024-07-23 11:12:31,788 - INFO - Conexão fechada!
+2024-07-23 11:13:58,141 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:13:58,152 - INFO - Conexão bem-sucedida!
+2024-07-23 11:13:58,153 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B57BEAECF0>
+2024-07-23 11:13:58,194 - INFO - Conexão fechada!
+2024-07-23 11:13:58,194 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:13:58,211 - INFO - Conexão bem-sucedida!
+2024-07-23 11:13:58,212 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B579F34320>
+2024-07-23 11:13:58,335 - INFO - Conexão fechada!
+2024-07-23 11:13:58,335 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:13:58,354 - INFO - Conexão bem-sucedida!
+2024-07-23 11:13:58,354 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B579AF4470>
+2024-07-23 11:13:58,418 - INFO - Conexão fechada!
+2024-07-23 11:13:58,419 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:13:58,439 - INFO - Conexão bem-sucedida!
+2024-07-23 11:13:58,439 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B579F34320>
+2024-07-23 11:13:58,493 - INFO - Conexão fechada!
+2024-07-23 11:13:58,493 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:13:58,511 - INFO - Conexão bem-sucedida!
+2024-07-23 11:13:58,512 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000001B579AF4470>
+2024-07-23 11:13:58,575 - INFO - Conexão fechada!
+2024-07-23 11:18:13,426 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:18:13,821 - INFO - Conexão bem-sucedida!
+2024-07-23 11:18:13,821 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AD61DA90>
+2024-07-23 11:18:13,822 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:18:13,822 - INFO - Conexão fechada.
+2024-07-23 11:18:13,823 - INFO - close retornou: None
+2024-07-23 11:18:13,823 - INFO - Conexão fechada!
+2024-07-23 11:18:28,696 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:18:28,714 - INFO - Conexão bem-sucedida!
+2024-07-23 11:18:28,715 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AB5E3380>
+2024-07-23 11:18:28,717 - INFO - Conexão fechada!
+2024-07-23 11:19:32,248 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:19:32,261 - INFO - Conexão bem-sucedida!
+2024-07-23 11:19:32,261 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AD61DA60>
+2024-07-23 11:19:32,302 - INFO - Conexão fechada!
+2024-07-23 11:19:32,302 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:19:32,316 - INFO - Conexão bem-sucedida!
+2024-07-23 11:19:32,316 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AD61DA90>
+2024-07-23 11:19:32,362 - INFO - Conexão fechada!
+2024-07-23 11:19:32,362 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:19:32,374 - INFO - Conexão bem-sucedida!
+2024-07-23 11:19:32,374 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AD61DA90>
+2024-07-23 11:19:32,412 - INFO - Conexão fechada!
+2024-07-23 11:19:32,412 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:19:32,424 - INFO - Conexão bem-sucedida!
+2024-07-23 11:19:32,424 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AD61DA90>
+2024-07-23 11:19:32,572 - INFO - Conexão fechada!
+2024-07-23 11:19:32,573 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:19:32,583 - INFO - Conexão bem-sucedida!
+2024-07-23 11:19:32,583 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000266AD61DA90>
+2024-07-23 11:19:32,696 - INFO - Conexão fechada!
+2024-07-23 11:23:02,573 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:23:02,967 - INFO - Conexão bem-sucedida!
+2024-07-23 11:23:02,967 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A6F0E0F0>
+2024-07-23 11:23:02,968 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:23:02,969 - INFO - Conexão fechada.
+2024-07-23 11:23:02,969 - INFO - close retornou: None
+2024-07-23 11:23:02,969 - INFO - Conexão fechada!
+2024-07-23 11:23:11,207 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:23:11,220 - INFO - Conexão bem-sucedida!
+2024-07-23 11:23:11,220 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A4ED3380>
+2024-07-23 11:23:11,222 - INFO - Conexão fechada!
+2024-07-23 11:24:04,356 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:24:04,367 - INFO - Conexão bem-sucedida!
+2024-07-23 11:24:04,368 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A6F0E120>
+2024-07-23 11:24:04,457 - INFO - Conexão fechada!
+2024-07-23 11:24:04,457 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:24:04,468 - INFO - Conexão bem-sucedida!
+2024-07-23 11:24:04,468 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A6F0E0F0>
+2024-07-23 11:24:04,572 - INFO - Conexão fechada!
+2024-07-23 11:24:04,572 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:24:04,584 - INFO - Conexão bem-sucedida!
+2024-07-23 11:24:04,585 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A6F0E0F0>
+2024-07-23 11:24:04,681 - INFO - Conexão fechada!
+2024-07-23 11:24:04,681 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:24:04,693 - INFO - Conexão bem-sucedida!
+2024-07-23 11:24:04,693 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A6F0E0F0>
+2024-07-23 11:24:04,838 - INFO - Conexão fechada!
+2024-07-23 11:24:04,838 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:24:04,849 - INFO - Conexão bem-sucedida!
+2024-07-23 11:24:04,850 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x00000181A6F0E0F0>
+2024-07-23 11:24:04,997 - INFO - Conexão fechada!
+2024-07-23 11:25:29,932 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:25:30,276 - INFO - Conexão bem-sucedida!
+2024-07-23 11:25:30,276 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F0125F9340>
+2024-07-23 11:25:30,277 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 11:25:30,277 - INFO - Conexão fechada.
+2024-07-23 11:25:30,277 - INFO - close retornou: None
+2024-07-23 11:25:30,277 - INFO - Conexão fechada!
+2024-07-23 11:25:44,247 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:25:44,265 - INFO - Conexão bem-sucedida!
+2024-07-23 11:25:44,265 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F0107CA060>
+2024-07-23 11:25:44,267 - INFO - Conexão fechada!
+2024-07-23 11:26:45,171 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:26:45,185 - INFO - Conexão bem-sucedida!
+2024-07-23 11:26:45,185 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F01267E870>
+2024-07-23 11:26:45,227 - INFO - Conexão fechada!
+2024-07-23 11:26:45,228 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:26:45,242 - INFO - Conexão bem-sucedida!
+2024-07-23 11:26:45,242 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F01267E390>
+2024-07-23 11:26:45,338 - INFO - Conexão fechada!
+2024-07-23 11:26:45,338 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:26:45,349 - INFO - Conexão bem-sucedida!
+2024-07-23 11:26:45,349 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F01267E870>
+2024-07-23 11:26:45,429 - INFO - Conexão fechada!
+2024-07-23 11:26:45,430 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:26:45,440 - INFO - Conexão bem-sucedida!
+2024-07-23 11:26:45,440 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F01267E390>
+2024-07-23 11:26:45,502 - INFO - Conexão fechada!
+2024-07-23 11:26:45,502 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 11:26:45,514 - INFO - Conexão bem-sucedida!
+2024-07-23 11:26:45,514 - INFO - connect retornou: <mysql.connector.connection_cext.CMySQLConnection object at 0x000002F01267E390>
+2024-07-23 11:26:45,596 - INFO - Conexão fechada!

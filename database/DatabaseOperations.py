@@ -37,7 +37,7 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def insert_users(user, password):
+    def insert_user(user, password):
         query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
@@ -52,8 +52,8 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def login_admin(user, password):
-        query = f"SELECT * FROM admin WHERE token = %s AND password = %s"
+    def login_user(user, password):
+        query = f"SELECT * FROM users WHERE token = %s AND password = %s"
         try:
             conn = DatabaseOperations.getConnect()
             conn.connect()

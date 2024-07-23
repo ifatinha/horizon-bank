@@ -70,12 +70,11 @@ def return_manager():
         is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
 
     fullname = input("Nome Completo: ")
-    email = input("Email: ")
     password = input("Senha: ")
     phone = input("Phone: ")
 
     address = return_address()
-
+    email = Manager.generate_email(fullname)
     manager = Manager(fullname, email, password, phone, address, employee_number)
     return manager
 

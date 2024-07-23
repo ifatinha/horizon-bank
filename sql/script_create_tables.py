@@ -38,3 +38,7 @@ def create_tables():
     DatabaseOperations.create_table(table_savigns_account_query)
     DatabaseOperations.create_table(table_historic_query)
     DatabaseOperations.create_table(table_transactions_query)
+
+
+def insert_default_user():
+    DatabaseOperations.insert_user("admin", "admin")
