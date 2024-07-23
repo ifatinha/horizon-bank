@@ -78,7 +78,6 @@ def menu_typle_customers():
     menu = """################ CLIENTES CADASTRADOS ################
         [1] Pessoas Fisicas
         [2] Pessoas Juridicas
-        [3] Pessoas Juridicas
         [0] Sair
         => """
 

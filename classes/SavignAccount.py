@@ -4,7 +4,7 @@ from classes.Account import Account
 class SavignAccount(Account):
 
     def __init__(self, password, branch, customer) -> None:
-        super().__init__(password, branch, customer, account_type="savings")
+        super().__init__(password, branch, customer, account_type="Savings")
         self.__interest_rate = 0.0050
 
     @property

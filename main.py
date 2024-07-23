@@ -198,18 +198,25 @@ def main():
                         option = menu_typle_customers()
 
                         if option == "1":
-                            print("##### PESSOAS FÍSICAS #####")
+
                             result = DatabaseOperations.list_individual_customers()
 
-                            for client in result:
-                                print(client + "\n")
+                            if len(result):
+                                print("##### CLIENTES ENCONTRADOS #####")
+                                for client in result:
+                                    print(client)
+                            else:
+                                print("@@@ Nenhum cliente encontrado. @@@")
 
                         elif option == "2":
-                            print("##### PESSOAS JURIDICAS #####")
+                            print("##### CLIENTES ENCONTRADOS #####")
                             result = DatabaseOperations.list_company_customers()
 
-                            for client in result:
-                                print(client + "\n")
+                            if len(result):
+                                for client in result:
+                                    print(client)
+                            else:
+                                print("@@@ Nenhum cliente encontrado. @@@")
 
                         elif option == "0":
                             print("### Retornando ao menu principal. ###")

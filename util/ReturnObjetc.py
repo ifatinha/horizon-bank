@@ -218,7 +218,7 @@ def return_savign_account():
 
 
 def return_current_account():
-    print("### Conta Poupança ###")
+    print("### Conta Corrente ###")
     password = input("Senha: ")
 
     branch = find_branch_bd()
