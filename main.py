@@ -35,10 +35,10 @@ def main():
         option = main_menu()
 
         if option == "1":
-            user = input("Token: ")
+            token = input("Token: ")
             password = input("Senha: ")
 
-            status = DatabaseOperations.login_customer(user, password)
+            status = DatabaseOperations.login_user(token, password)
 
             if len(status):
 
@@ -58,7 +58,7 @@ def main():
                         """Estrato"""
 
                     elif cl_option == "5":
-                        """Contas Cadastradas"""
+                        """Minhas Contas"""
 
                     elif cl_option == "0":
                         break

@@ -494,21 +494,3 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
-
-    @staticmethod
-    def login_customer(user, password):
-        query = (
-            f"SELECT email, password FROM customer WHERE email = %s and password = %s"
-        )
-        try:
-            conn = DatabaseOperations.getConnect()
-            conn.connect()
-            conn.cursor.execute(query, (user, password))
-            resultado = conn.cursor.fetchall()
-            return resultado
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
