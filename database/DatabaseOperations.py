@@ -193,7 +193,7 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def insert_invidual(individual, id_customer):
+    def insert_invidual(individual):
         query = (
             "INSERT INTO individual(customer_id, ssn, date_of_birth) VALUES(%s, %s, %s)"
         )
@@ -201,7 +201,7 @@ class DatabaseOperations:
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, ((id_customer,) + individual.to_tuple()))
+            cursor.execute(query, individual)
             conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
@@ -211,13 +211,13 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def insert_company(id_customer, company):
+    def insert_company(company):
         query = "INSERT INTO company(customer_id, ein, legal_name) VALUES(%s, %s, %s)"
 
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, ((id_customer,) + company.to_tuple()))
+            cursor.execute(query, company)
             conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
