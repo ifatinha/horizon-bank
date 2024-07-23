@@ -38,7 +38,7 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_admin(user, password):
-        query = f"INSERT INTO admin (user, password) VALUES(%s, %s)"
+        query = f"INSERT INTO admin (token, password) VALUES(%s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -53,7 +53,7 @@ class DatabaseOperations:
 
     @staticmethod
     def login_admin(user, password):
-        query = f"SELECT * FROM admin WHERE user = %s AND password = %s"
+        query = f"SELECT * FROM admin WHERE token = %s AND password = %s"
         try:
             conn = DatabaseOperations.getConnect()
             conn.connect()
@@ -69,7 +69,10 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_address(address):
-        query = "INSERT INTO address(number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes) VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
+        query = """
+            INSERT INTO address(number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes) 
+            VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -85,7 +88,12 @@ class DatabaseOperations:
 
     @staticmethod
     def find_address(manager_id):
-        query = "SELECT number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes from address a JOIN address_customer ac on ac.id_address = a.id JOIN customer c on c.id = ac.id_customer and c.id = %s;"
+        query = """SELECT number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes 
+                FROM address a 
+                JOIN address_customer ac 
+                ON ac.id_address = a.id 
+                JOIN customer 
+                c ON c.id = ac.id_customer AND c.id = %s;"""
 
         try:
             conn = DatabaseOperations.getConnect().connect()
@@ -102,7 +110,9 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_customer(customer):
-        query = "INSERT INTO customer(fullname, email, password, phone) VALUES(%s, %s, %s, %s)"
+        query = """
+            INSERT INTO customer(fullname, email, password, token, phone) 
+            VALUES(%s, %s, %s, %s, %s)"""
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -118,7 +128,8 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_manager(manager, manager_id):
-        query = "INSERT INTO manager(manager_id, employee_number, hire_date, manager_status) VALUES(%s, %s, %s, %s)"
+        query = """INSERT INTO manager(manager_id, employee_number, hire_date, manager_status) 
+            VALUES(%s, %s, %s, %s)"""
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -147,12 +158,15 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def find_manager_id(manager_id):
-        query = "SELECT C.ID, C.FULLNAME, M.employee_number, M.manager_status FROM customer C JOIN manager M ON C.ID = M.manager_id AND M.employee_number = %s AND M.manager_status = TRUE"
+    def find_manager_status(employee_number):
+        query = """SELECT C.id, C.fullname, M.employee_number, M.manager_status 
+                FROM customer C 
+                JOIN manager M ON C.ID = M.manager_id 
+                WHERE M.employee_number = %s AND M.manager_status = TRUE"""
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, (manager_id,))
+            cursor.execute(query, (employee_number,))
             resultado = cursor.fetchone()
             return resultado
         except Error as err:
@@ -164,7 +178,8 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_branch(branch):
-        query = "INSERT INTO branch(branch_number, branch_name, phone, open_date, manager_employee_number, address_id) VALUES(%s, %s, %s, %s, %s, %s)"
+        query = """INSERT INTO branch(branch_number, branch_name, phone, open_date, manager_employee_number, address_id) 
+                VALUES(%s, %s, %s, %s, %s, %s)"""
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -229,13 +244,13 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def find_customer(id_customer):
-        query = "SELECT id, fullname FROM customer WHERE id = %s"
+    def find_customer_token(token):
+        query = "SELECT id, fullname, token FROM customer WHERE token = %s"
 
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, (id_customer,))
+            cursor.execute(query, (token,))
             resultado = cursor.fetchone()
             return resultado
         except Error as err:
@@ -472,6 +487,24 @@ class DatabaseOperations:
             cursor = conn.cursor()
             cursor.execute(query, (ein,))
             resultado = cursor.fetchall()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def login_customer(user, password):
+        query = (
+            f"SELECT email, password FROM customer WHERE email = %s and password = %s"
+        )
+        try:
+            conn = DatabaseOperations.getConnect()
+            conn.connect()
+            conn.cursor.execute(query, (user, password))
+            resultado = conn.cursor.fetchall()
             return resultado
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")

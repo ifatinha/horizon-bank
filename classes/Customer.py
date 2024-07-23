@@ -1,4 +1,5 @@
 from datetime import datetime
+import secrets
 
 
 class Customer:
@@ -10,6 +11,7 @@ class Customer:
         self.password = password
         self.phone = phone
         self.address = address
+        self.__token = Customer.generate_token()
         self.created_at = datetime.now()
         self.updated_ate = datetime.now()
 
@@ -20,6 +22,14 @@ class Customer:
     @customer_id.setter
     def customer_id(self, id_customer):
         self.__customer_id = id_customer
+
+    @property
+    def token(self):
+        return self.__token
+
+    @token.setter
+    def token(self, token):
+        self.__token = token
 
     def update(self, **kwargs):
         for key, value in kwargs.items():
@@ -37,4 +47,9 @@ class Customer:
         )
 
     def to_tuple(self):
-        return (self.fullname, self.email, self.password, self.phone)
+        return (self.fullname, self.email, self.token, self.password, self.phone)
+
+    @staticmethod
+    def generate_token(length=8):
+        token = secrets.token_hex(length // 2)
+        return token

@@ -1,16 +1,12 @@
-from classes.Account import Account
-from classes.Branch import Branch
-from classes.Manager import Manager
-from classes.Individual import Individual
+import secrets
 
-manager = Manager("John Doe", "", "", None, "4784")
-manager.customer_id = 1
 
-branch = Branch(2015, "Agência Itaporanga", "83 4001-3200", None, manager)
-branch.id_branch = 2
+def generate_token(length=8):
+    # Gera um token de comprimento especificado (32 caracteres por padrão)
+    token = secrets.token_hex(length // 2)
+    return token
 
-client = Individual("Jane Doe", "", "", None, "1245", "14/10/1994")
-client.customer_id = 3
 
-account = Account("123456", branch, client)
-print(account.to_tuple())
+# Gera um token de 32 caracteres
+token = generate_token()
+print(f"Token: {token}")

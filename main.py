@@ -26,40 +26,51 @@ from util.ReturnObjetc import (
 
 def main():
 
-    # create_database()
-    # create_tables()
+    create_database()
+    create_tables()
 
     while True:
 
         option = main_menu()
 
         if option == "1":
-            cl_option = client_menu()
+            user = input("Token: ")
+            password = input("Senha: ")
 
-            if cl_option == "1":
-                """Cadastrar nova conta"""
+            status = DatabaseOperations.login_customer(user, password)
 
-            elif cl_option == "2":
-                """Depositar"""
+            if len(status):
 
-            elif cl_option == "3":
-                """Sacar"""
+                if option == "1":
+                    cl_option = client_menu()
 
-            elif cl_option == "4":
-                """Estrato"""
+                    if cl_option == "1":
+                        """Cadastrar nova conta"""
 
-            elif cl_option == "5":
-                """Contas Cadastradas"""
+                    elif cl_option == "2":
+                        """Depositar"""
 
-            elif cl_option == "0":
-                break
+                    elif cl_option == "3":
+                        """Sacar"""
 
-            else:
-                print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+                    elif cl_option == "4":
+                        """Estrato"""
+
+                    elif cl_option == "5":
+                        """Contas Cadastradas"""
+
+                    elif cl_option == "0":
+                        break
+
+                    else:
+                        print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+
+                else:
+                    print("@@@ Usuário ou senha inválidos @@@")
 
         elif option == "2":
-            user = input("Usuário: ")
-            password = input("Password: ")
+            user = input("Token: ")
+            password = input("Senha: ")
 
             status = DatabaseOperations.login_admin(user=user, password=password)
 

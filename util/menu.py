@@ -28,7 +28,7 @@ def client_menu():
     [2] Depositar
     [3] Sacar
     [4] Extrato
-    [5] Listar Contas
+    [5] Suas Contas
     [0] Sair
     => """
 

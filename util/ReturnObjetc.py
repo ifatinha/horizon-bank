@@ -60,18 +60,19 @@ def return_address():
 
 def return_manager():
     print("### Dados Pessoais ###")
-    fullname = input("Nome Completo: ")
-    email = input("Email: ")
-    password = input("Senha: ")
-    phone = input("Phone: ")
-    employee_number = input("Número de Registro: ")
 
+    employee_number = input("Número de Registro: ")
     is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
 
     while is_exist is not None:
         print("@@@ Já existe um gerente com esse número. @@@")
         employee_number = input("Número de Registro: ")
         is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
+
+    fullname = input("Nome Completo: ")
+    email = input("Email: ")
+    password = input("Senha: ")
+    phone = input("Phone: ")
 
     address = return_address()
 
@@ -82,12 +83,12 @@ def return_manager():
 def find_manager_bd():
     print("### Gerente ###")
     manager_id = int(input("Número do gerente: "))
-    result = DatabaseOperations.find_manager_id(manager_id)
+    result = DatabaseOperations.find_manager_status(manager_id)
 
     while result is None:
         print("@@@ Nenhum Gerente Encontrado. @@@")
         manager_id = int(input("Codigo do gerente: "))
-        result = DatabaseOperations.find_manager_id(manager_id)
+        result = DatabaseOperations.find_manager_status(manager_id)
 
     manager_id, fullname, employee_number, manager_status = result
 
@@ -121,12 +122,7 @@ def return_branch():
 
 def return_individual():
     print("### Dados Pessoais ###")
-    fullname = input("Nome Completo: ")
-    email = input("Email: ")
-    password = input("Senha: ")
-    phone = input("Telefone: ")
     ssn = input("SSN: ")
-
     result = DatabaseOperations.find_individual_ssn(ssn)
 
     while result is not None:
@@ -134,10 +130,14 @@ def return_individual():
         ssn = input("SSN: ")
         result = DatabaseOperations.find_individual_ssn(ssn)
 
+    fullname = input("Nome Completo: ")
     birth = input("Data de Nascimento (dd/mm/yyyy): ")
+    birth = datetime.strptime(birth, "%d/%m/%Y")
+    email = input("Email: ")
+    password = input("Senha: ")
+    phone = input("Telefone: ")
     address = return_address()
 
-    birth = datetime.strptime(birth, "%d/%m/%Y")
     individual = Individual(fullname, email, password, phone, address, ssn, birth)
 
     return individual
@@ -145,12 +145,7 @@ def return_individual():
 
 def return_company():
     print("### Dados da Empresa ###")
-    fullname = input("Razão Social: ")
-    email = input("Email: ")
-    password = input("Senha: ")
-    phone = input("Telefone: ")
     ein = input("EIN: ")
-
     is_exist = DatabaseOperations.find_company_ein(ein)
 
     while is_exist is not None:
@@ -158,7 +153,11 @@ def return_company():
         ein = input("EIN: ")
         is_exist = DatabaseOperations.find_company_ein(ein)
 
+    fullname = input("Razão Social: ")
     legal_name = input("Nome Fantasia: ")
+    email = input("Email: ")
+    password = input("Senha: ")
+    phone = input("Telefone: ")
     address = return_address()
 
     company = Company(fullname, email, password, phone, address, ein, legal_name)
@@ -183,17 +182,18 @@ def find_branch_bd():
 
 
 def find_customer_bd():
-    customer_id = int(input("Codigo do Cliente: "))
-    result = DatabaseOperations.find_customer(customer_id)
+    token = int(input("Token: "))
+    result = DatabaseOperations.find_customer(token)
 
     while result is None:
         print("@@@ Nenhum Cliente Encontrado. @@@")
-        customer_id = int(input("Codigo do Cliente: "))
-        result = DatabaseOperations.find_customer(customer_id)
+        token = int(input("Token: "))
+        result = DatabaseOperations.find_customer_token(token)
 
-    id_customer, fullname = result
+    id_customer, fullname, token = result
     customer = Customer(fullname, None, None, None, None)
     customer.customer_id = id_customer
+    customer.token = token
     return customer
 
 
