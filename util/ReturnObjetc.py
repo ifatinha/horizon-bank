@@ -165,7 +165,7 @@ def return_company():
 
 
 def find_branch_bd():
-    branch_number = int(input("Código da Agéncia: "))
+    branch_number = int(input("Agéncia: "))
     result = DatabaseOperations.find_branch(branch_number)
 
     while result is None:
@@ -181,12 +181,12 @@ def find_branch_bd():
 
 
 def find_customer_bd():
-    token = int(input("Token: "))
-    result = DatabaseOperations.find_customer(token)
+    token = input("Token do Cliente: ")
+    result = DatabaseOperations.find_customer_token(token)
 
     while result is None:
         print("@@@ Nenhum Cliente Encontrado. @@@")
-        token = int(input("Token: "))
+        token = input("Token: ")
         result = DatabaseOperations.find_customer_token(token)
 
     id_customer, fullname, token = result
@@ -198,30 +198,30 @@ def find_customer_bd():
 
 def return_account():
     print("### Conta Empresárial ###")
-    password = input("Senha: ")
-
-    branch = find_branch_bd()
     customer = find_customer_bd()
+    password = input("Senha: ")
+    branch = find_branch_bd()
+
     account = Account(password, branch, customer)
     return account
 
 
 def return_savign_account():
     print("### Conta Poupança ###")
-    password = input("Senha: ")
-
-    branch = find_branch_bd()
     customer = find_customer_bd()
+    password = input("Senha: ")
+    branch = find_branch_bd()
+
     savign = SavignAccount(password, branch, customer)
     return savign
 
 
 def return_current_account():
     print("### Conta Corrente ###")
-    password = input("Senha: ")
-
-    branch = find_branch_bd()
     customer = find_customer_bd()
+    password = input("Senha: ")
+    branch = find_branch_bd()
+
     return CurrentAccount(password, branch, customer)
 
 
