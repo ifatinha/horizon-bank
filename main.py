@@ -48,6 +48,37 @@ def main():
 
                 if cl_option == "1":
                     """Operações Bancárias"""
+                    number = input("Conta: ")
+                    password = input("Senha: ")
+                    account = DatabaseOperations.find_account_customer(number, password)
+
+                    while account is None:
+                        print("@@@ Nenhum conta encontrada. @@@")
+                        number = input("Conta: ")
+                        password = input("Senha: ")
+                        account = DatabaseOperations.find_account_customer(
+                            number, password
+                        )
+
+                    while True:
+                        option = menu_banking_operations()
+
+                        if option == "1":
+                            """Depósito"""
+                            pass
+                        elif option == "2":
+                            """Saque"""
+                            pass
+                        elif option == "3":
+                            """Transferência"""
+                            pass
+                        elif option == "4":
+                            """Extrato"""
+                            pass
+                        elif option == "0":
+                            break
+                        else:
+                            print("@@@ Opção Inválida. @@@")
 
                 elif cl_option == "2":
                     """Minhas Contas"""

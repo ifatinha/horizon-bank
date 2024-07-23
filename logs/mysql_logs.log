@@ -2560,3 +2560,53 @@
 2024-07-23 20:24:07,829 - INFO - Conexão bem-sucedida!
 2024-07-23 20:24:07,829 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x00000213216F5B50>
 2024-07-23 20:24:07,830 - INFO - Conexão fechada!
+2024-07-23 20:42:45,280 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:42:45,435 - INFO - package: mysql.connector.plugins
+2024-07-23 20:42:45,436 - INFO - plugin_name: caching_sha2_password
+2024-07-23 20:42:45,436 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-23 20:42:45,438 - INFO - Conexão bem-sucedida!
+2024-07-23 20:42:45,438 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002925E688590>
+2024-07-23 20:42:45,439 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 20:42:45,439 - INFO - Conexão fechada.
+2024-07-23 20:42:45,439 - INFO - close retornou: None
+2024-07-23 20:42:45,439 - INFO - Conexão fechada!
+2024-07-23 20:42:59,257 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:42:59,293 - INFO - Conexão bem-sucedida!
+2024-07-23 20:42:59,293 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002925E688590>
+2024-07-23 20:42:59,294 - INFO - Conexão fechada!
+2024-07-23 20:43:44,880 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:43:44,940 - INFO - package: mysql.connector.plugins
+2024-07-23 20:43:44,942 - INFO - plugin_name: caching_sha2_password
+2024-07-23 20:43:44,942 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-23 20:43:44,943 - INFO - Conexão bem-sucedida!
+2024-07-23 20:43:44,943 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000022B7B5DBB30>
+2024-07-23 20:43:44,944 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 20:43:44,945 - INFO - Conexão fechada.
+2024-07-23 20:43:44,945 - INFO - close retornou: None
+2024-07-23 20:43:44,945 - INFO - Conexão fechada!
+2024-07-23 20:43:48,216 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:43:48,261 - INFO - Conexão bem-sucedida!
+2024-07-23 20:43:48,262 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000022B7B549BE0>
+2024-07-23 20:43:48,264 - INFO - Conexão fechada!
+2024-07-23 20:43:50,288 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:43:50,325 - INFO - Conexão bem-sucedida!
+2024-07-23 20:43:50,325 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000022B7B681FD0>
+2024-07-23 20:43:50,330 - INFO - Conexão fechada!
+2024-07-23 20:44:03,681 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:44:03,719 - INFO - Conexão bem-sucedida!
+2024-07-23 20:44:03,719 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x0000022B7B26B920>
+2024-07-23 20:44:03,720 - INFO - Conexão fechada!
+2024-07-23 20:45:10,025 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:45:10,181 - INFO - package: mysql.connector.plugins
+2024-07-23 20:45:10,182 - INFO - plugin_name: caching_sha2_password
+2024-07-23 20:45:10,182 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-23 20:45:10,183 - INFO - Conexão bem-sucedida!
+2024-07-23 20:45:10,183 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002419731BE60>
+2024-07-23 20:45:10,184 - INFO - Chamando close com args: (), kwargs: {}
+2024-07-23 20:45:10,184 - INFO - Conexão fechada.
+2024-07-23 20:45:10,184 - INFO - close retornou: None
+2024-07-23 20:45:10,184 - INFO - Conexão fechada!
+2024-07-23 20:45:16,480 - INFO - Chamando connect com args: (), kwargs: {}
+2024-07-23 20:45:16,517 - INFO - Conexão bem-sucedida!
+2024-07-23 20:45:16,517 - INFO - connect retornou: <mysql.connector.connection.MySQLConnection object at 0x000002419731BE60>
+2024-07-23 20:45:16,518 - INFO - Conexão fechada!

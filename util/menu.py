@@ -39,8 +39,7 @@ def menu_banking_operations():
     [1] Depósito
     [2] Saque
     [3] Transferência
-    [4] Empréstimos
-    [5] Extrato
+    [4] Extrato
     [0] Sair
     => """
 
