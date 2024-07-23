@@ -10,6 +10,7 @@ from util.menu import (
     menu_create_manager,
     menu_create_branch,
     menu_typle_customers,
+    menu_banking_operations,
 )
 
 from util.ReturnObjetc import (
@@ -30,6 +31,8 @@ def main():
     # create_tables()
     # insert_default_user()
 
+    # f8d76506 4545
+
     while True:
 
         option = main_menu()
@@ -41,33 +44,28 @@ def main():
             status = DatabaseOperations.login_user(token, password)
 
             if len(status):
+                cl_option = client_menu()
 
-                if option == "1":
-                    cl_option = client_menu()
+                if cl_option == "1":
+                    """Operações Bancárias"""
 
-                    if cl_option == "1":
-                        """Cadastrar nova conta"""
+                elif cl_option == "2":
+                    """Minhas Contas"""
+                    result = DatabaseOperations.find_accounts_individual(token)
 
-                    elif cl_option == "2":
-                        """Depositar"""
-
-                    elif cl_option == "3":
-                        """Sacar"""
-
-                    elif cl_option == "4":
-                        """Estrato"""
-
-                    elif cl_option == "5":
-                        """Minhas Contas"""
-
-                    elif cl_option == "0":
-                        break
-
+                    if len(result) > 0:
+                        print(result)
                     else:
-                        print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+                        print("@@@ Você não possui contas na agência. @@@")
+
+                elif cl_option == "0":
+                    break
 
                 else:
-                    print("@@@ Usuário ou senha inválidos @@@")
+                    print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+
+            else:
+                print("@@@ Usuário ou senha inválidos @@@")
 
         elif option == "2":
             user = input("Token: ")
@@ -185,8 +183,8 @@ def main():
                         option = menu_type_customer()
 
                         if option == "1":
-                            ssn = input("SSN: ")
-                            result = DatabaseOperations.find_accounts_individual(ssn)
+                            token = input("Token: ")
+                            result = DatabaseOperations.find_accounts_individual(token)
 
                             if len(result) > 0:
                                 print(result)
@@ -196,9 +194,9 @@ def main():
                                 )
 
                         elif option == "2":
-                            ein = input("EIN: ")
+                            token = input("Token: ")
 
-                            result = DatabaseOperations.find_accounts_company(ein)
+                            result = DatabaseOperations.find_accounts_company(token)
 
                             if len(result) > 0:
                                 print(result)
@@ -281,6 +279,16 @@ def main():
                             print("@@@ Opção Inválida! Tente novamente. @@@")
 
                 elif mg_option == "6":
+                    """Listar Gerentes"""
+                    managers = DatabaseOperations.list_managers()
+
+                    if len(managers) > 0:
+                        for manager in managers:
+                            print(manager)
+                    else:
+                        print("@@@ Nenhum gerente encontrado. @@@")
+
+                elif mg_option == "7":
                     """Cadastrar Filial"""
 
                     while True:
@@ -302,6 +310,16 @@ def main():
                             break
                         else:
                             print("@@@ Opção Inválida! Tente novamente. @@@")
+
+                elif mg_option == "8":
+                    """Agências Cadastradas"""
+                    branchs = DatabaseOperations.list_branchs()
+
+                    if len(branchs) > 0:
+                        for branch in branchs:
+                            print(branch)
+                    else:
+                        print("@@@ Nenhum gerente encontrado. @@@")
 
                 elif mg_option == "0":
                     break

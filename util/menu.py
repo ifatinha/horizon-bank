@@ -15,7 +15,9 @@ def manager_menu():
     [3] Contas Cliente
     [4] Listar Clientes
     [5] Cadastrar Gerente
-    [6] Cadastrar Filial
+    [6] Gerentes Cadastrados
+    [7] Cadastrar Agência
+    [8] Agências Cadastradas
     [0] Sair
     => """
 
@@ -24,11 +26,21 @@ def manager_menu():
 
 def client_menu():
     menu = """################ MENU CLIENTE ################
-    [1] Nova Conta
-    [2] Depositar
-    [3] Sacar
-    [4] Extrato
-    [5] Suas Contas
+    [1] Operações Bancárias
+    [2] Suas Contas
+    [0] Sair
+    => """
+
+    return input(menu)
+
+
+def menu_banking_operations():
+    menu = """################ OPERAÇÕES BANCÁRIAS ################
+    [1] Depósito
+    [2] Saque
+    [3] Transferência
+    [4] Empréstimos
+    [5] Extrato
     [0] Sair
     => """
 

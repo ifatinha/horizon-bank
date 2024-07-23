@@ -143,6 +143,28 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
+    def list_managers():
+        query = """
+            SELECT fullname, email, phone, employee_number, manager_status
+            FROM customer C
+            INNER JOIN manager M
+            ON C.id = M.manager_id;
+            """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query)
+            result = cursor.fetchall()
+            return result
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
     def insert_address_customer(id_address, id_customer):
         query = "INSERT INTO address_customer(id_address, id_customer) VALUES(%s, %s)"
         try:
@@ -185,6 +207,28 @@ class DatabaseOperations:
             cursor = conn.cursor()
             cursor.execute(query, branch)
             conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def list_branchs():
+        query = """
+            SELECT branch_number, branch_name, phone, manager_employee_number, city, state
+            FROM branch B
+            INNER JOIN address A
+            ON B.address_id = A.id;
+            """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query)
+            result = cursor.fetchall()
+            return result
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
         finally:
@@ -446,21 +490,21 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def find_accounts_individual(ssn):
+    def find_accounts_individual(token):
         query = """
-            SELECT customer.fullname, individual.ssn, account.number as 'Account number', account.account_type 
-            FROM customer
-            INNER JOIN individual
-            ON customer.id = individual.customer_id
-            INNER JOIN account
-            ON account.customer_id = customer.id
-            WHERE individual.ssn = %s;
+            SELECT C.fullname, I.ssn, A.number, A.balance, A.account_type 
+            FROM customer C
+            INNER JOIN individual I
+            ON C.id = I.customer_id
+            INNER JOIN account A
+            ON A.customer_id = C.id
+            WHERE C.token = %s;
         """
 
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, (ssn,))
+            cursor.execute(query, (token,))
             resultado = cursor.fetchall()
             return resultado
         except Error as err:
@@ -471,21 +515,21 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def find_accounts_company(ein):
+    def find_accounts_company(token):
         query = """
-            SELECT customer.fullname, company.ein, account.number as 'Account number', account.account_type 
-            FROM customer
-            INNER JOIN company
-            ON customer.id = company.customer_id
-            INNER JOIN account
-            ON account.customer_id = customer.id
-            where company.ein = %s;
+            SELECT C.fullname, CO.ein, A.number, A.balance, A.account_type 
+            FROM customer c
+            INNER JOIN company CO
+            ON C.id = CO.customer_id
+            INNER JOIN account A
+            ON A.customer_id = C.id
+            where C.token = %s;
         """
 
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, (ein,))
+            cursor.execute(query, (token,))
             resultado = cursor.fetchall()
             return resultado
         except Error as err:
