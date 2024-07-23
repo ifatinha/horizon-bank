@@ -96,7 +96,12 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_invidual(individual, id_customer)
+                            DatabaseOperations.insert_users(
+                                individual.token, individual.password
+                            )
+                            DatabaseOperations.insert_invidual(
+                                ((id_customer,) + individual.to_tuple())
+                            )
                         elif tp_option == "2":
                             """Pessoa Juridica"""
                             company = return_company()
@@ -109,7 +114,13 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_company(id_customer, company)
+                            DatabaseOperations.insert_users(
+                                company.token, company.password
+                            )
+
+                            DatabaseOperations.insert_company(
+                                ((id_customer,) + company.to_tuple())
+                            )
                         elif tp_option == "0":
                             break
 
@@ -255,10 +266,12 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_admin(
-                                manager.employee_number, manager.password
+                            DatabaseOperations.insert_users(
+                                manager.token, manager.password
                             )
-                            DatabaseOperations.insert_manager(manager, id_customer)
+                            DatabaseOperations.insert_manager(
+                                (id_customer,) + manager.to_tuple()
+                            )
 
                         elif op_manager == "0":
                             break

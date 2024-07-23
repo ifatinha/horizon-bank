@@ -37,8 +37,8 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def insert_admin(user, password):
-        query = f"INSERT INTO admin (token, password) VALUES(%s, %s)"
+    def insert_users(user, password):
+        query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
@@ -127,13 +127,13 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def insert_manager(manager, manager_id):
+    def insert_manager(manager):
         query = """INSERT INTO manager(manager_id, employee_number, hire_date, manager_status) 
             VALUES(%s, %s, %s, %s)"""
         try:
             conn = DatabaseOperations.getConnect().connect()
             cursor = conn.cursor()
-            cursor.execute(query, ((manager_id,) + manager.to_tuple()))
+            cursor.execute(query, manager)
             conn.commit()
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")
