@@ -557,3 +557,69 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_account_historic(account_number):
+        query = """
+            SELECT H.id, H.id_account
+            FROM account A
+            INNER JOIN historic H
+            ON A.id = H.id_account
+            WHERE A.number = %s;"""
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (account_number,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_deposit(account_number, value, account_balance):
+        if value > 0:
+            value += float(account_balance)
+            query = """
+                UPDATE account A
+                SET A.balance = %s
+                WHERE A.number = %s
+            """
+
+            try:
+                conn = DatabaseOperations.getConnect().connect()
+                cursor = conn.cursor()
+                cursor.execute(query, (value, account_number))
+                conn.commit()
+                print("=== Depósito efetuado com sucesso! ===")
+            except Error as err:
+                logging.error(f"Erro ao executar SQL: {err}")
+            finally:
+                if conn:
+                    conn.close()
+                    logging.info("Conexão fechada!")
+        else:
+            print("@@@ Operação falhou! O valor informado é inválido! @@@")
+
+    @staticmethod
+    def insert_transaction(transaction):
+        query = """
+                INSERT INTO transactions(amount, transaction_type, historic_id) 
+                VALUES(%s, %s, %s)
+        """
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, transaction)
+            conn.commit()
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")

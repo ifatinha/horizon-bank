@@ -9,5 +9,5 @@ class Transaction(ABC):
         pass
 
     @abstractmethod
-    def register(self, account):
+    def register(self, historic_id):
         pass

@@ -22,6 +22,7 @@ from util.ReturnObjetc import (
     return_savign_account,
     return_current_account,
     return_historic,
+    return_transaction_Deposit,
 )
 
 
@@ -30,8 +31,12 @@ def main():
     # create_database()
     # create_tables()
     # insert_default_user()
+    # SET SQL_SAFE_UPDATES=0;
 
     # f8d76506 4545
+
+    # 5d98a027 1212
+    # 5346144456 1515
 
     while True:
 
@@ -47,6 +52,7 @@ def main():
                 cl_option = client_menu()
 
                 if cl_option == "1":
+
                     """Operações Bancárias"""
                     number = input("Conta: ")
                     password = input("Senha: ")
@@ -65,7 +71,22 @@ def main():
 
                         if option == "1":
                             """Depósito"""
-                            pass
+                            account_number, account_balance, account_type = account
+                            historic = DatabaseOperations.find_account_historic(number)
+                            id_historic, id_account = historic
+
+                            value = float(input("Valor do deposito: "))
+                            DatabaseOperations.insert_deposit(
+                                number, value, account_balance
+                            )
+
+                            transaction = return_transaction_Deposit(id_historic, value)
+                            DatabaseOperations.insert_transaction(transaction)
+
+                            account = DatabaseOperations.find_account_customer(
+                                number, password
+                            )
+
                         elif option == "2":
                             """Saque"""
                             pass

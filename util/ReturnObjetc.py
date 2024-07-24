@@ -9,6 +9,8 @@ from classes.Customer import Customer
 from classes.CurrentAccount import CurrentAccount
 from classes.SavignAccount import SavignAccount
 from classes.Historic import Historic
+from classes.Deposit import Deposit
+from classes.Withdraw import Withdraw
 
 from datetime import datetime
 
@@ -229,3 +231,8 @@ def return_historic(account):
     historic = Historic(account)
 
     return historic
+
+
+def return_transaction_Deposit(historic_id, value):
+    deposit = Deposit(value)
+    return deposit.to_tuple() + (historic_id,)
