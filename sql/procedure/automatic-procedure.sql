@@ -1,0 +1,7 @@
+SET GLOBAL event_scheduler = ON;
+
+CREATE EVENT AtualizarSaldoMensal
+ON SCHEDULE EVERY 1 MONTH
+STARTS (SELECT DATE_ADD(DATE_FORMAT(NOW() ,'%Y-%m-01'), INTERVAL 1 MONTH))
+DO
+CALL AtualizarSaldoComJuros();

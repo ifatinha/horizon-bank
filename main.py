@@ -23,6 +23,7 @@ from util.ReturnObjetc import (
     return_current_account,
     return_historic,
     return_transaction_Deposit,
+    return_transaction_Withdraw,
 )
 
 
@@ -37,6 +38,8 @@ def main():
 
     # 5d98a027 1212
     # 5346144456 1515
+    # 1028379526 1010
+    # 6781090948 1111
 
     while True:
 
@@ -66,36 +69,72 @@ def main():
                             number, password
                         )
 
+                    account_number, account_balance, account_type = account
+
                     while True:
                         option = menu_banking_operations()
 
                         if option == "1":
                             """Depósito"""
-                            account_number, account_balance, account_type = account
-                            historic = DatabaseOperations.find_account_historic(number)
+                            historic = DatabaseOperations.find_account_historic(
+                                account_number
+                            )
                             id_historic, id_account = historic
 
                             value = float(input("Valor do deposito: "))
                             DatabaseOperations.insert_deposit(
-                                number, value, account_balance
+                                account_number, value, account_balance
                             )
 
                             transaction = return_transaction_Deposit(id_historic, value)
                             DatabaseOperations.insert_transaction(transaction)
 
                             account = DatabaseOperations.find_account_customer(
-                                number, password
+                                account_number, password
                             )
+
+                            account_number, account_balance, account_type = account
 
                         elif option == "2":
                             """Saque"""
+                            historic = DatabaseOperations.find_account_historic(
+                                account_number
+                            )
+                            id_historic, id_account = historic
+
+                            value = float(input("Valor do Saque: "))
+
+                            DatabaseOperations.insert_withdraw(
+                                account_number, value, account_balance
+                            )
+
+                            transaction = return_transaction_Withdraw(
+                                id_historic, value
+                            )
+                            DatabaseOperations.insert_transaction(transaction)
+
+                            account = DatabaseOperations.find_account_customer(
+                                account_number, password
+                            )
+                            account_number, account_balance, account_type = account
+
                             pass
                         elif option == "3":
                             """Transferência"""
                             pass
                         elif option == "4":
                             """Extrato"""
-                            pass
+                            print(f"Conta {account_number}")
+                            historic_account = DatabaseOperations.list_historic(
+                                account_number
+                            )
+
+                            if len(historic_account) > 0:
+                                print("######### EXTRATO #########")
+                                for historic in historic_account:
+                                    print(historic)
+                            else:
+                                print("@@@ A conta não possui movimentações @@@")
                         elif option == "0":
                             break
                         else:

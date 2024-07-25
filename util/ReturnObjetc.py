@@ -236,3 +236,8 @@ def return_historic(account):
 def return_transaction_Deposit(historic_id, value):
     deposit = Deposit(value)
     return deposit.to_tuple() + (historic_id,)
+
+
+def return_transaction_Withdraw(historic_id, value):
+    withdraw = Withdraw(value)
+    return withdraw.to_tuple() + (historic_id,)

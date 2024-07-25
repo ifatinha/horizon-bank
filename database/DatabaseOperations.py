@@ -623,3 +623,57 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def list_historic(account_number):
+        query = """
+            SELECT T.amount, T.transaction_type, T.created_at 
+            FROM account A
+            INNER JOIN historic H
+            ON A.id = H.id_account
+            INNER JOIN transactions T
+            ON T.historic_id = H.id
+            WHERE A.number = %s"""
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (account_number,))
+            resultado = cursor.fetchall()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+
+    @staticmethod
+    def insert_withdraw(account_number, value, account_balance):
+        exceeded_balance = value > account_balance
+
+        if exceeded_balance:
+            print("@@@ Operação falhou! Você não tem saldo suficiente! @@@")
+        elif value > 0:
+            if value > 0:
+                value = float(account_balance) - value
+                query = """
+                    UPDATE account A
+                    SET A.balance = %s
+                    WHERE A.number = %s
+                """
+
+                try:
+                    conn = DatabaseOperations.getConnect().connect()
+                    cursor = conn.cursor()
+                    cursor.execute(query, (value, account_number))
+                    conn.commit()
+                    print("\n=== Saque efetuado com sucesso! ===")
+                except Error as err:
+                    logging.error(f"Erro ao executar SQL: {err}")
+                finally:
+                    if conn:
+                        conn.close()
+                        logging.info("Conexão fechada!")
+        else:
+            print("@@@ Operação falhou! O valor informado é inválido! @@@")
