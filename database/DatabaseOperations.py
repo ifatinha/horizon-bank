@@ -582,28 +582,36 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_deposit(account_number, value, account_balance):
-        if value > 0:
-            value += float(account_balance)
-            query = """
-                UPDATE account A
-                SET A.balance = %s
-                WHERE A.number = %s
-            """
+        qtd_transactions_day = DatabaseOperations.number_transactions_day(
+            account_number
+        )
 
-            try:
-                conn = DatabaseOperations.getConnect().connect()
-                cursor = conn.cursor()
-                cursor.execute(query, (value, account_number))
-                conn.commit()
-                print("=== Depósito efetuado com sucesso! ===")
-            except Error as err:
-                logging.error(f"Erro ao executar SQL: {err}")
-            finally:
-                if conn:
-                    conn.close()
-                    logging.info("Conexão fechada!")
+        if qtd_transactions_day[0] < 10:
+            if value > 0:
+                value += float(account_balance)
+                query = """
+                    UPDATE account A
+                    SET A.balance = %s
+                    WHERE A.number = %s
+                """
+
+                try:
+                    conn = DatabaseOperations.getConnect().connect()
+                    cursor = conn.cursor()
+                    cursor.execute(query, (value, account_number))
+                    conn.commit()
+                    print("=== Depósito efetuado com sucesso! ===")
+                    return True
+                except Error as err:
+                    logging.error(f"Erro ao executar SQL: {err}")
+                finally:
+                    if conn:
+                        conn.close()
+                        logging.info("Conexão fechada!")
+            else:
+                print("@@@ Operação falhou! O valor informado é inválido! @@@")
         else:
-            print("@@@ Operação falhou! O valor informado é inválido! @@@")
+            print("@@@ Operação falhou! Limite de transações diárias excedido. @@@")
 
     @staticmethod
     def insert_transaction(transaction):
@@ -650,30 +658,62 @@ class DatabaseOperations:
 
     @staticmethod
     def insert_withdraw(account_number, value, account_balance):
-        exceeded_balance = value > account_balance
 
-        if exceeded_balance:
-            print("@@@ Operação falhou! Você não tem saldo suficiente! @@@")
-        elif value > 0:
-            if value > 0:
-                value = float(account_balance) - value
-                query = """
-                    UPDATE account A
-                    SET A.balance = %s
-                    WHERE A.number = %s
-                """
+        qtd_transactions_day = DatabaseOperations.number_transactions_day(
+            account_number
+        )
 
-                try:
-                    conn = DatabaseOperations.getConnect().connect()
-                    cursor = conn.cursor()
-                    cursor.execute(query, (value, account_number))
-                    conn.commit()
-                    print("\n=== Saque efetuado com sucesso! ===")
-                except Error as err:
-                    logging.error(f"Erro ao executar SQL: {err}")
-                finally:
-                    if conn:
-                        conn.close()
-                        logging.info("Conexão fechada!")
+        if qtd_transactions_day[0] < 10:
+            exceeded_balance = value > account_balance
+            if exceeded_balance:
+                print("@@@ Operação falhou! Você não tem saldo suficiente! @@@")
+            elif value > 0:
+                if value > 0:
+                    value = float(account_balance) - value
+                    query = """
+                        UPDATE account A
+                        SET A.balance = %s
+                        WHERE A.number = %s
+                    """
+
+                    try:
+                        conn = DatabaseOperations.getConnect().connect()
+                        cursor = conn.cursor()
+                        cursor.execute(query, (value, account_number))
+                        conn.commit()
+                        print("\n=== Saque efetuado com sucesso! ===")
+                        return True
+                    except Error as err:
+                        logging.error(f"Erro ao executar SQL: {err}")
+                    finally:
+                        if conn:
+                            conn.close()
+                            logging.info("Conexão fechada!")
+            else:
+                print("@@@ Operação falhou! O valor informado é inválido! @@@")
         else:
-            print("@@@ Operação falhou! O valor informado é inválido! @@@")
+            print("@@@ Operação falhou! Limite de transações diárias excedido. @@@")
+
+    @staticmethod
+    def number_transactions_day(account_number):
+        query = """
+            SELECT COUNT(transaction_type) AS qtd_transactions
+            FROM account A
+            INNER JOIN historic H
+            ON A.id = H.id_account
+            INNER JOIN transactions T
+            ON T.historic_id = H.id
+            WHERE A.number = %s AND DATE(T.created_at) = CURDATE();"""
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (account_number,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")

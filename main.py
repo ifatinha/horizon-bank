@@ -82,12 +82,16 @@ def main():
                             id_historic, id_account = historic
 
                             value = float(input("Valor do deposito: "))
-                            DatabaseOperations.insert_deposit(
+                            result = DatabaseOperations.insert_deposit(
                                 account_number, value, account_balance
                             )
 
-                            transaction = return_transaction_Deposit(id_historic, value)
-                            DatabaseOperations.insert_transaction(transaction)
+                            if result:
+
+                                transaction = return_transaction_Deposit(
+                                    id_historic, value
+                                )
+                                DatabaseOperations.insert_transaction(transaction)
 
                             account = DatabaseOperations.find_account_customer(
                                 account_number, password
@@ -104,23 +108,32 @@ def main():
 
                             value = float(input("Valor do Saque: "))
 
-                            DatabaseOperations.insert_withdraw(
+                            result = DatabaseOperations.insert_withdraw(
                                 account_number, value, account_balance
                             )
 
-                            transaction = return_transaction_Withdraw(
-                                id_historic, value
-                            )
-                            DatabaseOperations.insert_transaction(transaction)
+                            print(result)
+                            if result:
+
+                                transaction = return_transaction_Withdraw(
+                                    id_historic, value
+                                )
+                                DatabaseOperations.insert_transaction(transaction)
 
                             account = DatabaseOperations.find_account_customer(
                                 account_number, password
                             )
                             account_number, account_balance, account_type = account
 
-                            pass
                         elif option == "3":
                             """Transferência"""
+                            print(account_number)
+                            qtd_transactions = (
+                                DatabaseOperations.number_transactions_day(
+                                    account_number
+                                )
+                            )
+                            print(qtd_transactions[0])
                             pass
                         elif option == "4":
                             """Extrato"""
