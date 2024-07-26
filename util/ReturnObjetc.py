@@ -11,6 +11,7 @@ from classes.SavignAccount import SavignAccount
 from classes.Historic import Historic
 from classes.Deposit import Deposit
 from classes.Withdraw import Withdraw
+from classes.Transfer import Transfer
 
 from datetime import datetime
 
@@ -241,3 +242,8 @@ def return_transaction_Deposit(historic_id, value):
 def return_transaction_Withdraw(historic_id, value):
     withdraw = Withdraw(value)
     return withdraw.to_tuple() + (historic_id,)
+
+
+def return_transaction_transfer(historic_id, value):
+    transfer = Transfer(value)
+    return transfer.to_tuple() + (historic_id,)

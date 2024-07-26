@@ -24,6 +24,7 @@ from util.ReturnObjetc import (
     return_historic,
     return_transaction_Deposit,
     return_transaction_Withdraw,
+    return_transaction_transfer,
 )
 
 
@@ -70,6 +71,8 @@ def main():
                         )
 
                     account_number, account_balance, account_type = account
+                    historic = DatabaseOperations.find_account_historic(account_number)
+                    id_historic, id_account = historic
 
                     while True:
                         option = menu_banking_operations()
@@ -112,7 +115,6 @@ def main():
                                 account_number, value, account_balance
                             )
 
-                            print(result)
                             if result:
 
                                 transaction = return_transaction_Withdraw(
@@ -127,14 +129,78 @@ def main():
 
                         elif option == "3":
                             """Transferência"""
-                            print(account_number)
-                            qtd_transactions = (
-                                DatabaseOperations.number_transactions_day(
-                                    account_number
+
+                            # Dados da conta de destino
+                            numero_conta_transferencia = int(
+                                input("Conta para transferência: ")
+                            )
+
+                            conta_transferencia = DatabaseOperations.find_account(
+                                numero_conta_transferencia
+                            )
+
+                            while conta_transferencia is None:
+                                print("@@@ Nenhum conta encontrada. @@@")
+                                numero_conta_transferencia = int(
+                                    input("Conta para transferência: ")
+                                )
+
+                                conta_transferencia = DatabaseOperations.find_account(
+                                    numero_conta_transferencia
+                                )
+
+                            conta_transfer_number, conta_transfer_balance = (
+                                conta_transferencia
+                            )
+
+                            conta_destino_historico = (
+                                DatabaseOperations.find_account_historic(
+                                    conta_transfer_number
                                 )
                             )
-                            print(qtd_transactions[0])
-                            pass
+
+                            id_historico_conta_destino, id_historico_conta_destino = (
+                                conta_destino_historico
+                            )
+
+                            valor_transferencia = float(
+                                input("Valor a ser transferido: ")
+                            )
+
+                            result_saque = DatabaseOperations.insert_withdraw(
+                                account_number, valor_transferencia, account_balance
+                            )
+
+                            if result_saque:
+
+                                transaction = return_transaction_transfer(
+                                    id_historic, valor_transferencia
+                                )
+                                DatabaseOperations.insert_transaction(transaction)
+
+                                account = DatabaseOperations.find_account_customer(
+                                    account_number, password
+                                )
+                                account_number, account_balance, account_type = account
+
+                                result_deposito = DatabaseOperations.insert_deposit(
+                                    conta_transfer_number,
+                                    valor_transferencia,
+                                    conta_transfer_balance,
+                                )
+
+                                if result_deposito:
+                                    transaction = return_transaction_transfer(
+                                        id_historico_conta_destino, valor_transferencia
+                                    )
+                                    DatabaseOperations.insert_transaction(transaction)
+
+                                    conta_transferencia = (
+                                        DatabaseOperations.find_account(
+                                            numero_conta_transferencia
+                                        )
+                                    )
+
                         elif option == "4":
                             """Extrato"""
                             print(f"Conta {account_number}")

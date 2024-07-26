@@ -717,3 +717,22 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
+
+    @staticmethod
+    def find_account(number):
+        query = """
+            SELECT number, balance FROM account A
+            WHERE A.number = %s;"""
+
+        try:
+            conn = DatabaseOperations.getConnect().connect()
+            cursor = conn.cursor()
+            cursor.execute(query, (number,))
+            resultado = cursor.fetchone()
+            return resultado
+        except Error as err:
+            logging.error(f"Erro ao executar SQL: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
