@@ -14,6 +14,8 @@ from sql.scriptSql import (
     table_current_account_query,
     table_historic_query,
     table_transactions_query,
+    store_procedure_update_account_balance,
+    execute_automatic_procedure,
 )
 
 
@@ -38,6 +40,8 @@ def create_tables():
     DatabaseOperations.create_table(table_savigns_account_query)
     DatabaseOperations.create_table(table_historic_query)
     DatabaseOperations.create_table(table_transactions_query)
+    DatabaseOperations.execute_sql_procedure(store_procedure_update_account_balance)
+    DatabaseOperations.execute_sql_procedure(execute_automatic_procedure)
 
 
 def insert_default_user():

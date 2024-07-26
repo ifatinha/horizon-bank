@@ -37,6 +37,20 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
+    def execute_sql_procedure(sql_procedure):
+        try:
+            conn = DatabaseOperations.getConnect()
+            conn.connect()
+            conn.cursor.execute(sql_procedure)
+            logging.info("Procedure Criada!")
+        except Error as err:
+            logging.error(f"Erro ao criar procedure: {err}")
+        finally:
+            if conn:
+                conn.close()
+                logging.info("Conexão fechada!")
+    
+    @staticmethod
     def insert_user(user, password):
         query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
         try:
