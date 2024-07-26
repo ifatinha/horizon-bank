@@ -49,7 +49,7 @@ class DatabaseOperations:
             if conn:
                 conn.close()
                 logging.info("Conexão fechada!")
-    
+
     @staticmethod
     def insert_user(user, password):
         query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
@@ -132,6 +132,7 @@ class DatabaseOperations:
             cursor = conn.cursor()
             cursor.execute(query, customer)
             conn.commit()
+            print("### Gerente cadastrado com sucesso. ###")
             return cursor.lastrowid
         except Error as err:
             logging.error(f"Erro ao executar SQL: {err}")

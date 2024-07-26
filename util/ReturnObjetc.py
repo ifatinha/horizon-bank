@@ -16,51 +16,6 @@ from classes.Transfer import Transfer
 from datetime import datetime
 
 
-def return_address():
-    print("### Informações de Endereço ###")
-    street = input("Endereço: ")
-    number = input("Número: ")
-    neighborhood = input("Bairro: ")
-    postal_code = input("CEP: ")
-    city = input("Cidade: ")
-    state = input("Estado: ")
-
-    while True:
-        type_address = int(
-            input(
-                "Tipo de Endereço: ('[1] - Residential', '[2] - Business', '[3] - Shipping', '[4] - Billing'): "
-            )
-        )
-
-        if type_address == 1:
-            address_type = "Residential"
-            break
-        elif type_address == 2:
-            address_type = "Business"
-            break
-        elif type_address == 3:
-            address_type = "Shipping"
-            break
-        elif type_address == 4:
-            address_type = "Billing"
-            break
-        else:
-            print("@@@ Opção Inválida, tente novamente.")
-
-    notes = input("Detalhes: ")
-
-    return Address(
-        number,
-        street,
-        postal_code,
-        neighborhood,
-        city,
-        state,
-        address_type,
-        notes,
-    )
-
-
 def return_manager():
     print("### Dados Pessoais ###")
 
@@ -76,7 +31,7 @@ def return_manager():
     password = input("Senha: ")
     phone = input("Phone: ")
 
-    address = return_address()
+    address = Address.get_instance()
     email = Manager.generate_email(fullname)
     manager = Manager(fullname, email, password, phone, address, employee_number)
     return manager
@@ -113,7 +68,7 @@ def return_branch():
         branch_number = int(input("Novo Número: "))
         result = DatabaseOperations.find_branch(branch_number)
 
-    branch_address = return_address()
+    branch_address = Address.get_instance()
     manager = find_manager_bd()
     print(manager)
 
@@ -138,7 +93,7 @@ def return_individual():
     email = input("Email: ")
     password = input("Senha: ")
     phone = input("Telefone: ")
-    address = return_address()
+    address = Address.get_instance()
 
     individual = Individual(fullname, email, password, phone, address, ssn, birth)
 
@@ -160,7 +115,7 @@ def return_company():
     email = input("Email: ")
     password = input("Senha: ")
     phone = input("Telefone: ")
-    address = return_address()
+    address = Address.get_instance()
 
     company = Company(fullname, email, password, phone, address, ein, legal_name)
 
