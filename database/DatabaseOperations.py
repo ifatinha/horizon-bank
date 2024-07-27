@@ -50,25 +50,6 @@ class DatabaseOperations:
                 conn.close()
                 logging.info("Conexão fechada!")
 
-    # @staticmethod
-    # def insert_address(address):
-    #     query = """
-    #         INSERT INTO address(number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes)
-    #         VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
-
-    #     try:
-    #         conn = DatabaseOperations.getConnect().connect()
-    #         cursor = conn.cursor()
-    #         cursor.execute(query, address.to_tuple())
-    #         conn.commit()
-    #         return cursor.lastrowid
-    #     except Error as err:
-    #         logging.error(f"Erro ao executar SQL: {err}")
-    #     finally:
-    #         if conn:
-    #             conn.close()
-    #             logging.info("Conexão fechada!")
-
     @staticmethod
     def find_address(manager_id):
         query = """SELECT number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes 

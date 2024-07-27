@@ -1,4 +1,4 @@
-from classes.Address import Address
+from controller.address_creator import AddressCreator
+from classes.AddressTypes import AddressType
 
-address = Address.get_instance()
-print(address)
+print(AddressType.RESIDENTIAL.value)

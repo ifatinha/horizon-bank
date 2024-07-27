@@ -1,40 +1,26 @@
 from datetime import datetime
+from dataclasses import dataclass, field
 
 
+@dataclass
 class Branch:
 
-    def __init__(self, number, address, manager) -> None:
-        self.__id_branch = None
-        self.number = number
-        self.__name = "Horizon Bank"
-        self.phone = "0800-123-3001"
-        self.address = address
-        self.manager = manager
-        self.open_date = datetime.now()
-
-    @property
-    def id_branch(self):
-        return self.__id_branch
-
-    @id_branch.setter
-    def id_branch(self, id_branch):
-        self.__id_branch = id_branch
-
-    @property
-    def name(self):
-        return self.__name
-
-    @name.setter
-    def name(self, name):
-        self.__name = name
+    number: int
+    address: object
+    manager: object
+    id_branch: int = field(default=None, init=False)
+    name: str = field(default="Horizon Bank", init=False)
+    phone: str = field(default="0800-123-3001", init=False)
+    open_date: datetime = field(default_factory=datetime.now, init=False)
 
     def __str__(self) -> str:
         return (
             f"Agência: {self.name}\n"
-            f"Número: {self.number}"
-            f"Aberta em: {self.open_date}\n"
-            f"Gerente: {self.manager.fullname}\n"
-            f"{self.address}"
+            f"Número da Agência: {self.number}\n"
+            f"Telefone: {self.phone}\n"
+            f"{self.address}\n"
+            f"Gerente: {self.manager.fullname} (Número do Funcionário: {self.manager.employee_number})\n"
+            f"Data de Abertura: {self.open_date.strftime('%d/%m/%Y %H:%M:%S')}\n"
         )
 
     def to_tuple(self):

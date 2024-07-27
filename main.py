@@ -1,6 +1,6 @@
 from database.DatabaseOperations import DatabaseOperations
 from sql.script_create_tables import create_database, create_tables, insert_default_user
-from classes.Manager import Manager
+from controller.manager_creator import ManagerCreator
 
 from util.menu import (
     main_menu,
@@ -425,7 +425,7 @@ def main():
                                 "Informe os dados abaixo para cadastar um novo gerente"
                             )
 
-                            manager = Manager.get_instance()
+                            manager = ManagerCreator.get_instance()
                             insert_manager(manager)
 
                         elif op_manager == "0":
@@ -440,7 +440,7 @@ def main():
 
                     if managers:
                         for manager in managers:
-                            print(Manager.from_db_record(manager))
+                            print(ManagerCreator.from_db_record(manager))
                     else:
                         print("@@@ Nenhum gerente encontrado. @@@")
 

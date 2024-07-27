@@ -1,5 +1,5 @@
 from database.DatabaseOperations import DatabaseOperations
-from classes.Address import Address
+from controller.address_creator import AddressCreator
 from classes.Manager import Manager
 from classes.Branch import Branch
 from classes.Individual import Individual
@@ -38,7 +38,7 @@ def find_manager_bd():
 
 def return_branch():
 
-    print("### Informe os dados abaixo para cadastrar uma nova filial ###")
+    print("### Informe os dados abaixo para cadastrar uma nova agência ###")
     branch_number = int(input("Número: "))
     result = DatabaseOperations.find_branch(branch_number)
 
@@ -47,7 +47,7 @@ def return_branch():
         branch_number = int(input("Novo Número: "))
         result = DatabaseOperations.find_branch(branch_number)
 
-    branch_address = Address.get_instance()
+    branch_address = AddressCreator.get_instance()
     manager = find_manager_bd()
     print(manager)
 
@@ -72,7 +72,7 @@ def return_individual():
     email = input("Email: ")
     password = input("Senha: ")
     phone = input("Telefone: ")
-    address = Address.get_instance()
+    address = AddressCreator.get_instance()
 
     individual = Individual(fullname, email, password, phone, address, ssn, birth)
 
@@ -94,7 +94,7 @@ def return_company():
     email = input("Email: ")
     password = input("Senha: ")
     phone = input("Telefone: ")
-    address = Address.get_instance()
+    address = AddressCreator.get_instance()
 
     company = Company(fullname, email, password, phone, address, ein, legal_name)
 

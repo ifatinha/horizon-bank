@@ -16,7 +16,6 @@ logging.basicConfig(
 )
 
 
-@staticmethod
 def insert_manager(manager):
 
     try:
@@ -36,7 +35,7 @@ def insert_manager(manager):
         # Inserindo os dados de acesso
         insert_user(manager.token, manager.password)
 
-        query = """INSERT INTO manager(manager_id, employee_number, hire_date, manager_status) 
+        query = """INSERT INTO manager(manager_id, employee_number, hire_date, manager_status)
                 VALUES(%s, %s, %s, %s)"""
         cursor.execute(query, (id_customer,) + manager.to_tuple())
 
@@ -52,10 +51,10 @@ def insert_manager(manager):
             logging.info("Conexão fechada!")
 
 
-@staticmethod
 def list_managers():
     query = """
-            SELECT 
+            SELECT
+            C.id, 
             C.fullname, 
             C.email, 
             C.phone, 
@@ -95,18 +94,74 @@ def list_managers():
             logging.info("Conexão fechada!")
 
 
-@staticmethod
-def find_manager_status(employee_number):
-    query = """SELECT C.id, C.fullname, M.employee_number, M.manager_status 
-                FROM customer C 
-                JOIN manager M ON C.ID = M.manager_id 
-                WHERE M.employee_number = %s AND M.manager_status = TRUE"""
+def find_manager_employee_number(employee_number):
+    query = "SELECT employee_number FROM manager WHERE employee_number = %s"
+
     try:
         conn = Connection().connect()
         cursor = conn.cursor()
         cursor.execute(query, (employee_number,))
         resultado = cursor.fetchone()
         return resultado
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")
+
+
+def find_manager_status(employee_number):
+    query = """
+        SELECT 
+            C.id,
+            C.fullname, 
+            C.email, 
+            C.phone, 
+            M.employee_number, 
+            M.hire_date, 
+            M.manager_status, 
+            A.number, 
+            A.street, 
+            A.postal_code, 
+            A.neighborhood, 
+            A.city, 
+            A.state, 
+            A.country, 
+            A.address_type, 
+            A.is_primary, 
+            A.notes
+            FROM customer C
+            INNER JOIN 
+                manager M ON C.id = M.manager_id
+            INNER JOIN 
+                address_customer AC ON AC.id_customer = M.manager_id
+            INNER JOIN 
+                address A ON A.id = AC.id_address
+			WHERE M.employee_number = %s AND M.manager_status = TRUE;
+    """
+    try:
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (employee_number,))
+        resultado = cursor.fetchone()
+        return resultado
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")
+
+
+def update_status_manager(employee_number):
+    query = "UPDATE manager SET manager_status = False where employee_number = %s"
+
+    try:
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (employee_number,))
+        conn.commit()
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")
     finally:
