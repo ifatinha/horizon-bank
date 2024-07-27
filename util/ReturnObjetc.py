@@ -16,46 +16,6 @@ from classes.Transfer import Transfer
 from datetime import datetime
 
 
-def find_manager_bd():
-    print("### Gerente ###")
-    employee_number = int(input("Número do gerente: "))
-    result = DatabaseOperations.find_manager_status(employee_number)
-
-    while result is None:
-        print("@@@ Nenhum Gerente Encontrado. @@@")
-        employee_number = int(input("Codigo do gerente: "))
-        result = DatabaseOperations.find_manager_status(employee_number)
-
-    manager_id, fullname, employee_number, manager_status = result
-
-    manager = Manager(
-        fullname, None, None, None, None, employee_number, status=manager_status
-    )
-    manager.customer_id = manager_id
-
-    return manager
-
-
-def return_branch():
-
-    print("### Informe os dados abaixo para cadastrar uma nova agência ###")
-    branch_number = int(input("Número: "))
-    result = DatabaseOperations.find_branch(branch_number)
-
-    while result is not None:
-        print("@@@ Já existe uma agência cadastrada com esse número. @@@")
-        branch_number = int(input("Novo Número: "))
-        result = DatabaseOperations.find_branch(branch_number)
-
-    branch_address = AddressCreator.get_instance()
-    manager = find_manager_bd()
-    print(manager)
-
-    branch = Branch(branch_number, branch_address, manager)
-
-    return branch
-
-
 def return_individual():
     print("### Dados Pessoais ###")
     ssn = input("SSN: ")

@@ -16,6 +16,7 @@ class ManagerCreator:
         from database.manager_db import find_manager_employee_number
         from controller.address_creator import AddressCreator
 
+        print("Informe os dados abaixo para cadastar um novo gerente")
         print("### Dados Pessoais ###")
 
         while True:

@@ -8,22 +8,6 @@ def main_menu():
     return input(menu)
 
 
-def manager_menu():
-    menu = """################ MENU GERENTE ################
-    [1] Novo Cliente
-    [2] Nova Conta
-    [3] Contas Cliente
-    [4] Listar Clientes
-    [5] Cadastrar Gerente
-    [6] Gerentes Cadastrados
-    [7] Cadastrar Agência
-    [8] Agências Cadastradas
-    [0] Sair
-    => """
-
-    return input(menu)
-
-
 def client_menu():
     menu = """################ MENU CLIENTE ################
     [1] Operações Bancárias
@@ -40,6 +24,17 @@ def menu_banking_operations():
     [2] Saque
     [3] Transferência
     [4] Extrato
+    [0] Sair
+    => """
+
+    return input(menu)
+
+
+def manager_menu():
+    menu = """################ MENU GERENTE ################
+    [1] Gerenciar Clientes
+    [2] Gerenciar Gerentes
+    [3] Gerenciar Agências
     [0] Sair
     => """
 
@@ -67,18 +62,20 @@ def menu_type_account():
     return input(menu)
 
 
-def menu_create_manager():
-    menu = """################ CADASTRAR GERENTE ################
+def menu_managers():
+    menu = """################ GERENCIAR GERENTES ################
         [1] Novo Gerente
+        [2] Gerentes Cadastrados
         [0] Sair
         => """
 
     return input(menu)
 
 
-def menu_create_branch():
-    menu = """################ CADASTRAR FILIAL ################
-        [1] Nova Filial
+def menu_branchs():
+    menu = """################ GERENCIAR AGÊNCIAS ################
+        [1] Nova Agência
+        [2] Agências Cadastradas
         [0] Sair
         => """
 

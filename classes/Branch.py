@@ -23,7 +23,7 @@ class Branch:
             f"Data de Abertura: {self.open_date.strftime('%d/%m/%Y %H:%M:%S')}\n"
         )
 
-    def to_tuple(self):
+    def to_tuple(self) -> tuple:
         return (
             self.number,
             self.name,

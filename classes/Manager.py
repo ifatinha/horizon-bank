@@ -15,9 +15,9 @@ class Manager(Customer):
         status=True,
     ) -> None:
         super().__init__(fullname, email, password, phone, address)
-        self.__employee_number = employee_number
-        self.__hire_date = datetime.now()
-        self.__status = status
+        self.employee_number = employee_number
+        self.hire_date = datetime.now()
+        self.status = status
 
     @property
     def employee_number(self):
@@ -44,11 +44,11 @@ class Manager(Customer):
         self.__status = status
 
     def update(self, **kwargs):
-        return super().update(**kwargs)
+        super().update(**kwargs)
 
     def __str__(self) -> str:
         return (
-            f"Id: {self.customer_id}\n"
+            f"Código: {self.customer_id}\n"
             f"Nome: {self.fullname}\n"
             f"Email: {self.email}\n"
             f"Telefone: {self.phone}\n"

@@ -104,3 +104,172 @@
 2024-07-27 19:12:50,063 - INFO - Conexão fechada!
 2024-07-27 19:12:51,269 - INFO - Conexão bem-sucedida!
 2024-07-27 19:12:51,270 - INFO - Conexão fechada!
+2024-07-27 19:24:07,173 - INFO - package: mysql.connector.plugins
+2024-07-27 19:24:07,174 - INFO - plugin_name: caching_sha2_password
+2024-07-27 19:24:07,174 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 19:24:07,175 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:07,177 - INFO - Conexão fechada!
+2024-07-27 19:24:16,591 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:16,593 - INFO - Conexão fechada!
+2024-07-27 19:24:48,799 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:48,837 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:48,843 - INFO - Customer inserido no banco de dados.
+2024-07-27 19:24:48,843 - INFO - Conexão fechada!
+2024-07-27 19:24:48,878 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:48,882 - INFO - Endereço inserido no banco de dados.
+2024-07-27 19:24:48,882 - INFO - Conexão fechada!
+2024-07-27 19:24:48,918 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:48,922 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-27 19:24:48,922 - INFO - Conexão fechada!
+2024-07-27 19:24:48,957 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:48,961 - INFO - Usuário inserido no banco de dados!
+2024-07-27 19:24:48,961 - INFO - Conexão fechada!
+2024-07-27 19:24:48,965 - INFO - Gerente inserido no banco de dados.
+2024-07-27 19:24:48,965 - INFO - Conexão fechada!
+2024-07-27 19:24:55,407 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:55,413 - INFO - Conexão fechada!
+2024-07-27 19:24:56,278 - INFO - Conexão bem-sucedida!
+2024-07-27 19:24:56,279 - INFO - Conexão fechada!
+2024-07-27 19:34:47,073 - INFO - package: mysql.connector.plugins
+2024-07-27 19:34:47,073 - INFO - plugin_name: caching_sha2_password
+2024-07-27 19:34:47,073 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 19:34:47,075 - INFO - Conexão bem-sucedida!
+2024-07-27 19:34:47,078 - INFO - Conexão fechada!
+2024-07-27 19:34:58,183 - INFO - package: mysql.connector.plugins
+2024-07-27 19:34:58,183 - INFO - plugin_name: caching_sha2_password
+2024-07-27 19:34:58,183 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 19:34:58,185 - INFO - Conexão bem-sucedida!
+2024-07-27 19:34:58,187 - INFO - Conexão fechada!
+2024-07-27 19:34:59,931 - INFO - Conexão bem-sucedida!
+2024-07-27 19:34:59,932 - INFO - Conexão fechada!
+2024-07-27 19:35:00,849 - INFO - Conexão bem-sucedida!
+2024-07-27 19:35:00,850 - INFO - Conexão fechada!
+2024-07-27 19:37:21,880 - INFO - package: mysql.connector.plugins
+2024-07-27 19:37:21,880 - INFO - plugin_name: caching_sha2_password
+2024-07-27 19:37:21,880 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 19:37:21,881 - INFO - Conexão bem-sucedida!
+2024-07-27 19:37:21,882 - INFO - Conexão fechada!
+2024-07-27 19:37:32,651 - INFO - package: mysql.connector.plugins
+2024-07-27 19:37:32,652 - INFO - plugin_name: caching_sha2_password
+2024-07-27 19:37:32,652 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 19:37:32,653 - INFO - Conexão bem-sucedida!
+2024-07-27 19:37:32,654 - INFO - Conexão fechada!
+2024-07-27 19:37:34,176 - INFO - Conexão bem-sucedida!
+2024-07-27 19:37:34,177 - INFO - Conexão fechada!
+2024-07-27 20:05:43,413 - INFO - package: mysql.connector.plugins
+2024-07-27 20:05:43,413 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:05:43,414 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:05:43,415 - INFO - Conexão bem-sucedida!
+2024-07-27 20:05:43,417 - INFO - Conexão fechada!
+2024-07-27 20:05:45,604 - INFO - Conexão bem-sucedida!
+2024-07-27 20:05:45,607 - INFO - Conexão fechada!
+2024-07-27 20:05:47,177 - INFO - Conexão bem-sucedida!
+2024-07-27 20:05:47,179 - INFO - Conexão fechada!
+2024-07-27 20:06:15,005 - INFO - Conexão bem-sucedida!
+2024-07-27 20:06:15,009 - INFO - Conexão fechada!
+2024-07-27 20:06:20,131 - INFO - Conexão bem-sucedida!
+2024-07-27 20:06:20,132 - INFO - Conexão fechada!
+2024-07-27 20:23:16,043 - INFO - package: mysql.connector.plugins
+2024-07-27 20:23:16,043 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:23:16,043 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:23:16,045 - INFO - Conexão bem-sucedida!
+2024-07-27 20:23:16,046 - INFO - Conexão fechada!
+2024-07-27 20:23:37,785 - INFO - Conexão bem-sucedida!
+2024-07-27 20:23:37,788 - INFO - Conexão fechada!
+2024-07-27 20:23:40,414 - INFO - Conexão bem-sucedida!
+2024-07-27 20:23:40,415 - INFO - Conexão fechada!
+2024-07-27 20:24:20,089 - INFO - Conexão bem-sucedida!
+2024-07-27 20:24:20,090 - INFO - Conexão fechada!
+2024-07-27 20:24:27,391 - INFO - Conexão bem-sucedida!
+2024-07-27 20:24:27,396 - INFO - Conexão fechada!
+2024-07-27 20:24:27,437 - INFO - Conexão bem-sucedida!
+2024-07-27 20:24:27,447 - INFO - Endereço inserido no banco de dados.
+2024-07-27 20:24:27,447 - INFO - Conexão fechada!
+2024-07-27 20:24:27,494 - INFO - Conexão bem-sucedida!
+2024-07-27 20:24:27,501 - INFO - Conexão fechada!
+2024-07-27 20:24:27,537 - INFO - Conexão bem-sucedida!
+2024-07-27 20:24:27,542 - INFO - Agência inserida com sucesso!
+2024-07-27 20:24:27,542 - INFO - Conexão fechada!
+2024-07-27 20:35:41,677 - INFO - package: mysql.connector.plugins
+2024-07-27 20:35:41,677 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:35:41,677 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:35:41,678 - INFO - Conexão bem-sucedida!
+2024-07-27 20:35:41,680 - INFO - Conexão fechada!
+2024-07-27 20:35:45,820 - INFO - Conexão bem-sucedida!
+2024-07-27 20:35:45,821 - INFO - Conexão fechada!
+2024-07-27 20:36:04,520 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:04,522 - INFO - Conexão fechada!
+2024-07-27 20:36:34,942 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:34,987 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:34,993 - INFO - Customer inserido no banco de dados.
+2024-07-27 20:36:34,994 - INFO - Conexão fechada!
+2024-07-27 20:36:35,031 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:35,035 - INFO - Endereço inserido no banco de dados.
+2024-07-27 20:36:35,035 - INFO - Conexão fechada!
+2024-07-27 20:36:35,072 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:35,076 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-27 20:36:35,076 - INFO - Conexão fechada!
+2024-07-27 20:36:35,112 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:35,115 - INFO - Usuário inserido no banco de dados!
+2024-07-27 20:36:35,115 - INFO - Conexão fechada!
+2024-07-27 20:36:35,119 - INFO - Gerente inserido no banco de dados.
+2024-07-27 20:36:35,119 - INFO - Conexão fechada!
+2024-07-27 20:36:37,830 - INFO - Conexão bem-sucedida!
+2024-07-27 20:36:37,835 - INFO - Conexão fechada!
+2024-07-27 20:38:20,761 - INFO - package: mysql.connector.plugins
+2024-07-27 20:38:20,761 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:38:20,761 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:38:20,762 - INFO - Conexão bem-sucedida!
+2024-07-27 20:38:20,764 - INFO - Conexão fechada!
+2024-07-27 20:38:24,532 - INFO - Conexão bem-sucedida!
+2024-07-27 20:38:24,534 - INFO - Conexão fechada!
+2024-07-27 20:39:08,559 - INFO - package: mysql.connector.plugins
+2024-07-27 20:39:08,559 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:39:08,559 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:39:08,560 - INFO - Conexão bem-sucedida!
+2024-07-27 20:39:08,569 - INFO - Conexão fechada!
+2024-07-27 20:39:11,357 - INFO - Conexão bem-sucedida!
+2024-07-27 20:39:11,358 - INFO - Conexão fechada!
+2024-07-27 20:50:36,425 - INFO - package: mysql.connector.plugins
+2024-07-27 20:50:36,426 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:50:36,426 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:50:36,427 - INFO - Conexão bem-sucedida!
+2024-07-27 20:50:36,428 - INFO - Conexão fechada!
+2024-07-27 20:53:34,124 - INFO - package: mysql.connector.plugins
+2024-07-27 20:53:34,124 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:53:34,125 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:53:34,126 - INFO - Conexão bem-sucedida!
+2024-07-27 20:53:34,131 - INFO - Conexão fechada!
+2024-07-27 20:53:49,786 - INFO - Conexão bem-sucedida!
+2024-07-27 20:53:49,788 - INFO - Conexão fechada!
+2024-07-27 20:54:08,351 - INFO - package: mysql.connector.plugins
+2024-07-27 20:54:08,351 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:54:08,351 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:54:08,353 - INFO - Conexão bem-sucedida!
+2024-07-27 20:54:08,354 - INFO - Conexão fechada!
+2024-07-27 20:54:13,482 - INFO - Conexão bem-sucedida!
+2024-07-27 20:54:13,486 - INFO - Conexão fechada!
+2024-07-27 20:55:19,472 - INFO - package: mysql.connector.plugins
+2024-07-27 20:55:19,472 - INFO - plugin_name: caching_sha2_password
+2024-07-27 20:55:19,473 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 20:55:19,474 - INFO - Conexão bem-sucedida!
+2024-07-27 20:55:19,475 - INFO - Conexão fechada!
+2024-07-27 20:55:30,284 - INFO - Conexão bem-sucedida!
+2024-07-27 20:55:30,285 - INFO - Conexão fechada!
+2024-07-27 20:56:13,090 - INFO - Conexão bem-sucedida!
+2024-07-27 20:56:13,128 - INFO - Conexão bem-sucedida!
+2024-07-27 20:56:13,135 - INFO - Customer inserido no banco de dados.
+2024-07-27 20:56:13,135 - INFO - Conexão fechada!
+2024-07-27 20:56:13,170 - INFO - Conexão bem-sucedida!
+2024-07-27 20:56:13,175 - INFO - Endereço inserido no banco de dados.
+2024-07-27 20:56:13,175 - INFO - Conexão fechada!
+2024-07-27 20:56:13,211 - INFO - Conexão bem-sucedida!
+2024-07-27 20:56:13,214 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-27 20:56:13,214 - INFO - Conexão fechada!
+2024-07-27 20:56:13,249 - INFO - Conexão bem-sucedida!
+2024-07-27 20:56:13,253 - INFO - Usuário inserido no banco de dados!
+2024-07-27 20:56:13,253 - INFO - Conexão fechada!
+2024-07-27 20:56:13,257 - INFO - Gerente inserido no banco de dados.
+2024-07-27 20:56:13,257 - INFO - Conexão fechada!
+2024-07-27 20:56:15,687 - INFO - Conexão bem-sucedida!
+2024-07-27 20:56:15,691 - INFO - Conexão fechada!

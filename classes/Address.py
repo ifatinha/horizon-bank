@@ -14,7 +14,7 @@ class Address:
     city: str
     state: str
     address_type: AddressType = AddressType.RESIDENTIAL.value
-    country: str = field(default="Brasil")
+    country: str = field(default="Brasil", init=False)
     notes: str = ""
     is_primary: bool = True
     created_at: datetime = field(default_factory=datetime.now)

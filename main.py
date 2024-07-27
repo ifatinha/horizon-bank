@@ -1,6 +1,7 @@
 from database.DatabaseOperations import DatabaseOperations
 from sql.script_create_tables import create_database, create_tables, insert_default_user
 from controller.manager_creator import ManagerCreator
+from controller.branch_creator import BranchCreator
 
 from util.menu import (
     main_menu,
@@ -8,14 +9,13 @@ from util.menu import (
     client_menu,
     menu_type_customer,
     menu_type_account,
-    menu_create_manager,
-    menu_create_branch,
+    menu_managers,
+    menu_branchs,
     menu_typle_customers,
     menu_banking_operations,
 )
 
 from util.ReturnObjetc import (
-    return_branch,
     return_individual,
     return_company,
     return_account,
@@ -29,6 +29,7 @@ from util.ReturnObjetc import (
 
 from database.users_db import insert_user, login_user
 from database.manager_db import insert_manager, list_managers
+from database.branch_db import insert_branch
 
 
 def main():
@@ -248,240 +249,235 @@ def main():
 
             if len(status):
 
-                mg_option = manager_menu()
+                while True:
+                    mg_option = manager_menu()
 
-                if mg_option == "1":
-                    """Cadastrar Novo Cliente"""
+                    if mg_option == "1":
+                        """Gerenciar Clientes"""
 
-                    while True:
-                        tp_option = menu_type_customer()
+                        while True:
+                            tp_option = menu_type_customer()
 
-                        if tp_option == "1":
-                            """Pessoa Fisica"""
-                            individual = return_individual()
-                            id_customer = DatabaseOperations.insert_customer(
-                                individual.customer_to_tuple()
-                            )
-                            id_address = DatabaseOperations.insert_address(
-                                individual.address
-                            )
-                            DatabaseOperations.insert_address_customer(
-                                id_address, id_customer
-                            )
-                            insert_user(individual.token, individual.password)
-                            DatabaseOperations.insert_invidual(
-                                ((id_customer,) + individual.to_tuple())
-                            )
-                        elif tp_option == "2":
-                            """Pessoa Juridica"""
-                            company = return_company()
-                            id_customer = DatabaseOperations.insert_customer(
-                                company.customer_to_tuple()
-                            )
-                            id_address = DatabaseOperations.insert_address(
-                                company.address
-                            )
-                            DatabaseOperations.insert_address_customer(
-                                id_address, id_customer
-                            )
-                            insert_user(company.token, company.password)
+                            if tp_option == "1":
+                                """Pessoa Fisica"""
+                                individual = return_individual()
+                                id_customer = DatabaseOperations.insert_customer(
+                                    individual.customer_to_tuple()
+                                )
+                                id_address = DatabaseOperations.insert_address(
+                                    individual.address
+                                )
+                                DatabaseOperations.insert_address_customer(
+                                    id_address, id_customer
+                                )
+                                insert_user(individual.token, individual.password)
+                                DatabaseOperations.insert_invidual(
+                                    ((id_customer,) + individual.to_tuple())
+                                )
+                            elif tp_option == "2":
+                                """Pessoa Juridica"""
+                                company = return_company()
+                                id_customer = DatabaseOperations.insert_customer(
+                                    company.customer_to_tuple()
+                                )
+                                id_address = DatabaseOperations.insert_address(
+                                    company.address
+                                )
+                                DatabaseOperations.insert_address_customer(
+                                    id_address, id_customer
+                                )
+                                insert_user(company.token, company.password)
 
-                            DatabaseOperations.insert_company(
-                                ((id_customer,) + company.to_tuple())
-                            )
-                        elif tp_option == "0":
-                            break
+                                DatabaseOperations.insert_company(
+                                    ((id_customer,) + company.to_tuple())
+                                )
+                            elif tp_option == "0":
+                                break
 
-                        else:
-                            print("@@@ Opção inválida @@@")
-
-                elif mg_option == "2":
-                    """Cadastrar Nova Conta"""
-
-                    while True:
-                        menu_option = menu_type_account()
-
-                        if menu_option == "1":
-                            """Conta Poupança"""
-                            savign_account = return_savign_account()
-                            id_account = DatabaseOperations.insert_account(
-                                savign_account.super_to_tuple()
-                            )
-
-                            savign_account.id_account = id_account
-                            DatabaseOperations.insert_savign_account(
-                                savign_account.to_tuple()
-                            )
-
-                            historic = return_historic(savign_account)
-                            DatabaseOperations.insert_historic(historic)
-
-                        elif menu_option == "2":
-                            """Conta Corrente"""
-                            current_account = return_current_account()
-                            id_account = DatabaseOperations.insert_account(
-                                current_account.super_to_tuple()
-                            )
-                            current_account.id_account = id_account
-
-                            DatabaseOperations.insert_current_account(
-                                current_account.to_tuple()
-                            )
-                            historic = return_historic(current_account)
-                            DatabaseOperations.insert_historic(historic)
-                        elif menu_option == "3":
-                            """Conta Empresárial"""
-
-                            account = return_account()
-                            id_account = DatabaseOperations.insert_account(
-                                account.to_tuple()
-                            )
-                            account.id_account = id_account
-                            historic = return_historic(account)
-                            DatabaseOperations.insert_historic(historic)
-                        elif menu_option == "0":
-                            break
-
-                        else:
-                            print("@@@ Opção Inválida! Tente novamente. @@@")
-
-                elif mg_option == "3":
-                    """Contas Cliente"""
-
-                    while True:
-                        option = menu_type_customer()
-
-                        if option == "1":
-                            token = input("Token: ")
-                            result = DatabaseOperations.find_accounts_individual(token)
-
-                            if len(result) > 0:
-                                print(result)
                             else:
-                                print(
-                                    "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
+                                print("@@@ Opção inválida @@@")
+
+                    elif mg_option == "20":
+                        """Cadastrar Nova Conta"""
+
+                        while True:
+                            menu_option = menu_type_account()
+
+                            if menu_option == "1":
+                                """Conta Poupança"""
+                                savign_account = return_savign_account()
+                                id_account = DatabaseOperations.insert_account(
+                                    savign_account.super_to_tuple()
                                 )
 
-                        elif option == "2":
-                            token = input("Token: ")
-
-                            result = DatabaseOperations.find_accounts_company(token)
-
-                            if len(result) > 0:
-                                print(result)
-                            else:
-                                print(
-                                    "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
+                                savign_account.id_account = id_account
+                                DatabaseOperations.insert_savign_account(
+                                    savign_account.to_tuple()
                                 )
 
-                        elif option == "0":
-                            print("@@@ Retornando ao menu principal. @@@")
-                            break
+                                historic = return_historic(savign_account)
+                                DatabaseOperations.insert_historic(historic)
 
-                        else:
-                            print("@@@ Opção Inválida! @@@")
+                            elif menu_option == "2":
+                                """Conta Corrente"""
+                                current_account = return_current_account()
+                                id_account = DatabaseOperations.insert_account(
+                                    current_account.super_to_tuple()
+                                )
+                                current_account.id_account = id_account
 
-                elif mg_option == "4":
-                    """Listar Clientes"""
+                                DatabaseOperations.insert_current_account(
+                                    current_account.to_tuple()
+                                )
+                                historic = return_historic(current_account)
+                                DatabaseOperations.insert_historic(historic)
+                            elif menu_option == "3":
+                                """Conta Empresárial"""
 
-                    while True:
-                        option = menu_typle_customers()
+                                account = return_account()
+                                id_account = DatabaseOperations.insert_account(
+                                    account.to_tuple()
+                                )
+                                account.id_account = id_account
+                                historic = return_historic(account)
+                                DatabaseOperations.insert_historic(historic)
+                            elif menu_option == "0":
+                                break
 
-                        if option == "1":
+                            else:
+                                print("@@@ Opção Inválida! Tente novamente. @@@")
 
-                            result = DatabaseOperations.list_individual_customers()
+                    elif mg_option == "30":
+                        """Contas Cliente"""
 
-                            if len(result):
+                        while True:
+                            option = menu_type_customer()
+
+                            if option == "1":
+                                token = input("Token: ")
+                                result = DatabaseOperations.find_accounts_individual(
+                                    token
+                                )
+
+                                if len(result) > 0:
+                                    print(result)
+                                else:
+                                    print(
+                                        "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
+                                    )
+
+                            elif option == "2":
+                                token = input("Token: ")
+
+                                result = DatabaseOperations.find_accounts_company(token)
+
+                                if len(result) > 0:
+                                    print(result)
+                                else:
+                                    print(
+                                        "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
+                                    )
+
+                            elif option == "0":
+                                print("@@@ Retornando ao menu principal. @@@")
+                                break
+
+                            else:
+                                print("@@@ Opção Inválida! @@@")
+
+                    elif mg_option == "40":
+                        """Listar Clientes"""
+
+                        while True:
+                            option = menu_typle_customers()
+
+                            if option == "1":
+
+                                result = DatabaseOperations.list_individual_customers()
+
+                                if len(result):
+                                    print("##### CLIENTES ENCONTRADOS #####")
+                                    for client in result:
+                                        print(client)
+                                else:
+                                    print("@@@ Nenhum cliente encontrado. @@@")
+
+                            elif option == "2":
                                 print("##### CLIENTES ENCONTRADOS #####")
-                                for client in result:
-                                    print(client)
+                                result = DatabaseOperations.list_company_customers()
+
+                                if len(result):
+                                    for client in result:
+                                        print(client)
+                                else:
+                                    print("@@@ Nenhum cliente encontrado. @@@")
+
+                            elif option == "0":
+                                print("### Retornando ao menu principal. ###")
+                                break
                             else:
-                                print("@@@ Nenhum cliente encontrado. @@@")
+                                print("@@@ Opção Inválida. @@@")
 
-                        elif option == "2":
-                            print("##### CLIENTES ENCONTRADOS #####")
-                            result = DatabaseOperations.list_company_customers()
+                    elif mg_option == "70":
+                        """Gerenciamento de Agências"""
 
-                            if len(result):
-                                for client in result:
-                                    print(client)
+                        while True:
+                            op_branch = menu_create_branch()
+
+                            if op_branch == "1":
+
+                                branch = BranchCreator.get_instance()
+                                insert_branch(branch)
+
+                            elif op_branch == "0":
+                                break
                             else:
-                                print("@@@ Nenhum cliente encontrado. @@@")
+                                print("@@@ Opção Inválida! Tente novamente. @@@")
 
-                        elif option == "0":
-                            print("### Retornando ao menu principal. ###")
-                            break
+                    elif mg_option == "80":
+                        """Agências Cadastradas"""
+                        branchs = DatabaseOperations.list_branchs()
+
+                        if len(branchs) > 0:
+                            for branch in branchs:
+                                print(branch)
                         else:
-                            print("@@@ Opção Inválida. @@@")
+                            print("@@@ Nenhum gerente encontrado. @@@")
 
-                elif mg_option == "5":
-                    """Cadastrar Gerente"""
+                    elif mg_option == "2":
 
-                    while True:
-                        op_manager = menu_create_manager()
+                        while True:
+                            option_manager = menu_managers()
 
-                        if op_manager == "1":
-                            print(
-                                "Informe os dados abaixo para cadastar um novo gerente"
-                            )
+                            if option_manager == "1":
 
-                            manager = ManagerCreator.get_instance()
-                            insert_manager(manager)
+                                """Novo Gerente"""
+                                manager = ManagerCreator.get_instance()
+                                insert_manager(manager)
 
-                        elif op_manager == "0":
-                            break
+                            elif option_manager == "2":
 
-                        else:
-                            print("@@@ Opção Inválida! Tente novamente. @@@")
+                                """Gerentes Cadastrados"""
+                                managers = list_managers()
 
-                elif mg_option == "6":
-                    """Listar Gerentes"""
-                    managers = list_managers()
+                                if managers:
+                                    for manager in managers:
+                                        print(ManagerCreator.from_db_record(manager))
 
-                    if managers:
-                        for manager in managers:
-                            print(ManagerCreator.from_db_record(manager))
+                                else:
+                                    print("@@@ Nenhum gerente cadastrado. @@@")
+                            elif option_manager == "0":
+                                """Retornando ao menu principal"""
+                                break
+                            else:
+                                print(
+                                    "\n@@@ Operação inválida, selecione novamente. @@@\n"
+                                )
+
+                    elif mg_option == "0":
+                        break
                     else:
-                        print("@@@ Nenhum gerente encontrado. @@@")
-
-                elif mg_option == "7":
-                    """Cadastrar Filial"""
-
-                    while True:
-                        op_branch = menu_create_branch()
-
-                        if op_branch == "1":
-                            branch = return_branch()
-                            id_address = DatabaseOperations.insert_address(
-                                branch.address
-                            )
-                            DatabaseOperations.insert_branch(
-                                branch.to_tuple() + (id_address,)
-                            )
-
-                            DatabaseOperations.update_status_manager(
-                                branch.manager.customer_id
-                            )
-                        elif op_branch == "0":
-                            break
-                        else:
-                            print("@@@ Opção Inválida! Tente novamente. @@@")
-
-                elif mg_option == "8":
-                    """Agências Cadastradas"""
-                    branchs = DatabaseOperations.list_branchs()
-
-                    if len(branchs) > 0:
-                        for branch in branchs:
-                            print(branch)
-                    else:
-                        print("@@@ Nenhum gerente encontrado. @@@")
-
-                elif mg_option == "0":
-                    break
-
-                else:
-                    print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+                        print("\n@@@ Operação inválida, selecione novamente. @@@\n")
             else:
                 print("@@@ Usuário ou senha inválidos @@@")
 
@@ -491,4 +487,5 @@ def main():
             print("\n@@@ Operação inválida, selecione novamente. @@@\n")
 
 
-main()
+if __name__ == "__main__":
+    main()

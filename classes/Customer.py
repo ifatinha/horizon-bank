@@ -11,7 +11,7 @@ class Customer:
         self.__password = password
         self.__phone = phone
         self.__address = address
-        self.__token = Customer.generate_token()
+        self.__token = self.generate_token()
         self.__created_at = datetime.now()
         self.__updated_at = datetime.now()
 

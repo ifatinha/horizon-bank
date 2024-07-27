@@ -1,4 +1,5 @@
-from controller.address_creator import AddressCreator
-from classes.AddressTypes import AddressType
+from controller.branch_creator import BranchCreator
 
-print(AddressType.RESIDENTIAL.value)
+branch = BranchCreator.get_instance()
+
+print(branch)
