@@ -105,8 +105,8 @@ class Manager(Customer):
             record[10],
             record[11],
             record[13],
-            record[14],
             record[15],
+            record[14],
         )
 
         address.country = record[12]

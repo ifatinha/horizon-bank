@@ -129,7 +129,7 @@ class Address:
             f"Cidade: {self.city} - {self.state}/{self.country}\n"
             f"Tipo: {self.address_type}\n"
             f"Principal: {'Sim' if self.is_primary else 'Não'}\n"
-            f"Detalhes: {self.notes}\n"
+            f"Detalhes: {self.notes if self.notes else ''}\n"
         )
 
     def to_tuple(self) -> str:

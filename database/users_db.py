@@ -35,9 +35,9 @@ def login_user(user, password):
     query = f"SELECT * FROM users WHERE token = %s AND password = %s"
     try:
         conn = Connection().connect()
-        conn.connect()
-        conn.cursor.execute(query, (user, password))
-        resultado = conn.cursor.fetchall()
+        cursor = conn.cursor()
+        cursor.execute(query, (user, password))
+        resultado = cursor.fetchall()
         return resultado
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")

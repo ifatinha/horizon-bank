@@ -30,10 +30,11 @@ class Branch:
 
     def __str__(self) -> str:
         return (
-            f"Filial: {self.name}\n"
+            f"Agência: {self.name}\n"
+            f"Número: {self.number}"
             f"Aberta em: {self.open_date}\n"
-            f"Gerente: {self.manager}\n"
-            f"Endereço: {self.address}"
+            f"Gerente: {self.manager.fullname}\n"
+            f"{self.address}"
         )
 
     def to_tuple(self):

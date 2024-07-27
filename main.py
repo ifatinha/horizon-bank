@@ -28,6 +28,7 @@ from util.ReturnObjetc import (
 )
 
 from database.users_db import insert_user, login_user
+from database.manager_db import insert_manager, list_managers
 
 
 def main():
@@ -243,7 +244,7 @@ def main():
             user = input("Token: ")
             password = input("Senha: ")
 
-            status = DatabaseOperations.login_user(user=user, password=password)
+            status = login_user(user=user, password=password)
 
             if len(status):
 
@@ -423,20 +424,9 @@ def main():
                             print(
                                 "Informe os dados abaixo para cadastar um novo gerente"
                             )
+
                             manager = Manager.get_instance()
-                            id_customer = DatabaseOperations.insert_customer(
-                                manager.customer_to_tuple()
-                            )
-                            id_address = DatabaseOperations.insert_address(
-                                manager.address
-                            )
-                            DatabaseOperations.insert_address_customer(
-                                id_address, id_customer
-                            )
-                            insert_user(manager.token, manager.password)
-                            DatabaseOperations.insert_manager(
-                                (id_customer,) + manager.to_tuple()
-                            )
+                            insert_manager(manager)
 
                         elif op_manager == "0":
                             break
@@ -446,9 +436,9 @@ def main():
 
                 elif mg_option == "6":
                     """Listar Gerentes"""
-                    managers = DatabaseOperations.list_managers()
+                    managers = list_managers()
 
-                    if len(managers) > 0:
+                    if managers:
                         for manager in managers:
                             print(Manager.from_db_record(manager))
                     else:

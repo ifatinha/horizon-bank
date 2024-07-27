@@ -1,4 +1,5 @@
 from connection.Connection import Connection
+from database.customer_db import insert_customer
 from mysql.connector import Error
 from pathlib import Path
 import logging
@@ -14,14 +15,18 @@ logging.basicConfig(
 
 
 @staticmethod
-def insert_user(user, password):
-    query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
+def insert_address(address):
+    query = """
+            INSERT INTO address(number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes) 
+            VALUES(%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"""
+
     try:
         conn = Connection().connect()
         cursor = conn.cursor()
-        cursor.execute(query, (user, password))
+        cursor.execute(query, address.to_tuple())
         conn.commit()
-        logging.info("Usuário inserido no banco de dados!")
+        logging.info("Endereço inserido no banco de dados.")
+        return cursor.lastrowid
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")
     finally:
@@ -31,14 +36,14 @@ def insert_user(user, password):
 
 
 @staticmethod
-def login_user(user, password):
-    query = f"SELECT * FROM users WHERE token = %s AND password = %s"
+def insert_address_customer(id_address, id_customer):
+    query = "INSERT INTO address_customer(id_address, id_customer) VALUES(%s, %s)"
     try:
         conn = Connection().connect()
-        conn.connect()
-        conn.cursor.execute(query, (user, password))
-        resultado = conn.cursor.fetchall()
-        return resultado
+        cursor = conn.cursor()
+        cursor.execute(query, (id_address, id_customer))
+        conn.commit()
+        logging.info("Relação Customer/Endereço inserido no banco de dados.")
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")
     finally:
