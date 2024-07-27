@@ -4,7 +4,6 @@ import logging
 from mysql.connector import Error
 from pathlib import Path
 from connection.config import user, password, host, database
-from util.logs import database_log
 
 # Configuração básica do logging para registrar em um arquivo
 file_path = Path(__file__).resolve().parents[1] / "logs" / "mysql_logs.log"
@@ -26,7 +25,6 @@ class Connection:
         self.connection = None
         self.cursor = None
 
-    @database_log
     def connect(self):
         """Cria e retorna uma conexão com o servidor MySQL."""
         try:
@@ -46,7 +44,6 @@ class Connection:
             logging.error(f"Erro ao conectar: {err}")
             return None
 
-    @database_log
     def close(self):
         """Fecha a conexão com o servidor MySQL."""
         if self.connection is not None and self.connection.is_connected():
@@ -56,7 +53,6 @@ class Connection:
         else:
             logging.info("A conexão já estava fechada ou não foi estabelecida.")
 
-    @database_log
     @staticmethod
     def check_and_create_database(db_name):
         """Verifica se um banco de dados existe e, se não, cria-o."""

@@ -1,5 +1,6 @@
 from database.DatabaseOperations import DatabaseOperations
 from sql.script_create_tables import create_database, create_tables, insert_default_user
+from classes.Manager import Manager
 
 from util.menu import (
     main_menu,
@@ -14,7 +15,6 @@ from util.menu import (
 )
 
 from util.ReturnObjetc import (
-    return_manager,
     return_branch,
     return_individual,
     return_company,
@@ -26,6 +26,8 @@ from util.ReturnObjetc import (
     return_transaction_Withdraw,
     return_transaction_transfer,
 )
+
+from database.users_db import insert_user, login_user
 
 
 def main():
@@ -50,7 +52,7 @@ def main():
             token = input("Token: ")
             password = input("Senha: ")
 
-            status = DatabaseOperations.login_user(token, password)
+            status = login_user(token, password)
 
             if len(status):
                 cl_option = client_menu()
@@ -265,9 +267,7 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_user(
-                                individual.token, individual.password
-                            )
+                            insert_user(individual.token, individual.password)
                             DatabaseOperations.insert_invidual(
                                 ((id_customer,) + individual.to_tuple())
                             )
@@ -283,9 +283,7 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_user(
-                                company.token, company.password
-                            )
+                            insert_user(company.token, company.password)
 
                             DatabaseOperations.insert_company(
                                 ((id_customer,) + company.to_tuple())
@@ -425,7 +423,7 @@ def main():
                             print(
                                 "Informe os dados abaixo para cadastar um novo gerente"
                             )
-                            manager = return_manager()
+                            manager = Manager.get_instance()
                             id_customer = DatabaseOperations.insert_customer(
                                 manager.customer_to_tuple()
                             )
@@ -435,9 +433,7 @@ def main():
                             DatabaseOperations.insert_address_customer(
                                 id_address, id_customer
                             )
-                            DatabaseOperations.insert_user(
-                                manager.token, manager.password
-                            )
+                            insert_user(manager.token, manager.password)
                             DatabaseOperations.insert_manager(
                                 (id_customer,) + manager.to_tuple()
                             )
@@ -454,7 +450,7 @@ def main():
 
                     if len(managers) > 0:
                         for manager in managers:
-                            print(manager)
+                            print(Manager.from_db_record(manager))
                     else:
                         print("@@@ Nenhum gerente encontrado. @@@")
 

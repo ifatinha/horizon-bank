@@ -126,10 +126,10 @@ class Address:
             f"Endereço: {self.street}, {self.number}\n"
             f"Bairro: {self.neighborhood}\n"
             f"CEP: {self.postal_code}\n"
-            f"Cidade: {self.city} - {self.state}\n"
+            f"Cidade: {self.city} - {self.state}/{self.country}\n"
             f"Tipo: {self.address_type}\n"
-            f"Principal: {self.is_primary}\n"
-            f"Detalhes: {self.notes}"
+            f"Principal: {'Sim' if self.is_primary else 'Não'}\n"
+            f"Detalhes: {self.notes}\n"
         )
 
     def to_tuple(self) -> str:
@@ -160,7 +160,7 @@ class Address:
             try:
                 type_address = int(
                     input(
-                        "Tipo de Endereço: ('[1] - Residêncial', '[2] - Comercial', '[3] - Envio', '[4] - Cobrança'): "
+                        "Tipo de Endereço: ('[1] - Residencial', '[2] - Comercial', '[3] - Envio', '[4] - Cobrança'): "
                     )
                 )
 

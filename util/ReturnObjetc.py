@@ -16,27 +16,6 @@ from classes.Transfer import Transfer
 from datetime import datetime
 
 
-def return_manager():
-    print("### Dados Pessoais ###")
-
-    employee_number = input("Número de Registro: ")
-    is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
-
-    while is_exist is not None:
-        print("@@@ Já existe um gerente com esse número. @@@")
-        employee_number = input("Número de Registro: ")
-        is_exist = DatabaseOperations.find_manager_employee_number(employee_number)
-
-    fullname = input("Nome Completo: ")
-    password = input("Senha: ")
-    phone = input("Phone: ")
-
-    address = Address.get_instance()
-    email = Manager.generate_email(fullname)
-    manager = Manager(fullname, email, password, phone, address, employee_number)
-    return manager
-
-
 def find_manager_bd():
     print("### Gerente ###")
     employee_number = int(input("Número do gerente: "))

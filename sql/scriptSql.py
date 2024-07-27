@@ -1,8 +1,9 @@
 table_admin_query = """
 CREATE TABLE IF NOT EXISTS users(
-    token VARCHAR(100) NOT NULL PRIMARY KEY DEFAULT "admin",
-    password VARCHAR(100) NOT NULL DEFAULT "12345"
-);;
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    token VARCHAR(100) NOT NULL DEFAULT "admin",
+    password VARCHAR(100) NOT NULL DEFAULT "admin"
+);
 """
 
 table_address_query = """

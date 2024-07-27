@@ -51,37 +51,6 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def insert_user(user, password):
-        query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
-        try:
-            conn = DatabaseOperations.getConnect().connect()
-            cursor = conn.cursor()
-            cursor.execute(query, (user, password))
-            conn.commit()
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
-
-    @staticmethod
-    def login_user(user, password):
-        query = f"SELECT * FROM users WHERE token = %s AND password = %s"
-        try:
-            conn = DatabaseOperations.getConnect()
-            conn.connect()
-            conn.cursor.execute(query, (user, password))
-            resultado = conn.cursor.fetchall()
-            return resultado
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
-
-    @staticmethod
     def insert_address(address):
         query = """
             INSERT INTO address(number, street, postal_code, neighborhood, city, state, country, address_type, is_primary, notes) 
@@ -160,10 +129,30 @@ class DatabaseOperations:
     @staticmethod
     def list_managers():
         query = """
-            SELECT fullname, email, phone, employee_number, manager_status
+            SELECT 
+            C.fullname, 
+            C.email, 
+            C.phone, 
+            M.employee_number, 
+            M.hire_date, 
+            M.manager_status, 
+            A.number, 
+            A.street, 
+            A.postal_code, 
+            A.neighborhood, 
+            A.city, 
+            A.state, 
+            A.country, 
+            A.address_type, 
+            A.is_primary, 
+            A.notes
             FROM customer C
-            INNER JOIN manager M
-            ON C.id = M.manager_id;
+            INNER JOIN 
+                manager M ON C.id = M.manager_id
+            INNER JOIN 
+                address_customer AC ON AC.id_customer = M.manager_id
+            INNER JOIN 
+                address A ON A.id = AC.id_address;
             """
 
         try:
