@@ -14,12 +14,12 @@ logging.basicConfig(
 
 
 @staticmethod
-def insert_user(user, password):
+def insert_user(token, password):
     query = f"INSERT INTO users (token, password) VALUES(%s, %s)"
     try:
         conn = Connection().connect()
         cursor = conn.cursor()
-        cursor.execute(query, (user, password))
+        cursor.execute(query, (token, password))
         conn.commit()
         logging.info("Usuário inserido no banco de dados!")
     except Error as err:
@@ -31,12 +31,12 @@ def insert_user(user, password):
 
 
 @staticmethod
-def login_user(user, password):
+def login_user(token, password):
     query = f"SELECT * FROM users WHERE token = %s AND password = %s"
     try:
         conn = Connection().connect()
         cursor = conn.cursor()
-        cursor.execute(query, (user, password))
+        cursor.execute(query, (token, password))
         resultado = cursor.fetchall()
         return resultado
     except Error as err:

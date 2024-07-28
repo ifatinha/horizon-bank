@@ -1,4 +1,5 @@
 from classes.Manager import Manager
+from controller.address_creator import AddressCreator
 
 
 class ManagerCreator:
@@ -36,32 +37,20 @@ class ManagerCreator:
 
     @staticmethod
     def from_db_record(record):
-        from classes.Address import Address
 
-        address = Address(
-            record[7],  # number,
-            record[8],  # street,
-            record[9],  # postal_code,
-            record[10],  # neighborhood,
-            record[11],  # city,
-            record[12],  # state,
-            record[14],  # address_type,
-            record[16],  # notes,
-            record[13],  # country,
-            record[15],  # is_primary,
-        )
+        address = AddressCreator.from_db_record(record)
 
         manager = Manager(
-            record[1],
-            record[2],
+            record[11],
+            record[12],
             None,
-            record[3],
+            record[13],
             address,
-            record[4],
-            record[6],
+            record[14],
+            record[16],
         )
 
-        manager.customer_id = record[0]
-        manager.hire_date = record[5]
+        manager.customer_id = record[10]
+        manager.hire_date = record[15]
 
         return manager

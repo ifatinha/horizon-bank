@@ -45,6 +45,9 @@ class Manager(Customer):
 
     def update(self, **kwargs):
         super().update(**kwargs)
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
 
     def __str__(self) -> str:
         return (

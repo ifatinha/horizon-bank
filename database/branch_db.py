@@ -93,13 +93,6 @@ def list_branchs():
 
     query = """
             SELECT
-            C.id,
-            C.fullname,
-            C.email,
-            C.phone, 
-            M.employee_number,
-            M.hire_date,
-            M.manager_status,
             A.number, 
             A.street, 
             A.postal_code, 
@@ -110,6 +103,13 @@ def list_branchs():
             A.address_type, 
             A.is_primary, 
             A.notes,
+            C.id,
+            C.fullname,
+            C.email,
+            C.phone, 
+            M.employee_number,
+            M.hire_date,
+            M.manager_status,
             B.branch_number,
             B.branch_name, 
             B.phone,

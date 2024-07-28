@@ -11,11 +11,19 @@ class Individual(Customer):
         self.date_of_birth = date_of_birth
 
     def update(self, **kwargs):
-        return super().update(**kwargs)
+        super().update(**kwargs)
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
 
     def __str__(self) -> str:
         return (
-            super().__str__() + f"\nSSN: {self.ssn}" f"\nBirthday: {self.date_of_birth}"
+            f"Nome: {self.fullname}\n"
+            f"Email: {self.email}\n"
+            f"Telefone: {self.phone}\n"
+            f"{self.address}\n"
+            f"SSN: {self.ssn}\n"
+            f"Data de nascimento: {self.date_of_birth.strftime('%d/%m/%Y')}"
         )
 
     def to_tuple(self):

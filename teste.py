@@ -1,5 +1,8 @@
-from controller.branch_creator import BranchCreator
+from classes.Individual import Individual
+from controller.individual_creator import IndividualCreator
 
-branch = BranchCreator.get_instance()
+individual = IndividualCreator.get_instance()
 
-print(branch)
+print(individual.customer_to_tuple())
+print(individual.to_tuple())
+print(individual.address.to_tuple())

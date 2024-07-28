@@ -65,40 +65,30 @@ def menu_type_customer():
 
 def menu_type_account():
     menu = """################ TIPO DE CONTA ################
-        [1] Poupança
-        [2] Corrente
-        [3] Empresarial
-        [0] Sair
-        => """
-
-    return input(menu)
-
-
-def menu_type_customers():
-    menu = """################ CLIENTES CADASTRADOS ################
-        [1] Pessoas Fisicas
-        [2] Pessoas Juridicas
-        [0] Sair
-        => """
+    [1] Poupança
+    [2] Corrente
+    [3] Empresarial
+    [0] Sair
+    => """
 
     return input(menu)
 
 
 def menu_managers():
     menu = """################ GERENCIAR GERENTES ################
-        [1] Novo Gerente
-        [2] Gerentes Cadastrados
-        [0] Sair
-        => """
+    [1] Novo Gerente
+    [2] Gerentes Cadastrados
+    [0] Sair
+    => """
 
     return input(menu)
 
 
 def menu_branchs():
     menu = """################ GERENCIAR AGÊNCIAS ################
-        [1] Nova Agência
-        [2] Agências Cadastradas
-        [0] Sair
-        => """
+    [1] Nova Agência
+    [2] Agências Cadastradas
+    [0] Sair
+    => """
 
     return input(menu)
