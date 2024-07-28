@@ -26,7 +26,38 @@ def find_branch(branch_number):
         tupla
     """
 
-    query = "SELECT branch_id, branch_number, branch_name FROM branch WHERE branch_number = %s"
+    query = """
+        SELECT
+        A.number, 
+        A.street, 
+        A.postal_code, 
+        A.neighborhood, 
+        A.city,
+        A.state, 
+        A.country, 
+        A.address_type, 
+        A.is_primary, 
+        A.notes,
+        C.id,
+        C.fullname,
+        C.email,
+        C.phone, 
+        M.employee_number,
+        M.hire_date,
+        M.manager_status,
+        B.branch_id,
+        B.branch_number,
+        B.branch_name, 
+        B.phone,
+        B.open_date
+        FROM branch B
+        INNER JOIN manager M
+        ON B.manager_employee_number = M.employee_number
+        INNER JOIN customer C
+        ON M.manager_id = C.id
+        INNER JOIN address A
+        ON B.address_id = A.id
+        WHERE B.branch_number = %s"""
 
     try:
         conn = Connection().connect()
@@ -68,6 +99,7 @@ def insert_branch(branch):
         cursor = conn.cursor()
         cursor.execute(query, (branch.to_tuple() + (id_address,)))
         conn.commit()
+
         print("### Agência inserida com sucesso! ###")
         logging.info("Agência inserida com sucesso!")
 
@@ -110,6 +142,7 @@ def list_branchs():
             M.employee_number,
             M.hire_date,
             M.manager_status,
+            B.branch_id,
             B.branch_number,
             B.branch_name, 
             B.phone,

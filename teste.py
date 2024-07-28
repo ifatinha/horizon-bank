@@ -1,8 +1,5 @@
-from classes.Individual import Individual
-from controller.individual_creator import IndividualCreator
+from database.customer_db import find_customer_token
+from controller.customer_creator import CustomerCreator
 
-individual = IndividualCreator.get_instance()
-
-print(individual.customer_to_tuple())
-print(individual.to_tuple())
-print(individual.address.to_tuple())
+customer = find_customer_token("beb31257")
+print(CustomerCreator.from_db_record(customer))

@@ -96,3 +96,13 @@ class Customer:
     def generate_token(length=8):
         token = secrets.token_hex(length // 2)
         return token
+
+    def __str__(self) -> str:
+        return (
+            f"Código de registro: {self.customer_id}\n"
+            f"Nome: {self.fullname}\n"
+            f"Email: {self.email}\n"
+            f"Telefone: {self.phone}\n"
+            f"Token: {self.token}\n"
+            f"{self.address}"
+        )

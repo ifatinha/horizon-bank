@@ -43,6 +43,7 @@ class CompanyCreator:
     def from_db_record(record):
         address = AddressCreator.from_db_record(record)
         company = Company(
-            record[10], record[11], None, record[12], address, record[13], record[14]
+            record[11], record[12], None, record[13], address, record[14], record[15]
         )
+        company.customer_id = record[10]
         return company

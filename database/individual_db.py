@@ -95,6 +95,7 @@ def list_individual() -> list:
         A.address_type,
         A.is_primary, 
         A.notes,
+        C.id,
         C.fullname, 
         C.email, 
         C.phone, 
@@ -112,6 +113,52 @@ def list_individual() -> list:
         cursor = conn.cursor()
         cursor.execute(query)
         record = cursor.fetchall()
+        return record
+
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+        return []
+    finally:
+        if conn:
+            conn.close()
+            cursor.close()
+            logging.info("Conexão fechada!")
+
+
+def find_individual_token(token):
+    try:
+        query = """
+        SELECT 
+        A.number, 
+        A.street, 
+        A.postal_code, 
+        A.neighborhood, 
+        A.city, 
+        A.state, 
+        A.country,
+        A.address_type,
+        A.is_primary, 
+        A.notes,
+        C.id,
+        C.fullname, 
+        C.email, 
+        C.phone, 
+        I.ssn, 
+        I.date_of_birth 
+        FROM individual I
+        INNER JOIN customer C
+        ON C.id = I.customer_id
+        INNER JOIN address_customer AC
+        ON AC.id_customer = C.id
+        INNER JOIN address A
+        ON A.id = AC.id_address
+        WHERE C.token = %s
+        ;"""
+
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (token,))
+        record = cursor.fetchone()
         return record
 
     except Error as err:

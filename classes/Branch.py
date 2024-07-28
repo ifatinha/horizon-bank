@@ -15,6 +15,7 @@ class Branch:
 
     def __str__(self) -> str:
         return (
+            f"Código: {self.id_branch}\n"
             f"Agência: {self.name}\n"
             f"Número da Agência: {self.number}\n"
             f"Telefone: {self.phone}\n"

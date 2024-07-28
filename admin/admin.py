@@ -4,6 +4,7 @@ from util.menu import (
     menu_type_customer,
     menu_managers,
     menu_branchs,
+    menu_type_account,
 )
 
 from controller.manager_creator import ManagerCreator
@@ -14,6 +15,10 @@ from controller.individual_creator import IndividualCreator
 from database.individual_db import insert_invidual, list_individual
 from controller.company_creator import CompanyCreator
 from database.company_db import insert_company, list_company
+from controller.account_creator import AccountCreator
+from database.account_db import insert_business_account
+from controller.historic_creator import HistoricCreator
+from database.historic_db import insert_historic
 
 
 def admin_operations():
@@ -48,54 +53,51 @@ def admin_operations():
                             print("@@@ Opção inválida @@@")
 
                 elif option_customer == "2":
-                    """Nova Conta"""
-                    #     while True:
-                    #         menu_option = menu_type_account()
+                    # Abri conta
+                    while True:
+                        menu_option = menu_type_account()
 
-                    #         if menu_option == "1":
-                    #             """Conta Poupança"""
-                    #             savign_account = return_savign_account()
-                    #             id_account = DatabaseOperations.insert_account(
-                    #                 savign_account.super_to_tuple()
-                    #             )
+                        if menu_option == "1":
+                            # Conta Poupança
+                            # savign_account = return_savign_account()
+                            # id_account = DatabaseOperations.insert_account(
+                            #     savign_account.super_to_tuple()
+                            # )
 
-                    #             savign_account.id_account = id_account
-                    #             DatabaseOperations.insert_savign_account(
-                    #                 savign_account.to_tuple()
-                    #             )
+                            # savign_account.id_account = id_account
+                            # DatabaseOperations.insert_savign_account(
+                            #     savign_account.to_tuple()
+                            # )
 
-                    #             historic = return_historic(savign_account)
-                    #             DatabaseOperations.insert_historic(historic)
+                            # historic = return_historic(savign_account)
+                            # DatabaseOperations.insert_historic(historic)
+                            pass
 
-                    #         elif menu_option == "2":
-                    #             """Conta Corrente"""
-                    #             current_account = return_current_account()
-                    #             id_account = DatabaseOperations.insert_account(
-                    #                 current_account.super_to_tuple()
-                    #             )
-                    #             current_account.id_account = id_account
+                        elif menu_option == "2":
+                            # Conta Corrente
+                            # current_account = return_current_account()
+                            # id_account = DatabaseOperations.insert_account(
+                            #     current_account.super_to_tuple()
+                            # )
+                            # current_account.id_account = id_account
 
-                    #             DatabaseOperations.insert_current_account(
-                    #                 current_account.to_tuple()
-                    #             )
-                    #             historic = return_historic(current_account)
-                    #             DatabaseOperations.insert_historic(historic)
-                    #         elif menu_option == "3":
-                    #             """Conta Empresárial"""
+                            # DatabaseOperations.insert_current_account(
+                            #     current_account.to_tuple()
+                            # )
+                            # historic = return_historic(current_account)
+                            # DatabaseOperations.insert_historic(historic)
+                            pass
+                        elif menu_option == "3":
+                            # Conta Comercial
+                            account = AccountCreator.get_instance_business_account()
+                            insert_business_account(account)
 
-                    #             account = return_account()
-                    #             id_account = DatabaseOperations.insert_account(
-                    #                 account.to_tuple()
-                    #             )
-                    #             account.id_account = id_account
-                    #             historic = return_historic(account)
-                    #             DatabaseOperations.insert_historic(historic)
-                    #         elif menu_option == "0":
-                    #             break
+                            pass
+                        elif menu_option == "0":
+                            break
 
-                    #         else:
-                    #             print("@@@ Opção Inválida! Tente novamente. @@@")
-                    pass
+                        else:
+                            print("@@@ Opção Inválida! Tente novamente. @@@")
 
                 elif option_customer == "3":
 

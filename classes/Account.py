@@ -1,10 +1,13 @@
 from datetime import datetime
+from enums.AccountTypes import AccountTypes
 import random
 
 
 class Account:
 
-    def __init__(self, password, branch, customer, account_type="Business") -> None:
+    def __init__(
+        self, password, branch, customer, account_type=AccountTypes.BUSINESS.value
+    ) -> None:
         self.__id_account = None
         self.__number = Account.generate_account_number()
         self.__password = password
@@ -65,26 +68,16 @@ class Account:
 
     @staticmethod
     def generate_account_number():
-
         return f"{random.randint(1000000000, 9999999999)}"
 
     def __str__(self) -> str:
         return (
-            f"Conta: {self.number} - {self.account_type}"
-            f"\nAgência: {self.branch}"
-            f"\nSaldo: $ {self.balance:.2f}"
-            f"\nCliente: {self.customer}"
+            f"Código de registro: {self.id_account}\n"
+            f"Conta: {self.number} - {self.account_type}\n"
+            f"Agência: {self.branch.number}\n"
+            f"Saldo: R$ {self.balance:.2f}\n"
+            f"Cliente: {self.customer.fullname} - Token: {self.customer.token}"
         )
-
-    @staticmethod
-    def return_type_account():
-        accounts_type = {
-            "1": "Savings",
-            "2": "Current",
-            "3": "Business",
-        }
-
-        return accounts_type
 
     def to_tuple(self):
         return (
@@ -97,25 +90,23 @@ class Account:
         )
 
     def withdraw(self, value):
-        exceeded_balance = value > self.balance
 
-        if exceeded_balance:
+        if value > self.balance:
             print("@@@ Operação falhou! Você não tem saldo suficiente! @@@")
+            return False
         elif value > 0:
             self.balance -= value
             print("\n=== Saque efetuado com sucesso! ===")
             return True
         else:
             print("@@@ Operação falhou! O valor informado é inválido. @@@")
-
-        return False
-
-    def deposit(self, value):
-        if value > 0:
-            self.balance += value
-            print("=== Depósito efetuado com sucesso! ===")
-        else:
-            print("@@@ Operação falhou! O valor informado é inválido! @@@")
             return False
 
-        return True
+    def deposit(self, value):
+        if value <= 0:
+            print("@@@ Operação falhou! O valor informado é inválido! @@@")
+            return False
+        else:
+            self.balance += value
+            print("=== Depósito efetuado com sucesso! ===")
+            return True

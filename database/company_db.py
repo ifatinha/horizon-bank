@@ -95,6 +95,7 @@ def list_company() -> list:
         A.address_type,
         A.is_primary, 
         A.notes,
+        C.id,
         C.fullname, 
         C.email, 
         C.phone, 

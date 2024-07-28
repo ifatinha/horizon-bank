@@ -18,6 +18,7 @@ class Individual(Customer):
 
     def __str__(self) -> str:
         return (
+            f"Código de registro: {self.customer_id}\n"
             f"Nome: {self.fullname}\n"
             f"Email: {self.email}\n"
             f"Telefone: {self.phone}\n"

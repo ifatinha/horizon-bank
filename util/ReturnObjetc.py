@@ -16,28 +16,6 @@ from classes.Transfer import Transfer
 from datetime import datetime
 
 
-def return_company():
-    print("### Dados da Empresa ###")
-    ein = input("EIN: ")
-    is_exist = DatabaseOperations.find_company_ein(ein)
-
-    while is_exist is not None:
-        print("@@@ Já existe uma empresa com o ein. @@@")
-        ein = input("EIN: ")
-        is_exist = DatabaseOperations.find_company_ein(ein)
-
-    fullname = input("Razão Social: ")
-    legal_name = input("Nome Fantasia: ")
-    email = input("Email: ")
-    password = input("Senha: ")
-    phone = input("Telefone: ")
-    address = AddressCreator.get_instance()
-
-    company = Company(fullname, email, password, phone, address, ein, legal_name)
-
-    return company
-
-
 def find_branch_bd():
     branch_number = int(input("Agéncia: "))
     result = DatabaseOperations.find_branch(branch_number)

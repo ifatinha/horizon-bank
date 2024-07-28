@@ -18,6 +18,7 @@ class Company(Customer):
 
     def __str__(self) -> str:
         return (
+            f"Código de registro: {self.customer_id}\n"
             f"Razão Social: {self.fullname}\n"
             f"Nome Fantasia: {self.legal_name}\n"
             f"EIN: {self.ein}\n"

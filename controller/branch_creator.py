@@ -82,9 +82,10 @@ class BranchCreator:
 
         address = AddressCreator.from_db_record(record)
 
-        branch = Branch(record[17], address, manager)
-        branch.name = record[18]
-        branch.phone = record[19]
-        branch.open_date = record[20]
+        branch = Branch(record[18], address, manager)
+        branch.id_branch = record[17]
+        branch.name = record[19]
+        branch.phone = record[20]
+        branch.open_date = record[21]
 
         return branch

@@ -113,14 +113,7 @@ def find_manager_employee_number(employee_number):
 
 def find_manager_status(employee_number):
     query = """
-        SELECT 
-            C.id,
-            C.fullname, 
-            C.email, 
-            C.phone, 
-            M.employee_number, 
-            M.hire_date, 
-            M.manager_status, 
+        SELECT
             A.number, 
             A.street, 
             A.postal_code, 
@@ -130,7 +123,14 @@ def find_manager_status(employee_number):
             A.country, 
             A.address_type, 
             A.is_primary, 
-            A.notes
+            A.notes, 
+            C.id,
+            C.fullname, 
+            C.email, 
+            C.phone, 
+            M.employee_number, 
+            M.hire_date, 
+            M.manager_status
             FROM customer C
             INNER JOIN 
                 manager M ON C.id = M.manager_id
