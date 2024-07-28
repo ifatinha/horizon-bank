@@ -16,29 +16,6 @@ from classes.Transfer import Transfer
 from datetime import datetime
 
 
-def return_individual():
-    print("### Dados Pessoais ###")
-    ssn = input("SSN: ")
-    result = DatabaseOperations.find_individual_ssn(ssn)
-
-    while result is not None:
-        print("@@@ Já existe uma pessoa cadastrada com esse ssn. @@@")
-        ssn = input("SSN: ")
-        result = DatabaseOperations.find_individual_ssn(ssn)
-
-    fullname = input("Nome Completo: ")
-    birth = input("Data de Nascimento (dd/mm/yyyy): ")
-    birth = datetime.strptime(birth, "%d/%m/%Y")
-    email = input("Email: ")
-    password = input("Senha: ")
-    phone = input("Telefone: ")
-    address = AddressCreator.get_instance()
-
-    individual = Individual(fullname, email, password, phone, address, ssn, birth)
-
-    return individual
-
-
 def return_company():
     print("### Dados da Empresa ###")
     ein = input("EIN: ")

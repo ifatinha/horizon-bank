@@ -12,6 +12,8 @@ from controller.branch_creator import BranchCreator
 from database.branch_db import insert_branch, list_branchs
 from controller.individual_creator import IndividualCreator
 from database.individual_db import insert_invidual, list_individual
+from controller.company_creator import CompanyCreator
+from database.company_db import insert_company, list_company
 
 
 def admin_operations():
@@ -36,7 +38,9 @@ def admin_operations():
 
                         elif type_customer == "2":
                             # Cadastrar Pessoa Juridica
-                            pass
+                            company = CompanyCreator.get_instance()
+                            insert_company(company)
+
                         elif type_customer == "0":
                             # Encerrar aplicação
                             break
@@ -92,6 +96,7 @@ def admin_operations():
                     #         else:
                     #             print("@@@ Opção Inválida! Tente novamente. @@@")
                     pass
+
                 elif option_customer == "3":
 
                     while True:
@@ -103,7 +108,7 @@ def admin_operations():
                             result = list_individual()
 
                             if result:
-                                print("##### CLIENTES ENCONTRADOS #####")
+                                print("##### CLIENTES CADASTRADOS #####")
                                 for client in result:
                                     print("=" * 60)
                                     print(IndividualCreator.from_db_record(client))
@@ -112,15 +117,19 @@ def admin_operations():
                                 print("@@@ Nenhum cliente encontrado. @@@")
 
                         elif option == "2":
-                            #     print("##### CLIENTES ENCONTRADOS #####")
-                            #     result = DatabaseOperations.list_company_customers()
+                            # Pessoas Juridicas Cadastradas
 
-                            #     if len(result):
-                            #         for client in result:
-                            #             print(client)
-                            #     else:
-                            #         print("@@@ Nenhum cliente encontrado. @@@")
-                            pass
+                            result = list_company()
+
+                            if result:
+                                print("##### EMPRESSAS CADASTRADAS #####")
+                                for client in result:
+                                    print("=" * 60)
+                                    print(CompanyCreator.from_db_record(client))
+                                    print("=" * 60 + "\n")
+                            else:
+                                print("@@@ Nenhum cliente encontrado. @@@")
+
                         elif option == "0":
                             break
                         else:
@@ -164,6 +173,7 @@ def admin_operations():
                     #         else:
                     #             print("@@@ Opção Inválida! @@@")
                     pass
+
                 elif option_customer == "0":
                     break
                 else:

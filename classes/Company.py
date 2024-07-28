@@ -11,10 +11,20 @@ class Company(Customer):
         self.legal_name = legal_name
 
     def update(self, **kwargs):
-        return super().update(**kwargs)
+        super().update(**kwargs)
+        for key, value in kwargs.items():
+            if hasattr(self, key):
+                setattr(self, key, value)
 
     def __str__(self) -> str:
-        return super().__str__() + f"EIN: {self.ein}\n" f"Legal Name: {self.legal_name}"
+        return (
+            f"Razão Social: {self.fullname}\n"
+            f"Nome Fantasia: {self.legal_name}\n"
+            f"EIN: {self.ein}\n"
+            f"Email: {self.email}\n"
+            f"Telefone: {self.phone}\n"
+            f"{self.address}"
+        )
 
     def to_tuple(self):
         return (self.ein, self.legal_name)
