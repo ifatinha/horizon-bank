@@ -1,5 +1,5 @@
 from classes.Address import Address
-from classes.AddressTypes import AddressType
+from enums.AddressTypes import AddressType
 
 
 class AddressCreator:

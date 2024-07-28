@@ -574,3 +574,50 @@
 2024-07-28 20:44:05,358 - INFO - Conexão fechada!
 2024-07-28 20:44:05,359 - INFO - Conta business cadastrada no banco.
 2024-07-28 20:44:05,359 - INFO - Conexão fechada!
+2024-07-28 20:49:10,770 - INFO - package: mysql.connector.plugins
+2024-07-28 20:49:10,770 - INFO - plugin_name: caching_sha2_password
+2024-07-28 20:49:10,770 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-28 20:49:10,771 - INFO - Conexão bem-sucedida!
+2024-07-28 20:49:10,775 - INFO - Conexão fechada!
+2024-07-28 20:49:18,056 - INFO - Conexão bem-sucedida!
+2024-07-28 20:49:18,058 - INFO - Conexão fechada!
+2024-07-28 20:50:00,383 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:00,390 - INFO - Customer inserido no banco de dados.
+2024-07-28 20:50:00,390 - INFO - Conexão fechada!
+2024-07-28 20:50:00,448 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:00,455 - INFO - Endereço inserido no banco de dados.
+2024-07-28 20:50:00,455 - INFO - Conexão fechada!
+2024-07-28 20:50:00,492 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:00,497 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-28 20:50:00,497 - INFO - Conexão fechada!
+2024-07-28 20:50:00,533 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:00,537 - INFO - Usuário inserido no banco de dados!
+2024-07-28 20:50:00,537 - INFO - Conexão fechada!
+2024-07-28 20:50:00,574 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:00,578 - INFO - Cliente cadastrado com sucesso.
+2024-07-28 20:50:00,578 - INFO - Conexão fechada!
+2024-07-28 20:50:07,503 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:07,507 - INFO - Conexão fechada!
+2024-07-28 20:50:44,383 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:44,390 - INFO - Conexão fechada!
+2024-07-28 20:50:49,478 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:49,479 - INFO - Conexão fechada!
+2024-07-28 20:50:58,341 - INFO - Conexão bem-sucedida!
+2024-07-28 20:50:58,342 - INFO - Conexão fechada!
+2024-07-28 20:52:00,688 - INFO - Conexão bem-sucedida!
+2024-07-28 20:52:00,697 - INFO - Customer inserido no banco de dados.
+2024-07-28 20:52:00,697 - INFO - Conexão fechada!
+2024-07-28 20:52:00,740 - INFO - Conexão bem-sucedida!
+2024-07-28 20:52:00,743 - INFO - Endereço inserido no banco de dados.
+2024-07-28 20:52:00,744 - INFO - Conexão fechada!
+2024-07-28 20:52:00,781 - INFO - Conexão bem-sucedida!
+2024-07-28 20:52:00,786 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-28 20:52:00,786 - INFO - Conexão fechada!
+2024-07-28 20:52:00,822 - INFO - Conexão bem-sucedida!
+2024-07-28 20:52:00,824 - INFO - Usuário inserido no banco de dados!
+2024-07-28 20:52:00,824 - INFO - Conexão fechada!
+2024-07-28 20:52:00,861 - INFO - Conexão bem-sucedida!
+2024-07-28 20:52:00,865 - INFO - Empresa cadastrada com sucesso.
+2024-07-28 20:52:00,865 - INFO - Conexão fechada!
+2024-07-28 20:52:05,999 - INFO - Conexão bem-sucedida!
+2024-07-28 20:52:06,001 - INFO - Conexão fechada!
