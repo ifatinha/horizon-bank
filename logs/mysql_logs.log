@@ -424,3 +424,13 @@
 2024-07-27 21:40:25,262 - INFO - Conexão fechada!
 2024-07-27 21:40:45,109 - INFO - Conexão bem-sucedida!
 2024-07-27 21:40:45,110 - INFO - Conexão fechada!
+2024-07-27 21:55:26,797 - INFO - package: mysql.connector.plugins
+2024-07-27 21:55:26,797 - INFO - plugin_name: caching_sha2_password
+2024-07-27 21:55:26,797 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 21:55:26,799 - INFO - Conexão bem-sucedida!
+2024-07-27 21:55:26,803 - INFO - Conexão fechada!
+2024-07-27 21:56:14,840 - INFO - package: mysql.connector.plugins
+2024-07-27 21:56:14,840 - INFO - plugin_name: caching_sha2_password
+2024-07-27 21:56:14,840 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-27 21:56:14,841 - INFO - Conexão bem-sucedida!
+2024-07-27 21:56:14,842 - INFO - Conexão fechada!
