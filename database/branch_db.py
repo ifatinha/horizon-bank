@@ -77,3 +77,61 @@ def insert_branch(branch):
         if conn:
             conn.close()
             logging.info("Conexão fechada!")
+
+
+@staticmethod
+def list_branchs():
+    """
+    Lista todas as agências cadastras no banco.
+
+    Args:
+        Nenhum.
+
+    Returns:
+        tupla.
+    """
+
+    query = """
+            SELECT
+            C.id,
+            C.fullname,
+            C.email,
+            C.phone, 
+            M.employee_number,
+            M.hire_date,
+            M.manager_status,
+            A.number, 
+            A.street, 
+            A.postal_code, 
+            A.neighborhood, 
+            A.city,
+            A.state, 
+            A.country, 
+            A.address_type, 
+            A.is_primary, 
+            A.notes,
+            B.branch_number,
+            B.branch_name, 
+            B.phone,
+            B.open_date
+            FROM branch B
+            INNER JOIN manager M
+            ON B.manager_employee_number = M.employee_number
+            INNER JOIN customer C
+            ON M.manager_id = C.id
+            INNER JOIN address A
+            ON B.address_id = A.id;
+            """
+
+    try:
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query)
+        result = cursor.fetchall()
+        return result
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")

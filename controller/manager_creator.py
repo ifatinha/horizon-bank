@@ -46,9 +46,9 @@ class ManagerCreator:
             record[11],  # city,
             record[12],  # state,
             record[14],  # address_type,
+            record[16],  # notes,
             record[13],  # country,
-            record[16],  # is_primary,
-            record[15],  # notes,
+            record[15],  # is_primary,
         )
 
         manager = Manager(

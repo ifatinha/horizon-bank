@@ -14,8 +14,8 @@ class Address:
     city: str
     state: str
     address_type: AddressType = AddressType.RESIDENTIAL.value
-    country: str = field(default="Brasil", init=False)
     notes: str = ""
+    country: str = field(default="Brasil", init=False)
     is_primary: bool = True
     created_at: datetime = field(default_factory=datetime.now)
     updated_at: datetime = field(default_factory=datetime.now)
@@ -32,7 +32,7 @@ class Address:
             f"Cidade: {self.city} - {self.state}/{self.country}\n"
             f"Tipo: {self.address_type}\n"
             f"Principal: {'Sim' if self.is_primary else 'Não'}\n"
-            f"Detalhes: {self.notes if self.notes else ''}\n"
+            f"Detalhes: {self.notes if self.notes else ''}"
         )
 
     def to_tuple(self) -> str:

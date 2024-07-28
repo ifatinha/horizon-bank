@@ -29,7 +29,7 @@ from util.ReturnObjetc import (
 
 from database.users_db import insert_user, login_user
 from database.manager_db import insert_manager, list_managers
-from database.branch_db import insert_branch
+from database.branch_db import insert_branch, list_branchs
 
 
 def main():
@@ -418,33 +418,9 @@ def main():
                             else:
                                 print("@@@ Opção Inválida. @@@")
 
-                    elif mg_option == "70":
-                        """Gerenciamento de Agências"""
-
-                        while True:
-                            op_branch = menu_create_branch()
-
-                            if op_branch == "1":
-
-                                branch = BranchCreator.get_instance()
-                                insert_branch(branch)
-
-                            elif op_branch == "0":
-                                break
-                            else:
-                                print("@@@ Opção Inválida! Tente novamente. @@@")
-
-                    elif mg_option == "80":
-                        """Agências Cadastradas"""
-                        branchs = DatabaseOperations.list_branchs()
-
-                        if len(branchs) > 0:
-                            for branch in branchs:
-                                print(branch)
-                        else:
-                            print("@@@ Nenhum gerente encontrado. @@@")
-
                     elif mg_option == "2":
+
+                        """Gerenciamento de Gerentes"""
 
                         while True:
                             option_manager = menu_managers()
@@ -462,12 +438,46 @@ def main():
 
                                 if managers:
                                     for manager in managers:
+                                        print("====================================")
                                         print(ManagerCreator.from_db_record(manager))
+                                        print("====================================\n")
 
                                 else:
                                     print("@@@ Nenhum gerente cadastrado. @@@")
                             elif option_manager == "0":
                                 """Retornando ao menu principal"""
+                                break
+                            else:
+                                print(
+                                    "\n@@@ Operação inválida, selecione novamente. @@@\n"
+                                )
+
+                    elif mg_option == "3":
+                        """Gerenciamento de Agências"""
+
+                        while True:
+
+                            option_branch = menu_branchs()
+
+                            if option_branch == "1":
+                                """Cadastrar nova agência"""
+                                branch = BranchCreator.get_instance()
+                                insert_branch(branch)
+                            elif option_branch == "2":
+                                """Agências Cadastradas"""
+
+                                branchs = list_branchs()
+
+                                if len(branchs) > 0:
+                                    for branch in branchs:
+                                        print("==================================")
+                                        print(BranchCreator.from_db_record(branch))
+                                        print("==================================\n")
+                                else:
+                                    print("@@@ Nenhum gerente encontrado. @@@")
+
+                            elif option_branch == "0":
+                                """Saindo do menu"""
                                 break
                             else:
                                 print(

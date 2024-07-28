@@ -20,7 +20,7 @@ class Branch:
             f"Telefone: {self.phone}\n"
             f"{self.address}\n"
             f"Gerente: {self.manager.fullname} (Número do Funcionário: {self.manager.employee_number})\n"
-            f"Data de Abertura: {self.open_date.strftime('%d/%m/%Y %H:%M:%S')}\n"
+            f"Data de Abertura: {self.open_date.strftime('%d/%m/%Y')}"
         )
 
     def to_tuple(self) -> tuple:

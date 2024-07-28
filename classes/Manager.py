@@ -48,7 +48,7 @@ class Manager(Customer):
 
     def __str__(self) -> str:
         return (
-            f"Código: {self.customer_id}\n"
+            f"Gerente: {self.customer_id}\n"
             f"Nome: {self.fullname}\n"
             f"Email: {self.email}\n"
             f"Telefone: {self.phone}\n"

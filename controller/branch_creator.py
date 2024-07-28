@@ -1,5 +1,6 @@
 from classes.Branch import Branch
 from classes.Manager import Manager
+from classes.Address import Address
 from database.manager_db import find_manager_status
 from database.branch_db import find_branch
 from controller.manager_creator import ManagerCreator
@@ -62,3 +63,32 @@ class BranchCreator:
                 return ManagerCreator.from_db_record(record)
 
             print("@@@ Nenhum Gerente Encontrado. Tente novamente. @@@")
+
+    @staticmethod
+    def from_db_record(record):
+
+        manager = Manager(
+            record[1], record[2], None, record[3], None, record[4], record[6]
+        )
+        manager.customer_id = record[0]
+        manager.hire_date = record[5]
+
+        address = Address(
+            record[7],  # number,
+            record[8],  # street,
+            record[9],  # postal_code,
+            record[10],  # neighborhood,
+            record[11],  # city,
+            record[12],  # state,
+            record[14],  # address_type,
+            record[16],  # notes,
+            record[13],  # country,
+            record[15],  # is_primary,
+        )
+
+        branch = Branch(record[17], address, manager)
+        branch.name = record[18]
+        branch.phone = record[19]
+        branch.open_date = record[20]
+
+        return branch

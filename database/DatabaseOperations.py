@@ -142,28 +142,6 @@ class DatabaseOperations:
                 logging.info("Conexão fechada!")
 
     @staticmethod
-    def list_branchs():
-        query = """
-            SELECT branch_number, branch_name, phone, manager_employee_number, city, state
-            FROM branch B
-            INNER JOIN address A
-            ON B.address_id = A.id;
-            """
-
-        try:
-            conn = DatabaseOperations.getConnect().connect()
-            cursor = conn.cursor()
-            cursor.execute(query)
-            result = cursor.fetchall()
-            return result
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
-
-    @staticmethod
     def insert_invidual(individual):
         query = (
             "INSERT INTO individual(customer_id, ssn, date_of_birth) VALUES(%s, %s, %s)"
