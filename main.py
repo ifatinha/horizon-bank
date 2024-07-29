@@ -3,7 +3,7 @@ from sql.script_create_tables import create_database, create_tables, insert_defa
 from util.menu import main_menu
 from database.users_db import login_user
 from admin.admin import admin_operations
-from admin.customer import customer_operations
+from admin.customer_operations import customer_operations
 
 
 def main():
@@ -15,10 +15,8 @@ def main():
 
     # f8d76506 4545
 
-    # 5d98a027 1212
-    # 5346144456 1515
-    # 1028379526 1010
-    # 6781090948 1111
+    # e2828d07 5656
+    # 7643713067 1515
 
     while True:
 
@@ -37,6 +35,7 @@ def main():
                 print("@@@ Usuário ou senha inválidos @@@")
 
         elif option == "2":
+
             token = input("Token: ")
             password = input("Senha: ")
 

@@ -9,7 +9,4 @@ class HistoricCreator:
 
     @staticmethod
     def from_db_record(record):
-        historic = Historic(record[1])
-        historic.id = record[0]
-
-        return historic
+        return record[0]

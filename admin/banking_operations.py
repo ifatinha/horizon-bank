@@ -1,3 +1,8 @@
+from database.account_db import find_account
+from database.historic_db import find_historic
+from controller.historic_creator import HistoricCreator
+
+
 class BankingOperations:
 
     @staticmethod
@@ -7,4 +12,13 @@ class BankingOperations:
             account_number = int(input("Conta: "))
             password = input("Senha: ")
 
-            pass
+            record = find_account(account_number, password)
+
+            if record:
+                return record
+
+            print("@@@ Conta não encontrada. @@@")
+
+    @staticmethod
+    def return_historic_account(account_number):
+        return find_historic(account_number)

@@ -9,7 +9,7 @@ class Account:
         self, password, branch, customer, account_type=AccountTypes.BUSINESS.value
     ) -> None:
         self.__id_account = None
-        self.__number = Account.generate_account_number()
+        self.__number = None
         self.__password = password
         self.__balance = float()
         self.__branch = branch
@@ -29,6 +29,10 @@ class Account:
     @property
     def number(self):
         return self.__number
+
+    @number.setter
+    def number(self, number):
+        self.__number = number
 
     @property
     def password(self):

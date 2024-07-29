@@ -61,6 +61,7 @@ class AccountCreator:
         customer = CustomerCreator.from_db_record(customer_record)
 
         account = Account(password, branch, customer)
+        account.number = Account.generate_account_number()
 
         return account
 
@@ -76,7 +77,10 @@ class AccountCreator:
         customer = CustomerCreator.from_db_record(customer_record)
 
         savign_account = SavignAccount(password, branch, customer)
+        savign_account.number = Account.generate_account_number()
+        savign_account.account_bd.number = savign_account.number
 
+        print(savign_account)
         return savign_account
 
     @staticmethod
@@ -91,6 +95,8 @@ class AccountCreator:
         customer = CustomerCreator.from_db_record(customer_record)
 
         current_account = CurrentAccount(password, branch, customer)
+        current_account.number = Account.generate_account_number()
+        current_account.account_bd.number = current_account.number
 
         return current_account
 
@@ -106,9 +112,9 @@ class AccountCreator:
         customer.customer_id = record[5]
         customer.token = record[8]
 
-        account = Account(record[11], branch, customer, record[14])
+        account = Account(record[12], branch, customer, record[14])
         account.id_account = record[10]
-        account.password = record[12]
+        account.number = record[11]
         account.balance = record[13]
         account.created_at = record[15]
 

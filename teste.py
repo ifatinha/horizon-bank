@@ -1,10 +1,7 @@
-from database.customer_db import find_customer_token
-from database.branch_db import find_branch
+from admin.banking_operations import BankingOperations
 from controller.account_creator import AccountCreator
-from classes.Account import Account
+from database.account_db import find_account
 
-customer = find_customer_token("cdd923f5")
-branch = find_branch(1003)
-
-account = AccountCreator.get_instance_savign_account()
-print(account.account_bd)
+account = find_account(6620287101, "1515")
+record = AccountCreator.from_db_record(account)
+print(record)

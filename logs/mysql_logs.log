@@ -1,267 +1,249 @@
-2024-07-29 10:12:28,842 - INFO - Conexão bem-sucedida!
-2024-07-29 10:12:28,844 - INFO - Conexão fechada!
-2024-07-29 10:12:37,744 - INFO - Conexão bem-sucedida!
-2024-07-29 10:12:37,745 - INFO - Conexão fechada!
-2024-07-29 10:12:41,531 - INFO - Conexão bem-sucedida!
-2024-07-29 10:12:41,533 - INFO - Conexão fechada!
-2024-07-29 10:12:41,544 - INFO - Conexão bem-sucedida!
-2024-07-29 10:12:41,612 - INFO - Conexão bem-sucedida!
-2024-07-29 10:12:41,755 - INFO - Historico da conta criando.
-2024-07-29 10:12:41,756 - INFO - Conexão fechada!
-2024-07-29 10:12:41,757 - INFO - Conta business cadastrada no banco.
-2024-07-29 10:12:41,759 - INFO - Conexão fechada!
-2024-07-29 10:12:41,791 - INFO - Conexão bem-sucedida!
-2024-07-29 10:12:41,792 - ERROR - Erro ao executar SQL: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'query = "INSERT INTO current_account(id_account, overdraft_limit, withdrawal_lim' at line 1
-2024-07-29 10:12:41,793 - INFO - Conexão fechada!
-2024-07-29 10:14:06,844 - INFO - Conexão bem-sucedida!
-2024-07-29 10:14:06,845 - INFO - Conexão fechada!
-2024-07-29 10:14:21,398 - INFO - Conexão bem-sucedida!
-2024-07-29 10:14:21,400 - INFO - Conexão fechada!
-2024-07-29 10:14:22,515 - INFO - Conexão bem-sucedida!
-2024-07-29 10:14:22,516 - INFO - Conexão fechada!
-2024-07-29 10:14:22,528 - INFO - Conexão bem-sucedida!
-2024-07-29 10:14:22,600 - INFO - Conexão bem-sucedida!
-2024-07-29 10:14:22,694 - INFO - Historico da conta criando.
-2024-07-29 10:14:22,695 - INFO - Conexão fechada!
-2024-07-29 10:14:22,696 - INFO - Conta business cadastrada no banco.
-2024-07-29 10:14:22,698 - INFO - Conexão fechada!
-2024-07-29 10:14:22,738 - INFO - Conexão bem-sucedida!
-2024-07-29 10:14:22,777 - INFO - Conta corrente cadastrada no banco.
-2024-07-29 10:14:22,778 - INFO - Conexão fechada!
-2024-07-29 11:26:09,735 - INFO - Conexão bem-sucedida!
-2024-07-29 11:26:09,738 - INFO - Conexão fechada!
-2024-07-29 11:26:16,941 - INFO - Conexão bem-sucedida!
-2024-07-29 11:26:16,943 - INFO - Conexão fechada!
-2024-07-29 11:27:47,675 - INFO - Conexão bem-sucedida!
-2024-07-29 11:27:47,676 - INFO - Conexão fechada!
-2024-07-29 11:27:52,668 - INFO - Conexão bem-sucedida!
-2024-07-29 11:27:52,670 - INFO - Conexão fechada!
-2024-07-29 11:27:55,164 - INFO - Conexão bem-sucedida!
-2024-07-29 11:27:55,166 - INFO - Conexão fechada!
-2024-07-29 11:27:56,590 - INFO - Conexão bem-sucedida!
-2024-07-29 11:27:56,592 - INFO - Conexão fechada!
-2024-07-29 11:27:58,336 - INFO - Conexão bem-sucedida!
-2024-07-29 11:27:58,338 - INFO - Conexão fechada!
-2024-07-29 11:27:59,965 - INFO - Conexão bem-sucedida!
-2024-07-29 11:27:59,967 - INFO - Conexão fechada!
-2024-07-29 11:28:25,661 - INFO - Conexão bem-sucedida!
-2024-07-29 11:28:25,663 - INFO - Conexão fechada!
-2024-07-29 11:29:11,590 - INFO - Conexão bem-sucedida!
-2024-07-29 11:29:11,593 - INFO - Conexão fechada!
-2024-07-29 11:29:15,838 - INFO - Conexão bem-sucedida!
-2024-07-29 11:29:15,840 - INFO - Conexão fechada!
-2024-07-29 11:29:16,622 - INFO - Conexão bem-sucedida!
-2024-07-29 11:29:16,624 - INFO - Conexão fechada!
-2024-07-29 11:29:17,494 - INFO - Conexão bem-sucedida!
-2024-07-29 11:29:17,496 - INFO - Conexão fechada!
-2024-07-29 11:33:43,916 - INFO - Conexão bem-sucedida!
-2024-07-29 11:33:43,917 - INFO - Conexão fechada!
-2024-07-29 11:33:48,227 - INFO - Conexão bem-sucedida!
-2024-07-29 11:33:48,229 - INFO - Conexão fechada!
-2024-07-29 11:33:57,578 - INFO - Conexão bem-sucedida!
-2024-07-29 11:33:57,580 - INFO - Conexão fechada!
-2024-07-29 11:38:20,600 - INFO - Conexão bem-sucedida!
-2024-07-29 11:38:20,602 - INFO - Conexão fechada!
-2024-07-29 11:38:32,367 - INFO - Conexão bem-sucedida!
-2024-07-29 11:38:32,369 - INFO - Conexão fechada!
-2024-07-29 11:38:32,388 - INFO - Conexão bem-sucedida!
-2024-07-29 11:38:32,390 - INFO - Conexão fechada!
-2024-07-29 13:40:22,846 - INFO - Conexão bem-sucedida!
-2024-07-29 13:40:22,848 - INFO - Conexão fechada!
-2024-07-29 13:40:33,969 - INFO - Conexão bem-sucedida!
-2024-07-29 13:40:33,971 - INFO - Conexão fechada!
-2024-07-29 13:40:33,986 - INFO - Conexão bem-sucedida!
-2024-07-29 13:40:33,988 - INFO - Conexão fechada!
-2024-07-29 13:43:34,253 - INFO - Conexão bem-sucedida!
-2024-07-29 13:43:34,255 - INFO - Conexão fechada!
-2024-07-29 13:43:47,545 - INFO - Conexão bem-sucedida!
-2024-07-29 13:43:47,547 - INFO - Conexão fechada!
-2024-07-29 13:43:47,567 - INFO - Conexão bem-sucedida!
-2024-07-29 13:43:47,569 - INFO - Conexão fechada!
-2024-07-29 13:44:17,367 - INFO - Conexão bem-sucedida!
-2024-07-29 13:44:17,369 - INFO - Conexão fechada!
-2024-07-29 13:44:20,889 - INFO - Conexão bem-sucedida!
-2024-07-29 13:44:20,890 - INFO - Conexão fechada!
-2024-07-29 13:44:25,306 - INFO - Conexão bem-sucedida!
-2024-07-29 13:44:25,307 - INFO - Conexão fechada!
-2024-07-29 13:44:25,327 - INFO - Conexão bem-sucedida!
-2024-07-29 13:44:25,329 - INFO - Conexão fechada!
-2024-07-29 13:49:37,033 - INFO - Conexão bem-sucedida!
-2024-07-29 13:49:37,035 - INFO - Conexão fechada!
-2024-07-29 13:49:45,855 - INFO - Conexão bem-sucedida!
-2024-07-29 13:49:45,856 - INFO - Conexão fechada!
-2024-07-29 13:49:45,873 - INFO - Conexão bem-sucedida!
-2024-07-29 13:49:45,876 - INFO - Conexão fechada!
-2024-07-29 13:59:25,110 - INFO - Conexão bem-sucedida!
-2024-07-29 13:59:25,112 - INFO - Conexão fechada!
-2024-07-29 13:59:31,403 - INFO - Conexão bem-sucedida!
-2024-07-29 13:59:31,404 - INFO - Conexão fechada!
-2024-07-29 13:59:31,422 - INFO - Conexão bem-sucedida!
-2024-07-29 13:59:31,425 - INFO - Conexão fechada!
-2024-07-29 14:01:08,511 - INFO - Conexão bem-sucedida!
-2024-07-29 14:01:08,513 - INFO - Conexão fechada!
-2024-07-29 14:01:14,242 - INFO - Conexão bem-sucedida!
-2024-07-29 14:01:14,243 - INFO - Conexão fechada!
-2024-07-29 14:01:14,262 - INFO - Conexão bem-sucedida!
-2024-07-29 14:01:14,265 - INFO - Conexão fechada!
-2024-07-29 14:02:01,016 - INFO - Conexão bem-sucedida!
-2024-07-29 14:02:01,018 - INFO - Conexão fechada!
-2024-07-29 14:02:06,850 - INFO - Conexão bem-sucedida!
-2024-07-29 14:02:06,852 - INFO - Conexão fechada!
-2024-07-29 14:02:06,870 - INFO - Conexão bem-sucedida!
-2024-07-29 14:02:06,874 - INFO - Conexão fechada!
-2024-07-29 14:03:00,259 - INFO - Conexão bem-sucedida!
-2024-07-29 14:03:00,261 - INFO - Conexão fechada!
-2024-07-29 14:03:03,258 - INFO - Conexão bem-sucedida!
-2024-07-29 14:03:03,260 - INFO - Conexão fechada!
-2024-07-29 14:03:03,279 - INFO - Conexão bem-sucedida!
-2024-07-29 14:03:03,281 - INFO - Conexão fechada!
-2024-07-29 14:04:15,270 - INFO - Conexão bem-sucedida!
-2024-07-29 14:04:15,271 - INFO - Conexão fechada!
-2024-07-29 14:04:24,345 - INFO - Conexão bem-sucedida!
-2024-07-29 14:04:24,347 - INFO - Conexão fechada!
-2024-07-29 14:04:24,360 - INFO - Conexão bem-sucedida!
-2024-07-29 14:04:24,363 - INFO - Conexão fechada!
-2024-07-29 14:22:02,318 - INFO - Conexão bem-sucedida!
-2024-07-29 14:22:02,319 - INFO - Conexão fechada!
-2024-07-29 14:22:06,066 - INFO - Conexão bem-sucedida!
-2024-07-29 14:22:06,068 - INFO - Conexão fechada!
-2024-07-29 14:22:16,882 - INFO - Conexão bem-sucedida!
-2024-07-29 14:22:16,884 - INFO - Conexão fechada!
-2024-07-29 14:22:24,883 - INFO - Conexão bem-sucedida!
-2024-07-29 14:22:24,884 - INFO - Conexão fechada!
-2024-07-29 14:23:22,950 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:22,968 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:23,030 - INFO - Customer inserido no banco de dados.
-2024-07-29 14:23:23,031 - INFO - Conexão fechada!
-2024-07-29 14:23:23,049 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:23,092 - INFO - Endereço inserido no banco de dados.
-2024-07-29 14:23:23,093 - INFO - Conexão fechada!
-2024-07-29 14:23:23,110 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:23,205 - INFO - Relação Customer/Endereço inserido no banco de dados.
-2024-07-29 14:23:23,206 - INFO - Conexão fechada!
-2024-07-29 14:23:23,224 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:23,338 - INFO - Usuário inserido no banco de dados!
-2024-07-29 14:23:23,339 - INFO - Conexão fechada!
-2024-07-29 14:23:23,492 - INFO - Gerente inserido no banco de dados.
-2024-07-29 14:23:23,493 - INFO - Conexão fechada!
-2024-07-29 14:23:25,791 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:25,794 - INFO - Conexão fechada!
-2024-07-29 14:23:38,232 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:38,235 - INFO - Conexão fechada!
-2024-07-29 14:23:59,107 - INFO - Conexão bem-sucedida!
-2024-07-29 14:23:59,110 - INFO - Conexão fechada!
-2024-07-29 14:25:00,903 - INFO - Conexão bem-sucedida!
-2024-07-29 14:25:00,905 - INFO - Conexão fechada!
-2024-07-29 14:25:07,567 - INFO - Conexão bem-sucedida!
-2024-07-29 14:25:07,569 - INFO - Conexão fechada!
-2024-07-29 14:25:07,591 - INFO - Conexão bem-sucedida!
-2024-07-29 14:25:07,658 - INFO - Endereço inserido no banco de dados.
-2024-07-29 14:25:07,658 - INFO - Conexão fechada!
-2024-07-29 14:25:07,678 - INFO - Conexão bem-sucedida!
-2024-07-29 14:25:07,733 - INFO - Conexão fechada!
-2024-07-29 14:25:07,750 - INFO - Conexão bem-sucedida!
-2024-07-29 14:25:07,845 - INFO - Agência inserida com sucesso!
-2024-07-29 14:25:07,846 - INFO - Conexão fechada!
-2024-07-29 14:25:11,208 - INFO - Conexão bem-sucedida!
-2024-07-29 14:25:11,211 - INFO - Conexão fechada!
-2024-07-29 14:26:25,248 - INFO - Conexão bem-sucedida!
-2024-07-29 14:26:25,250 - INFO - Conexão fechada!
-2024-07-29 14:26:30,887 - INFO - Conexão bem-sucedida!
-2024-07-29 14:26:30,889 - INFO - Conexão fechada!
-2024-07-29 14:27:11,318 - INFO - Conexão bem-sucedida!
-2024-07-29 14:27:11,362 - INFO - Customer inserido no banco de dados.
-2024-07-29 14:27:11,363 - INFO - Conexão fechada!
-2024-07-29 14:27:11,382 - INFO - Conexão bem-sucedida!
-2024-07-29 14:27:11,485 - INFO - Endereço inserido no banco de dados.
-2024-07-29 14:27:11,486 - INFO - Conexão fechada!
-2024-07-29 14:27:11,503 - INFO - Conexão bem-sucedida!
-2024-07-29 14:27:11,645 - INFO - Relação Customer/Endereço inserido no banco de dados.
-2024-07-29 14:27:11,646 - INFO - Conexão fechada!
-2024-07-29 14:27:11,663 - INFO - Conexão bem-sucedida!
-2024-07-29 14:27:11,728 - INFO - Usuário inserido no banco de dados!
-2024-07-29 14:27:11,729 - INFO - Conexão fechada!
-2024-07-29 14:27:11,747 - INFO - Conexão bem-sucedida!
-2024-07-29 14:27:11,834 - INFO - Cliente cadastrado com sucesso.
-2024-07-29 14:27:11,834 - INFO - Conexão fechada!
-2024-07-29 14:27:16,760 - INFO - Conexão bem-sucedida!
-2024-07-29 14:27:16,763 - INFO - Conexão fechada!
-2024-07-29 14:28:42,759 - INFO - Conexão bem-sucedida!
-2024-07-29 14:28:42,761 - INFO - Conexão fechada!
-2024-07-29 14:28:51,282 - INFO - Conexão bem-sucedida!
-2024-07-29 14:28:51,283 - INFO - Conexão fechada!
-2024-07-29 14:29:36,066 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:36,143 - INFO - Customer inserido no banco de dados.
-2024-07-29 14:29:36,144 - INFO - Conexão fechada!
-2024-07-29 14:29:36,157 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:36,223 - INFO - Endereço inserido no banco de dados.
-2024-07-29 14:29:36,223 - INFO - Conexão fechada!
-2024-07-29 14:29:36,234 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:36,290 - INFO - Relação Customer/Endereço inserido no banco de dados.
-2024-07-29 14:29:36,290 - INFO - Conexão fechada!
-2024-07-29 14:29:36,301 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:36,427 - INFO - Usuário inserido no banco de dados!
-2024-07-29 14:29:36,428 - INFO - Conexão fechada!
-2024-07-29 14:29:36,448 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:36,519 - INFO - Empresa cadastrada com sucesso.
-2024-07-29 14:29:36,520 - INFO - Conexão fechada!
-2024-07-29 14:29:40,736 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:40,738 - INFO - Conexão fechada!
-2024-07-29 14:29:56,902 - INFO - Conexão bem-sucedida!
-2024-07-29 14:29:56,903 - INFO - Conexão fechada!
-2024-07-29 14:30:23,967 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:23,969 - INFO - Conexão fechada!
-2024-07-29 14:30:23,987 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:24,056 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:24,145 - INFO - Historico da conta criando.
-2024-07-29 14:30:24,147 - INFO - Conexão fechada!
-2024-07-29 14:30:24,148 - INFO - Conta business cadastrada no banco.
-2024-07-29 14:30:24,150 - INFO - Conexão fechada!
-2024-07-29 14:30:24,176 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:24,307 - INFO - Conta poupança cadastrada no banco.
-2024-07-29 14:30:24,308 - INFO - Conexão fechada!
-2024-07-29 14:30:31,076 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:31,078 - INFO - Conexão fechada!
-2024-07-29 14:30:32,334 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:32,335 - INFO - Conexão fechada!
-2024-07-29 14:30:32,348 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:32,427 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:32,508 - INFO - Historico da conta criando.
-2024-07-29 14:30:32,509 - INFO - Conexão fechada!
-2024-07-29 14:30:32,511 - INFO - Conta business cadastrada no banco.
-2024-07-29 14:30:32,512 - INFO - Conexão fechada!
-2024-07-29 14:30:32,542 - INFO - Conexão bem-sucedida!
-2024-07-29 14:30:32,646 - INFO - Conta corrente cadastrada no banco.
-2024-07-29 14:30:32,647 - INFO - Conexão fechada!
-2024-07-29 14:32:18,163 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:18,165 - INFO - Conexão fechada!
-2024-07-29 14:32:24,798 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:24,799 - INFO - Conexão fechada!
-2024-07-29 14:32:26,492 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:26,494 - INFO - Conexão fechada!
-2024-07-29 14:32:26,505 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:26,686 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:26,738 - INFO - Historico da conta criando.
-2024-07-29 14:32:26,738 - INFO - Conexão fechada!
-2024-07-29 14:32:26,739 - INFO - Conta business cadastrada no banco.
-2024-07-29 14:32:26,740 - INFO - Conexão fechada!
-2024-07-29 14:32:35,975 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:35,976 - INFO - Conexão fechada!
-2024-07-29 14:32:35,988 - INFO - Conexão bem-sucedida!
-2024-07-29 14:32:35,991 - INFO - Conexão fechada!
-2024-07-29 14:51:19,917 - INFO - Conexão bem-sucedida!
-2024-07-29 14:51:19,918 - INFO - Conexão fechada!
-2024-07-29 14:51:31,039 - INFO - Conexão bem-sucedida!
-2024-07-29 14:51:31,041 - INFO - Conexão fechada!
-2024-07-29 14:51:38,583 - INFO - Conexão bem-sucedida!
-2024-07-29 14:51:38,584 - INFO - Conexão fechada!
-2024-07-29 14:57:00,532 - INFO - Conexão bem-sucedida!
-2024-07-29 14:57:00,534 - INFO - Conexão fechada!
-2024-07-29 14:57:35,387 - INFO - Conexão bem-sucedida!
-2024-07-29 14:57:35,389 - INFO - Conexão fechada!
-2024-07-29 15:07:41,944 - INFO - Conexão bem-sucedida!
-2024-07-29 15:07:41,946 - INFO - Conexão fechada!
-2024-07-29 15:07:43,919 - INFO - Conexão bem-sucedida!
-2024-07-29 15:07:43,920 - INFO - Conexão fechada!
-2024-07-29 15:14:09,872 - INFO - Conexão bem-sucedida!
-2024-07-29 15:14:09,873 - INFO - Conexão fechada!
+2024-07-29 19:25:08,993 - INFO - package: mysql.connector.plugins
+2024-07-29 19:25:08,993 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:25:08,993 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:25:08,995 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:08,996 - INFO - Conexão fechada!
+2024-07-29 19:25:15,756 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:15,761 - INFO - Conexão fechada!
+2024-07-29 19:25:16,936 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:16,942 - INFO - Conexão fechada!
+2024-07-29 19:25:16,977 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:17,017 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:17,021 - INFO - Historico da conta criando.
+2024-07-29 19:25:17,021 - INFO - Conexão fechada!
+2024-07-29 19:25:17,023 - INFO - Conta business cadastrada no banco.
+2024-07-29 19:25:17,023 - INFO - Conexão fechada!
+2024-07-29 19:25:38,649 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:38,650 - INFO - Conexão fechada!
+2024-07-29 19:25:39,459 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:39,461 - INFO - Conexão fechada!
+2024-07-29 19:25:39,496 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:39,537 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:39,541 - INFO - Historico da conta criando.
+2024-07-29 19:25:39,541 - INFO - Conexão fechada!
+2024-07-29 19:25:39,541 - INFO - Conta business cadastrada no banco.
+2024-07-29 19:25:39,542 - INFO - Conexão fechada!
+2024-07-29 19:25:39,579 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:39,582 - INFO - Conta poupança cadastrada no banco.
+2024-07-29 19:25:39,582 - INFO - Conexão fechada!
+2024-07-29 19:25:44,257 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:44,262 - INFO - Conexão fechada!
+2024-07-29 19:25:45,190 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:45,197 - INFO - Conexão fechada!
+2024-07-29 19:25:45,250 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:45,290 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:45,294 - INFO - Historico da conta criando.
+2024-07-29 19:25:45,294 - INFO - Conexão fechada!
+2024-07-29 19:25:45,295 - INFO - Conta business cadastrada no banco.
+2024-07-29 19:25:45,295 - INFO - Conexão fechada!
+2024-07-29 19:25:45,335 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:45,337 - INFO - Conta corrente cadastrada no banco.
+2024-07-29 19:25:45,337 - INFO - Conexão fechada!
+2024-07-29 19:25:50,210 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:50,212 - INFO - Conexão fechada!
+2024-07-29 19:25:50,255 - INFO - Conexão bem-sucedida!
+2024-07-29 19:25:50,256 - INFO - Conexão fechada!
+2024-07-29 19:26:26,460 - INFO - Conexão bem-sucedida!
+2024-07-29 19:26:26,461 - INFO - Conexão fechada!
+2024-07-29 19:26:27,796 - INFO - Conexão bem-sucedida!
+2024-07-29 19:26:27,798 - INFO - Conexão fechada!
+2024-07-29 19:27:52,825 - INFO - package: mysql.connector.plugins
+2024-07-29 19:27:52,825 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:27:52,825 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:27:52,826 - INFO - Conexão bem-sucedida!
+2024-07-29 19:27:52,827 - INFO - Conexão fechada!
+2024-07-29 19:28:00,677 - INFO - Conexão bem-sucedida!
+2024-07-29 19:28:00,680 - INFO - Conexão fechada!
+2024-07-29 19:28:00,721 - INFO - Conexão bem-sucedida!
+2024-07-29 19:28:00,722 - INFO - Conexão fechada!
+2024-07-29 19:36:00,465 - INFO - package: mysql.connector.plugins
+2024-07-29 19:36:00,465 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:36:00,465 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:36:00,471 - INFO - Conexão bem-sucedida!
+2024-07-29 19:36:00,475 - INFO - Conexão fechada!
+2024-07-29 19:36:27,770 - INFO - package: mysql.connector.plugins
+2024-07-29 19:36:27,771 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:36:27,771 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:36:27,773 - INFO - Conexão bem-sucedida!
+2024-07-29 19:36:27,775 - INFO - Conexão fechada!
+2024-07-29 19:36:44,456 - INFO - package: mysql.connector.plugins
+2024-07-29 19:36:44,456 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:36:44,456 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:36:44,458 - INFO - Conexão bem-sucedida!
+2024-07-29 19:36:44,461 - INFO - Conexão fechada!
+2024-07-29 19:39:44,456 - INFO - package: mysql.connector.plugins
+2024-07-29 19:39:44,456 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:39:44,456 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:39:44,458 - INFO - Conexão bem-sucedida!
+2024-07-29 19:39:44,459 - INFO - Conexão fechada!
+2024-07-29 19:40:32,671 - INFO - package: mysql.connector.plugins
+2024-07-29 19:40:32,671 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:40:32,671 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:40:32,672 - INFO - Conexão bem-sucedida!
+2024-07-29 19:40:32,675 - INFO - Conexão fechada!
+2024-07-29 19:40:44,658 - INFO - package: mysql.connector.plugins
+2024-07-29 19:40:44,658 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:40:44,658 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:40:44,659 - INFO - Conexão bem-sucedida!
+2024-07-29 19:40:44,660 - INFO - Conexão fechada!
+2024-07-29 19:41:34,379 - INFO - package: mysql.connector.plugins
+2024-07-29 19:41:34,379 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:41:34,379 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:41:34,381 - INFO - Conexão bem-sucedida!
+2024-07-29 19:41:34,383 - INFO - Conexão fechada!
+2024-07-29 19:41:44,836 - INFO - Conexão bem-sucedida!
+2024-07-29 19:41:44,842 - INFO - Conexão fechada!
+2024-07-29 19:41:44,881 - INFO - Conexão bem-sucedida!
+2024-07-29 19:41:44,883 - INFO - Conexão fechada!
+2024-07-29 19:44:47,659 - INFO - package: mysql.connector.plugins
+2024-07-29 19:44:47,659 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:44:47,659 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:44:47,661 - INFO - Conexão bem-sucedida!
+2024-07-29 19:44:47,662 - INFO - Conexão fechada!
+2024-07-29 19:44:56,983 - INFO - Conexão bem-sucedida!
+2024-07-29 19:44:56,991 - INFO - Conexão fechada!
+2024-07-29 19:44:57,997 - INFO - Conexão bem-sucedida!
+2024-07-29 19:44:57,998 - INFO - Conexão fechada!
+2024-07-29 19:44:58,040 - INFO - Conexão bem-sucedida!
+2024-07-29 19:44:58,043 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'number' cannot be null
+2024-07-29 19:44:58,043 - INFO - Conexão fechada!
+2024-07-29 19:44:58,078 - INFO - Conexão bem-sucedida!
+2024-07-29 19:44:58,079 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'id_account' cannot be null
+2024-07-29 19:44:58,079 - INFO - Conexão fechada!
+2024-07-29 19:45:02,114 - INFO - Conexão bem-sucedida!
+2024-07-29 19:45:02,115 - INFO - Conexão fechada!
+2024-07-29 19:45:02,167 - INFO - Conexão bem-sucedida!
+2024-07-29 19:45:02,169 - INFO - Conexão fechada!
+2024-07-29 19:46:26,310 - INFO - package: mysql.connector.plugins
+2024-07-29 19:46:26,310 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:46:26,310 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:46:26,312 - INFO - Conexão bem-sucedida!
+2024-07-29 19:46:26,313 - INFO - Conexão fechada!
+2024-07-29 19:46:35,561 - INFO - Conexão bem-sucedida!
+2024-07-29 19:46:35,567 - INFO - Conexão fechada!
+2024-07-29 19:46:36,952 - INFO - Conexão bem-sucedida!
+2024-07-29 19:46:36,955 - INFO - Conexão fechada!
+2024-07-29 19:46:36,996 - INFO - Conexão bem-sucedida!
+2024-07-29 19:46:37,053 - INFO - Conexão bem-sucedida!
+2024-07-29 19:46:37,058 - INFO - Historico da conta criando.
+2024-07-29 19:46:37,058 - INFO - Conexão fechada!
+2024-07-29 19:46:37,058 - INFO - Conta business cadastrada no banco.
+2024-07-29 19:46:37,058 - INFO - Conexão fechada!
+2024-07-29 19:47:07,289 - INFO - Conexão bem-sucedida!
+2024-07-29 19:47:07,292 - INFO - Conexão fechada!
+2024-07-29 19:47:09,027 - INFO - Conexão bem-sucedida!
+2024-07-29 19:47:09,029 - INFO - Conexão fechada!
+2024-07-29 19:47:09,072 - INFO - Conexão bem-sucedida!
+2024-07-29 19:47:09,073 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'number' cannot be null
+2024-07-29 19:47:09,073 - INFO - Conexão fechada!
+2024-07-29 19:47:09,110 - INFO - Conexão bem-sucedida!
+2024-07-29 19:47:09,111 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'id_account' cannot be null
+2024-07-29 19:47:09,111 - INFO - Conexão fechada!
+2024-07-29 19:48:02,977 - INFO - package: mysql.connector.plugins
+2024-07-29 19:48:02,977 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:48:02,977 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:48:02,979 - INFO - Conexão bem-sucedida!
+2024-07-29 19:48:02,981 - INFO - Conexão fechada!
+2024-07-29 19:48:08,654 - INFO - Conexão bem-sucedida!
+2024-07-29 19:48:08,657 - INFO - Conexão fechada!
+2024-07-29 19:48:10,901 - INFO - Conexão bem-sucedida!
+2024-07-29 19:48:10,902 - INFO - Conexão fechada!
+2024-07-29 19:48:11,890 - INFO - Conexão bem-sucedida!
+2024-07-29 19:48:11,892 - INFO - Conexão fechada!
+2024-07-29 19:48:11,929 - INFO - Conexão bem-sucedida!
+2024-07-29 19:48:11,931 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'number' cannot be null
+2024-07-29 19:48:11,932 - INFO - Conexão fechada!
+2024-07-29 19:48:11,969 - INFO - Conexão bem-sucedida!
+2024-07-29 19:48:11,974 - ERROR - Erro ao executar SQL: 1048 (23000): Column 'id_account' cannot be null
+2024-07-29 19:48:11,974 - INFO - Conexão fechada!
+2024-07-29 19:51:06,708 - INFO - package: mysql.connector.plugins
+2024-07-29 19:51:06,709 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:51:06,709 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:51:06,710 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:06,712 - INFO - Conexão fechada!
+2024-07-29 19:51:13,055 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:13,057 - INFO - Conexão fechada!
+2024-07-29 19:51:14,022 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:14,027 - INFO - Conexão fechada!
+2024-07-29 19:51:14,073 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:14,128 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:14,131 - INFO - Historico da conta criando.
+2024-07-29 19:51:14,131 - INFO - Conexão fechada!
+2024-07-29 19:51:14,132 - INFO - Conta business cadastrada no banco.
+2024-07-29 19:51:14,132 - INFO - Conexão fechada!
+2024-07-29 19:51:14,187 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:14,191 - INFO - Conta poupança cadastrada no banco.
+2024-07-29 19:51:14,192 - INFO - Conexão fechada!
+2024-07-29 19:51:29,327 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:29,329 - INFO - Conexão fechada!
+2024-07-29 19:51:29,377 - INFO - Conexão bem-sucedida!
+2024-07-29 19:51:29,378 - INFO - Conexão fechada!
+2024-07-29 19:53:12,343 - INFO - package: mysql.connector.plugins
+2024-07-29 19:53:12,343 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:53:12,343 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:53:12,345 - INFO - Conexão bem-sucedida!
+2024-07-29 19:53:12,347 - INFO - Conexão fechada!
+2024-07-29 19:53:13,651 - INFO - Conexão bem-sucedida!
+2024-07-29 19:53:13,656 - INFO - Conexão fechada!
+2024-07-29 19:54:08,012 - INFO - package: mysql.connector.plugins
+2024-07-29 19:54:08,012 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:54:08,012 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:54:08,014 - INFO - Conexão bem-sucedida!
+2024-07-29 19:54:08,017 - INFO - Conexão fechada!
+2024-07-29 19:54:54,859 - INFO - Conexão bem-sucedida!
+2024-07-29 19:54:54,866 - INFO - Conexão fechada!
+2024-07-29 19:55:54,381 - INFO - package: mysql.connector.plugins
+2024-07-29 19:55:54,381 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:55:54,381 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:55:54,383 - INFO - Conexão bem-sucedida!
+2024-07-29 19:55:54,384 - INFO - Conexão fechada!
+2024-07-29 19:56:32,444 - INFO - package: mysql.connector.plugins
+2024-07-29 19:56:32,444 - INFO - plugin_name: caching_sha2_password
+2024-07-29 19:56:32,444 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 19:56:32,446 - INFO - Conexão bem-sucedida!
+2024-07-29 19:56:32,449 - INFO - Conexão fechada!
+2024-07-29 20:08:31,063 - INFO - package: mysql.connector.plugins
+2024-07-29 20:08:31,064 - INFO - plugin_name: caching_sha2_password
+2024-07-29 20:08:31,064 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 20:08:31,067 - INFO - Conexão bem-sucedida!
+2024-07-29 20:08:31,069 - INFO - Conexão fechada!
+2024-07-29 20:08:38,179 - INFO - Conexão bem-sucedida!
+2024-07-29 20:08:38,183 - INFO - Conexão fechada!
+2024-07-29 20:08:38,219 - INFO - Conexão bem-sucedida!
+2024-07-29 20:08:38,220 - INFO - Conexão fechada!
+2024-07-29 20:09:58,448 - INFO - package: mysql.connector.plugins
+2024-07-29 20:09:58,448 - INFO - plugin_name: caching_sha2_password
+2024-07-29 20:09:58,448 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 20:09:58,450 - INFO - Conexão bem-sucedida!
+2024-07-29 20:09:58,451 - INFO - Conexão fechada!
+2024-07-29 20:10:07,090 - INFO - Conexão bem-sucedida!
+2024-07-29 20:10:07,092 - INFO - Conexão fechada!
+2024-07-29 20:10:07,132 - INFO - Conexão bem-sucedida!
+2024-07-29 20:10:07,133 - INFO - Conexão fechada!
+2024-07-29 20:11:39,628 - INFO - package: mysql.connector.plugins
+2024-07-29 20:11:39,628 - INFO - plugin_name: caching_sha2_password
+2024-07-29 20:11:39,629 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 20:11:39,630 - INFO - Conexão bem-sucedida!
+2024-07-29 20:11:39,633 - INFO - Conexão fechada!
+2024-07-29 20:11:46,486 - INFO - Conexão bem-sucedida!
+2024-07-29 20:11:46,488 - INFO - Conexão fechada!
+2024-07-29 20:11:46,530 - INFO - Conexão bem-sucedida!
+2024-07-29 20:11:46,533 - INFO - Conexão fechada!
+2024-07-29 20:24:27,930 - INFO - package: mysql.connector.plugins
+2024-07-29 20:24:27,930 - INFO - plugin_name: caching_sha2_password
+2024-07-29 20:24:27,930 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 20:24:27,931 - INFO - Conexão bem-sucedida!
+2024-07-29 20:24:27,933 - INFO - Conexão fechada!
+2024-07-29 20:24:35,300 - INFO - Conexão bem-sucedida!
+2024-07-29 20:24:35,301 - INFO - Conexão fechada!
+2024-07-29 20:24:35,338 - INFO - Conexão bem-sucedida!
+2024-07-29 20:24:35,341 - INFO - Conexão fechada!
+2024-07-29 20:26:23,024 - INFO - package: mysql.connector.plugins
+2024-07-29 20:26:23,024 - INFO - plugin_name: caching_sha2_password
+2024-07-29 20:26:23,024 - INFO - AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+2024-07-29 20:26:23,025 - INFO - Conexão bem-sucedida!
+2024-07-29 20:26:23,027 - INFO - Conexão fechada!
+2024-07-29 20:26:30,717 - INFO - Conexão bem-sucedida!
+2024-07-29 20:26:30,719 - INFO - Conexão fechada!
+2024-07-29 20:26:30,756 - INFO - Conexão bem-sucedida!
+2024-07-29 20:26:30,757 - INFO - Conexão fechada!

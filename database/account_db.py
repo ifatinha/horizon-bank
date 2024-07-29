@@ -221,7 +221,7 @@ def find_account(number_account, password):
         conn = Connection().connect()
         cursor = conn.cursor()
         cursor.execute(query, (number_account, password))
-        return cursor.fetchall()
+        return cursor.fetchone()
 
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")

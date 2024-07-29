@@ -2,6 +2,7 @@ from util.menu import client_menu
 from util.menu import menu_banking_operations
 from database.account_db import list_accounts_customer
 from controller.account_creator import AccountCreator
+from admin.banking_operations import BankingOperations
 
 
 def customer_operations(token):
@@ -11,7 +12,12 @@ def customer_operations(token):
         client_option = client_menu()
 
         if client_option == "1":
+
             # Operações bancárias
+
+            account = AccountCreator.from_db_record(BankingOperations.find_account())
+            historic = BankingOperations.return_historic_account(account.number)
+            print(account)
 
             while True:
 
