@@ -3,6 +3,8 @@ from controller.branch_creator import BranchCreator
 from database.customer_db import find_customer_token
 from controller.customer_creator import CustomerCreator
 from classes.Account import Account
+from classes.Branch import Branch
+from classes.Customer import Customer
 from classes.SavignAccount import SavignAccount
 from classes.CurrentAccount import CurrentAccount
 from controller.branch_creator import BranchCreator
@@ -94,4 +96,20 @@ class AccountCreator:
 
     @staticmethod
     def from_db_record(record):
-        return record
+        branch = Branch(record[1], None, None)
+        branch.id_branch = record[0]
+        branch.name = record[2]
+        branch.phone = record[3]
+        branch.open_date = record[4]
+
+        customer = Customer(record[6], record[7], None, record[9], None)
+        customer.customer_id = record[5]
+        customer.token = record[8]
+
+        account = Account(record[11], branch, customer, record[14])
+        account.id_account = record[10]
+        account.password = record[12]
+        account.balance = record[13]
+        account.created_at = record[15]
+
+        return account

@@ -62,9 +62,17 @@ class Account:
     def created_at(self):
         return self.__created_at
 
+    @created_at.setter
+    def created_at(self, created_at):
+        self.__created_at = created_at
+
     @property
     def update_at(self):
         return self.__update_at
+
+    @update_at.setter
+    def update_at(self, update_at):
+        self.update_at = update_at
 
     @staticmethod
     def generate_account_number():

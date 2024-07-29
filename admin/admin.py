@@ -136,14 +136,14 @@ def admin_operations():
                     record = get_valid_customer_token()
                     customer = CustomerCreator.from_db_record(record)
 
-                    print("=" * 60)
-                    print(customer)
-                    print("=" * 60 + "\n")
+                    print("CONTAS DO ENCONTRADAS")
 
                     accounts_customer = list_accounts_customer(customer.token)
 
                     for account in accounts_customer:
+                        print("=" * 60)
                         print(AccountCreator.from_db_record(account))
+                        print("=" * 60 + "\n")
 
                 elif option_customer == "0":
                     break
