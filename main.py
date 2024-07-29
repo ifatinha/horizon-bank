@@ -1,7 +1,6 @@
 from sql.script_create_tables import create_database, create_tables, insert_default_user
 
 from util.menu import main_menu
-
 from database.users_db import login_user
 from admin.admin import admin_operations
 
