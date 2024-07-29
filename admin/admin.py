@@ -16,7 +16,11 @@ from database.individual_db import insert_invidual, list_individual
 from controller.company_creator import CompanyCreator
 from database.company_db import insert_company, list_company
 from controller.account_creator import AccountCreator
-from database.account_db import insert_business_account, insert_savign_account
+from database.account_db import (
+    insert_business_account,
+    insert_savign_account,
+    insert_current_account,
+)
 
 
 def admin_operations():
@@ -32,6 +36,7 @@ def admin_operations():
                 if option_customer == "1":
 
                     while True:
+                        # Cadastrar Clientes
                         type_customer = menu_type_customer()
 
                         if type_customer == "1":
@@ -63,34 +68,13 @@ def admin_operations():
 
                             insert_savign_account(savign_account)
 
-                            # savign_account = return_savign_account()
-                            # id_account = DatabaseOperations.insert_account(
-                            #     savign_account.super_to_tuple()
-                            # )
-
-                            # savign_account.id_account = id_account
-                            # DatabaseOperations.insert_savign_account(
-                            #     savign_account.to_tuple()
-                            # )
-
-                            # historic = return_historic(savign_account)
-                            # DatabaseOperations.insert_historic(historic)
-                            pass
-
                         elif menu_option == "2":
                             # Conta Corrente
-                            # current_account = return_current_account()
-                            # id_account = DatabaseOperations.insert_account(
-                            #     current_account.super_to_tuple()
-                            # )
-                            # current_account.id_account = id_account
+                            current_account = (
+                                AccountCreator.get_instance_current_account()
+                            )
+                            insert_current_account(current_account)
 
-                            # DatabaseOperations.insert_current_account(
-                            #     current_account.to_tuple()
-                            # )
-                            # historic = return_historic(current_account)
-                            # DatabaseOperations.insert_historic(historic)
-                            pass
                         elif menu_option == "3":
                             # Conta Comercial
 
@@ -106,6 +90,9 @@ def admin_operations():
                 elif option_customer == "3":
 
                     while True:
+
+                        # Listar Clientes
+
                         option = menu_type_customer()
 
                         if option == "1":
@@ -142,7 +129,7 @@ def admin_operations():
                             print("@@@ Opção Inválida. @@@")
 
                 elif option_customer == "4":
-                    """Buscar dados de um cliente"""
+                    # Buscar dados de um cliente
                     #     """Contas Cliente"""
                     #     while True:
                     #         option = menu_type_customer()

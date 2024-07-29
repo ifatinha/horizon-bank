@@ -1,4 +1,5 @@
 from classes.Account import Account
+from enums.AccountTypes import AccountTypes
 
 
 class CurrentAccount(Account):
@@ -12,10 +13,15 @@ class CurrentAccount(Account):
         withdrawal_limit=1000,
         transaction_limit=10,
     ) -> None:
-        super().__init__(password, branch, customer, "Current")
+        super().__init__(
+            password, branch, customer, account_type=AccountTypes.CURRENT.value
+        )
         self.__overdraft_limit = overdraft_limit
         self.__withdrawal_limit = withdrawal_limit
         self.__transaction_limit = transaction_limit
+        self.account_bd = Account(
+            password, branch, customer, AccountTypes.CURRENT.value
+        )
 
     @property
     def overdraft_limit(self):
@@ -48,6 +54,3 @@ class CurrentAccount(Account):
             self.withdrawal_limit,
             self.transaction_limit,
         )
-
-    def super_to_tuple(self):
-        return super().to_tuple()

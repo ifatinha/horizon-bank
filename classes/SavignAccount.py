@@ -5,7 +5,9 @@ from enums.AccountTypes import AccountTypes
 class SavignAccount(Account):
 
     def __init__(self, password, branch, customer) -> None:
-        super().__init__(password, branch, customer, account_type="Savings")
+        super().__init__(
+            password, branch, customer, account_type=AccountTypes.SAVINGS.value
+        )
         self.__interest_rate = 0.0050
         self.account_bd = Account(
             password, branch, customer, AccountTypes.SAVINGS.value

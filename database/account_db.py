@@ -68,7 +68,7 @@ def insert_savign_account(savign_account):
         savign_account (Object): Um objeto contendo os valores para cadastrar um conta poupança.
 
     Returns:
-        int: O ID da última linha inserida, se a operação for bem-sucedida.
+        None:
     """
 
     try:
@@ -84,6 +84,41 @@ def insert_savign_account(savign_account):
 
         print("##### Tipo de conta: Poupança #####")
         logging.info("Conta poupança cadastrada no banco.")
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")
+
+
+def insert_current_account(current_account):
+    """
+    Insere uma nova conta corrente no banco de dados.
+
+    Args:
+        current_account (Object): Um objeto contendo os valores para cadastrar um conta corrente.
+
+    Returns:
+        None:
+    """
+
+    try:
+
+        # Insere os dados da conta da tabela Account e recebe o id da conta inserida
+        current_account.id_account = insert_business_account(current_account.account_bd)
+
+        query = """
+            INSERT INTO current_account(id_account, overdraft_limit, withdrawal_limit, transaction_limit) 
+            VALUES(%s, %s, %s, %s);
+        """
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, current_account.to_tuple())
+        conn.commit()
+
+        print("##### Tipo de conta: Corrente #####")
+        logging.info("Conta corrente cadastrada no banco.")
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")
     finally:

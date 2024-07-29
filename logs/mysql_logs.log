@@ -1,0 +1,30 @@
+2024-07-29 10:12:28,842 - INFO - Conexão bem-sucedida!
+2024-07-29 10:12:28,844 - INFO - Conexão fechada!
+2024-07-29 10:12:37,744 - INFO - Conexão bem-sucedida!
+2024-07-29 10:12:37,745 - INFO - Conexão fechada!
+2024-07-29 10:12:41,531 - INFO - Conexão bem-sucedida!
+2024-07-29 10:12:41,533 - INFO - Conexão fechada!
+2024-07-29 10:12:41,544 - INFO - Conexão bem-sucedida!
+2024-07-29 10:12:41,612 - INFO - Conexão bem-sucedida!
+2024-07-29 10:12:41,755 - INFO - Historico da conta criando.
+2024-07-29 10:12:41,756 - INFO - Conexão fechada!
+2024-07-29 10:12:41,757 - INFO - Conta business cadastrada no banco.
+2024-07-29 10:12:41,759 - INFO - Conexão fechada!
+2024-07-29 10:12:41,791 - INFO - Conexão bem-sucedida!
+2024-07-29 10:12:41,792 - ERROR - Erro ao executar SQL: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'query = "INSERT INTO current_account(id_account, overdraft_limit, withdrawal_lim' at line 1
+2024-07-29 10:12:41,793 - INFO - Conexão fechada!
+2024-07-29 10:14:06,844 - INFO - Conexão bem-sucedida!
+2024-07-29 10:14:06,845 - INFO - Conexão fechada!
+2024-07-29 10:14:21,398 - INFO - Conexão bem-sucedida!
+2024-07-29 10:14:21,400 - INFO - Conexão fechada!
+2024-07-29 10:14:22,515 - INFO - Conexão bem-sucedida!
+2024-07-29 10:14:22,516 - INFO - Conexão fechada!
+2024-07-29 10:14:22,528 - INFO - Conexão bem-sucedida!
+2024-07-29 10:14:22,600 - INFO - Conexão bem-sucedida!
+2024-07-29 10:14:22,694 - INFO - Historico da conta criando.
+2024-07-29 10:14:22,695 - INFO - Conexão fechada!
+2024-07-29 10:14:22,696 - INFO - Conta business cadastrada no banco.
+2024-07-29 10:14:22,698 - INFO - Conexão fechada!
+2024-07-29 10:14:22,738 - INFO - Conexão bem-sucedida!
+2024-07-29 10:14:22,777 - INFO - Conta corrente cadastrada no banco.
+2024-07-29 10:14:22,778 - INFO - Conexão fechada!
