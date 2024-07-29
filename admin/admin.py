@@ -56,7 +56,7 @@ def admin_operations():
                             # Encerrar aplicação
                             break
                         else:
-                            print("@@@ Opção inválida @@@")
+                            print("@@@ Opção inválida. Tente novamente. @@@")
 
                 elif option_customer == "2":
                     # Abri conta
@@ -136,14 +136,18 @@ def admin_operations():
                     record = get_valid_customer_token()
                     customer = CustomerCreator.from_db_record(record)
 
-                    print("CONTAS DO ENCONTRADAS")
-
                     accounts_customer = list_accounts_customer(customer.token)
 
-                    for account in accounts_customer:
-                        print("=" * 60)
-                        print(AccountCreator.from_db_record(account))
-                        print("=" * 60 + "\n")
+                    if accounts_customer:
+
+                        print("CONTAS DO ENCONTRADAS")
+                        for account in accounts_customer:
+                            print("=" * 60)
+                            print(AccountCreator.from_db_record(account))
+                            print("=" * 60 + "\n")
+
+                    else:
+                        print("@@@ O cliente não possui contas. @@@")
 
                 elif option_customer == "0":
                     break

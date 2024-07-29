@@ -177,3 +177,55 @@ def list_accounts_customer(token):
         if conn:
             conn.close()
             logging.info("Conexão fechada!")
+
+
+def find_account(number_account, password):
+    """
+    Retorna uma conta específica através de seu número e senha.
+
+    Este método aceita um numero de conta e uma senha como parâmetro e retorna uma conta especifica.
+
+    Parâmetros:
+    number_account (int): O número da conta.
+    password (str): A senha da conta.
+
+    Retorna:
+    Account[Object]: Uma conta.
+    """
+    try:
+        query = """
+            SELECT
+            B.branch_id,
+            B.branch_number,
+            B.branch_name,
+            B.phone,
+            B.open_date,
+            C.id,
+            C.fullname,
+            C.email,
+            C.token,
+            C.phone,
+            A.id,
+            A.number,
+            A.password,
+            A.balance,
+            A.account_type,
+            A.created_at
+            FROM account A
+            INNER JOIN customer C
+            ON C.id = A.customer_id
+            INNER JOIN branch B
+            ON B.branch_id = A.branch_id
+            WHERE A.number = %s and A.password = %s
+        """
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (number_account, password))
+        return cursor.fetchall()
+
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")

@@ -51,3 +51,7 @@ class IndividualCreator:
         individual.customer_id = record[10]
 
         return individual
+
+    @staticmethod
+    def create_individual():
+        pass

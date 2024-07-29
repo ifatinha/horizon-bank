@@ -1,5 +1,58 @@
-def customer_operations():
-    pass
+from util.menu import client_menu
+from util.menu import menu_banking_operations
+from database.account_db import list_accounts_customer
+from controller.account_creator import AccountCreator
+
+
+def customer_operations(token):
+
+    while True:
+
+        client_option = client_menu()
+
+        if client_option == "1":
+            # Operações bancárias
+
+            while True:
+
+                banking_operations = menu_banking_operations()
+
+                if banking_operations == "1":
+                    pass
+                elif banking_operations == "2":
+                    pass
+                elif banking_operations == "3":
+                    pass
+                elif banking_operations == "4":
+                    pass
+                elif banking_operations == "0":
+                    break
+                else:
+                    print("@@@ Operação inválida. Tente novamente. @@@")
+
+        elif client_option == "2":
+            # Contas Cadastradas
+
+            accounts_customer = list_accounts_customer(token)
+
+            if accounts_customer:
+
+                print("CONTAS ENCONTRADAS")
+
+                for account in accounts_customer:
+                    print("=" * 60)
+                    print(AccountCreator.from_db_record(account))
+                    print("=" * 60 + "\n")
+
+            else:
+                print("@@@ Você não possui contas. @@@")
+
+        elif client_option == "0":
+            break
+
+        else:
+            print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+
     #     cl_option = client_menu()
 
     #     if cl_option == "1":
@@ -166,20 +219,21 @@ def customer_operations():
     #             else:
     #                 print("@@@ Opção Inválida. @@@")
 
-    #     elif cl_option == "2":
-    #         """Minhas Contas"""
-    #         result = DatabaseOperations.find_accounts_individual(token)
 
-    #         if len(result) > 0:
-    #             print(result)
-    #         else:
-    #             print("@@@ Você não possui contas na agência. @@@")
+#     elif cl_option == "2":
+#         """Minhas Contas"""
+#         result = DatabaseOperations.find_accounts_individual(token)
 
-    #     elif cl_option == "0":
-    #         break
+#         if len(result) > 0:
+#             print(result)
+#         else:
+#             print("@@@ Você não possui contas na agência. @@@")
 
-    #     else:
-    #         print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+#     elif cl_option == "0":
+#         break
 
-    # else:
-    #     print("@@@ Usuário ou senha inválidos @@@")
+#     else:
+#         print("\n@@@ Operação inválida, selecione novamente. @@@\n")
+
+# else:
+#     print("@@@ Usuário ou senha inválidos @@@")

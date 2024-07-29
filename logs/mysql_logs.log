@@ -122,3 +122,146 @@
 2024-07-29 14:04:24,347 - INFO - Conexão fechada!
 2024-07-29 14:04:24,360 - INFO - Conexão bem-sucedida!
 2024-07-29 14:04:24,363 - INFO - Conexão fechada!
+2024-07-29 14:22:02,318 - INFO - Conexão bem-sucedida!
+2024-07-29 14:22:02,319 - INFO - Conexão fechada!
+2024-07-29 14:22:06,066 - INFO - Conexão bem-sucedida!
+2024-07-29 14:22:06,068 - INFO - Conexão fechada!
+2024-07-29 14:22:16,882 - INFO - Conexão bem-sucedida!
+2024-07-29 14:22:16,884 - INFO - Conexão fechada!
+2024-07-29 14:22:24,883 - INFO - Conexão bem-sucedida!
+2024-07-29 14:22:24,884 - INFO - Conexão fechada!
+2024-07-29 14:23:22,950 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:22,968 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:23,030 - INFO - Customer inserido no banco de dados.
+2024-07-29 14:23:23,031 - INFO - Conexão fechada!
+2024-07-29 14:23:23,049 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:23,092 - INFO - Endereço inserido no banco de dados.
+2024-07-29 14:23:23,093 - INFO - Conexão fechada!
+2024-07-29 14:23:23,110 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:23,205 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-29 14:23:23,206 - INFO - Conexão fechada!
+2024-07-29 14:23:23,224 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:23,338 - INFO - Usuário inserido no banco de dados!
+2024-07-29 14:23:23,339 - INFO - Conexão fechada!
+2024-07-29 14:23:23,492 - INFO - Gerente inserido no banco de dados.
+2024-07-29 14:23:23,493 - INFO - Conexão fechada!
+2024-07-29 14:23:25,791 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:25,794 - INFO - Conexão fechada!
+2024-07-29 14:23:38,232 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:38,235 - INFO - Conexão fechada!
+2024-07-29 14:23:59,107 - INFO - Conexão bem-sucedida!
+2024-07-29 14:23:59,110 - INFO - Conexão fechada!
+2024-07-29 14:25:00,903 - INFO - Conexão bem-sucedida!
+2024-07-29 14:25:00,905 - INFO - Conexão fechada!
+2024-07-29 14:25:07,567 - INFO - Conexão bem-sucedida!
+2024-07-29 14:25:07,569 - INFO - Conexão fechada!
+2024-07-29 14:25:07,591 - INFO - Conexão bem-sucedida!
+2024-07-29 14:25:07,658 - INFO - Endereço inserido no banco de dados.
+2024-07-29 14:25:07,658 - INFO - Conexão fechada!
+2024-07-29 14:25:07,678 - INFO - Conexão bem-sucedida!
+2024-07-29 14:25:07,733 - INFO - Conexão fechada!
+2024-07-29 14:25:07,750 - INFO - Conexão bem-sucedida!
+2024-07-29 14:25:07,845 - INFO - Agência inserida com sucesso!
+2024-07-29 14:25:07,846 - INFO - Conexão fechada!
+2024-07-29 14:25:11,208 - INFO - Conexão bem-sucedida!
+2024-07-29 14:25:11,211 - INFO - Conexão fechada!
+2024-07-29 14:26:25,248 - INFO - Conexão bem-sucedida!
+2024-07-29 14:26:25,250 - INFO - Conexão fechada!
+2024-07-29 14:26:30,887 - INFO - Conexão bem-sucedida!
+2024-07-29 14:26:30,889 - INFO - Conexão fechada!
+2024-07-29 14:27:11,318 - INFO - Conexão bem-sucedida!
+2024-07-29 14:27:11,362 - INFO - Customer inserido no banco de dados.
+2024-07-29 14:27:11,363 - INFO - Conexão fechada!
+2024-07-29 14:27:11,382 - INFO - Conexão bem-sucedida!
+2024-07-29 14:27:11,485 - INFO - Endereço inserido no banco de dados.
+2024-07-29 14:27:11,486 - INFO - Conexão fechada!
+2024-07-29 14:27:11,503 - INFO - Conexão bem-sucedida!
+2024-07-29 14:27:11,645 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-29 14:27:11,646 - INFO - Conexão fechada!
+2024-07-29 14:27:11,663 - INFO - Conexão bem-sucedida!
+2024-07-29 14:27:11,728 - INFO - Usuário inserido no banco de dados!
+2024-07-29 14:27:11,729 - INFO - Conexão fechada!
+2024-07-29 14:27:11,747 - INFO - Conexão bem-sucedida!
+2024-07-29 14:27:11,834 - INFO - Cliente cadastrado com sucesso.
+2024-07-29 14:27:11,834 - INFO - Conexão fechada!
+2024-07-29 14:27:16,760 - INFO - Conexão bem-sucedida!
+2024-07-29 14:27:16,763 - INFO - Conexão fechada!
+2024-07-29 14:28:42,759 - INFO - Conexão bem-sucedida!
+2024-07-29 14:28:42,761 - INFO - Conexão fechada!
+2024-07-29 14:28:51,282 - INFO - Conexão bem-sucedida!
+2024-07-29 14:28:51,283 - INFO - Conexão fechada!
+2024-07-29 14:29:36,066 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:36,143 - INFO - Customer inserido no banco de dados.
+2024-07-29 14:29:36,144 - INFO - Conexão fechada!
+2024-07-29 14:29:36,157 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:36,223 - INFO - Endereço inserido no banco de dados.
+2024-07-29 14:29:36,223 - INFO - Conexão fechada!
+2024-07-29 14:29:36,234 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:36,290 - INFO - Relação Customer/Endereço inserido no banco de dados.
+2024-07-29 14:29:36,290 - INFO - Conexão fechada!
+2024-07-29 14:29:36,301 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:36,427 - INFO - Usuário inserido no banco de dados!
+2024-07-29 14:29:36,428 - INFO - Conexão fechada!
+2024-07-29 14:29:36,448 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:36,519 - INFO - Empresa cadastrada com sucesso.
+2024-07-29 14:29:36,520 - INFO - Conexão fechada!
+2024-07-29 14:29:40,736 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:40,738 - INFO - Conexão fechada!
+2024-07-29 14:29:56,902 - INFO - Conexão bem-sucedida!
+2024-07-29 14:29:56,903 - INFO - Conexão fechada!
+2024-07-29 14:30:23,967 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:23,969 - INFO - Conexão fechada!
+2024-07-29 14:30:23,987 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:24,056 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:24,145 - INFO - Historico da conta criando.
+2024-07-29 14:30:24,147 - INFO - Conexão fechada!
+2024-07-29 14:30:24,148 - INFO - Conta business cadastrada no banco.
+2024-07-29 14:30:24,150 - INFO - Conexão fechada!
+2024-07-29 14:30:24,176 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:24,307 - INFO - Conta poupança cadastrada no banco.
+2024-07-29 14:30:24,308 - INFO - Conexão fechada!
+2024-07-29 14:30:31,076 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:31,078 - INFO - Conexão fechada!
+2024-07-29 14:30:32,334 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:32,335 - INFO - Conexão fechada!
+2024-07-29 14:30:32,348 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:32,427 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:32,508 - INFO - Historico da conta criando.
+2024-07-29 14:30:32,509 - INFO - Conexão fechada!
+2024-07-29 14:30:32,511 - INFO - Conta business cadastrada no banco.
+2024-07-29 14:30:32,512 - INFO - Conexão fechada!
+2024-07-29 14:30:32,542 - INFO - Conexão bem-sucedida!
+2024-07-29 14:30:32,646 - INFO - Conta corrente cadastrada no banco.
+2024-07-29 14:30:32,647 - INFO - Conexão fechada!
+2024-07-29 14:32:18,163 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:18,165 - INFO - Conexão fechada!
+2024-07-29 14:32:24,798 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:24,799 - INFO - Conexão fechada!
+2024-07-29 14:32:26,492 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:26,494 - INFO - Conexão fechada!
+2024-07-29 14:32:26,505 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:26,686 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:26,738 - INFO - Historico da conta criando.
+2024-07-29 14:32:26,738 - INFO - Conexão fechada!
+2024-07-29 14:32:26,739 - INFO - Conta business cadastrada no banco.
+2024-07-29 14:32:26,740 - INFO - Conexão fechada!
+2024-07-29 14:32:35,975 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:35,976 - INFO - Conexão fechada!
+2024-07-29 14:32:35,988 - INFO - Conexão bem-sucedida!
+2024-07-29 14:32:35,991 - INFO - Conexão fechada!
+2024-07-29 14:51:19,917 - INFO - Conexão bem-sucedida!
+2024-07-29 14:51:19,918 - INFO - Conexão fechada!
+2024-07-29 14:51:31,039 - INFO - Conexão bem-sucedida!
+2024-07-29 14:51:31,041 - INFO - Conexão fechada!
+2024-07-29 14:51:38,583 - INFO - Conexão bem-sucedida!
+2024-07-29 14:51:38,584 - INFO - Conexão fechada!
+2024-07-29 14:57:00,532 - INFO - Conexão bem-sucedida!
+2024-07-29 14:57:00,534 - INFO - Conexão fechada!
+2024-07-29 14:57:35,387 - INFO - Conexão bem-sucedida!
+2024-07-29 14:57:35,389 - INFO - Conexão fechada!
+2024-07-29 15:07:41,944 - INFO - Conexão bem-sucedida!
+2024-07-29 15:07:41,946 - INFO - Conexão fechada!
+2024-07-29 15:07:43,919 - INFO - Conexão bem-sucedida!
+2024-07-29 15:07:43,920 - INFO - Conexão fechada!
+2024-07-29 15:14:09,872 - INFO - Conexão bem-sucedida!
+2024-07-29 15:14:09,873 - INFO - Conexão fechada!

@@ -3,6 +3,7 @@ from sql.script_create_tables import create_database, create_tables, insert_defa
 from util.menu import main_menu
 from database.users_db import login_user
 from admin.admin import admin_operations
+from admin.customer import customer_operations
 
 
 def main():
@@ -24,13 +25,14 @@ def main():
         option = main_menu()
 
         if option == "1":
+
             token = input("Token: ")
             password = input("Senha: ")
 
             status = login_user(token, password)
 
-            if len(status):
-                pass
+            if status:
+                customer_operations(token)
             else:
                 print("@@@ Usuário ou senha inválidos @@@")
 
@@ -40,7 +42,7 @@ def main():
 
             status = login_user(token=token, password=password)
 
-            if len(status):
+            if status:
                 admin_operations()
             else:
                 print("@@@ Usuário ou senha inválidos @@@")
