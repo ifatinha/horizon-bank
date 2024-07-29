@@ -72,3 +72,17 @@ def find_customer_token(token):
             conn.close()
             cursor.close()
             logging.info("Conexão fechada!")
+
+
+def get_valid_customer_token():
+    while True:
+        try:
+            token = input("Cliente Token: ")
+            record = find_customer_token(token)
+
+            if record:
+                return record
+            else:
+                print("@@@ Nenhum cliente encontrado para o token informado. @@@")
+        except Exception as e:
+            print(f"Erro ao procurar o cliente: {e}")

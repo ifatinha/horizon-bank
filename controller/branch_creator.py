@@ -67,6 +67,8 @@ class BranchCreator:
     @staticmethod
     def from_db_record(record):
 
+        address = AddressCreator.from_db_record(record)
+
         manager = Manager(
             record[11],
             record[12],
@@ -79,8 +81,6 @@ class BranchCreator:
 
         manager.customer_id = record[10]
         manager.hire_date = record[15]
-
-        address = AddressCreator.from_db_record(record)
 
         branch = Branch(record[18], address, manager)
         branch.id_branch = record[17]

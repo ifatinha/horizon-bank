@@ -5,6 +5,7 @@ from controller.customer_creator import CustomerCreator
 from classes.Account import Account
 from classes.SavignAccount import SavignAccount
 from classes.CurrentAccount import CurrentAccount
+from controller.branch_creator import BranchCreator
 
 
 class AccountCreator:
@@ -90,3 +91,7 @@ class AccountCreator:
         current_account = CurrentAccount(password, branch, customer)
 
         return current_account
+
+    @staticmethod
+    def from_db_record(record):
+        return record

@@ -125,3 +125,55 @@ def insert_current_account(current_account):
         if conn:
             conn.close()
             logging.info("Conexão fechada!")
+
+
+def list_accounts_customer(token):
+    """
+    Retorna uma lista de contas associadas a um cliente específico.
+
+    Este método aceita um token de autenticação como parâmetro e retorna uma lista de tuplas,
+    onde cada tupla representa uma conta com seus detalhes.
+
+    Parâmetros:
+    token (str): O token de autenticação do cliente.
+
+    Retorna:
+    List[Tuple]: Uma lista de tuplas, onde cada tupla contém os detalhes de uma conta.
+    """
+    try:
+        query = """
+            SELECT
+            B.branch_id,
+            B.branch_number,
+            B.branch_name,
+            B.phone,
+            B.open_date,
+            C.id,
+            C.fullname,
+            C.email,
+            C.token,
+            C.phone,
+            A.id,
+            A.number,
+            A.password,
+            A.balance,
+            A.account_type,
+            A.created_at
+            FROM account A
+            INNER JOIN customer C
+            ON C.id = A.customer_id
+            INNER JOIN branch B
+            ON B.branch_id = A.branch_id
+            WHERE C.token = %s
+        """
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (token,))
+        return cursor.fetchall()
+
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")

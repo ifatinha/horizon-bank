@@ -20,7 +20,10 @@ from database.account_db import (
     insert_business_account,
     insert_savign_account,
     insert_current_account,
+    list_accounts_customer,
 )
+from controller.customer_creator import CustomerCreator
+from database.customer_db import get_valid_customer_token
 
 
 def admin_operations():
@@ -130,42 +133,17 @@ def admin_operations():
 
                 elif option_customer == "4":
                     # Buscar dados de um cliente
-                    #     """Contas Cliente"""
-                    #     while True:
-                    #         option = menu_type_customer()
+                    record = get_valid_customer_token()
+                    customer = CustomerCreator.from_db_record(record)
 
-                    #         if option == "1":
-                    #             token = input("Token: ")
-                    #             result = DatabaseOperations.find_accounts_individual(
-                    #                 token
-                    #             )
+                    print("=" * 60)
+                    print(customer)
+                    print("=" * 60 + "\n")
 
-                    #             if len(result) > 0:
-                    #                 print(result)
-                    #             else:
-                    #                 print(
-                    #                     "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
-                    #                 )
+                    accounts_customer = list_accounts_customer(customer.token)
 
-                    #         elif option == "2":
-                    #             token = input("Token: ")
-
-                    #             result = DatabaseOperations.find_accounts_company(token)
-
-                    #             if len(result) > 0:
-                    #                 print(result)
-                    #             else:
-                    #                 print(
-                    #                     "@@@ O cliente não encontrado ou não possui contas na agência. @@@"
-                    #                 )
-
-                    #         elif option == "0":
-                    #             print("@@@ Retornando ao menu principal. @@@")
-                    #             break
-
-                    #         else:
-                    #             print("@@@ Opção Inválida! @@@")
-                    pass
+                    for account in accounts_customer:
+                        print(AccountCreator.from_db_record(account))
 
                 elif option_customer == "0":
                     break
@@ -190,9 +168,9 @@ def admin_operations():
 
                     if managers:
                         for manager in managers:
-                            print("====================================")
+                            print("=" * 60)
                             print(ManagerCreator.from_db_record(manager))
-                            print("====================================\n")
+                            print("=" * 60 + "\n")
 
                     else:
                         print("@@@ Nenhum gerente cadastrado. @@@")
@@ -220,9 +198,9 @@ def admin_operations():
 
                     if branchs:
                         for branch in branchs:
-                            print("==================================")
+                            print("=" * 60)
                             print(BranchCreator.from_db_record(branch))
-                            print("==================================\n")
+                            print("=" * 60 + "\n")
                     else:
                         print("@@@ Nenhuma agência encontrada. @@@")
 
