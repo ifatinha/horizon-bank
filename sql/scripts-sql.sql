@@ -100,17 +100,17 @@ CREATE TABLE IF NOT EXISTS account (
 );
 
 CREATE TABLE IF NOT EXISTS savigns_account(
-    id INT PRIMARY KEY,
+    id_account INT PRIMARY KEY,
     interest_rate DECIMAL(5, 4) DEFAULT 0.005,
-    FOREIGN KEY (id) REFERENCES account(id) ON DELETE CASCADE
+    FOREIGN KEY (id_account) REFERENCES account(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS current_account(
-    id INT PRIMARY KEY,
+    id_account INT PRIMARY KEY,
     overdraft_limit DECIMAL(15, 2) DEFAULT 500.00,
     withdrawal_limit DECIMAL(15, 2) DEFAULT 1000.00,
     transaction_limit INT DEFAULT 10,
-    FOREIGN KEY (id) REFERENCES account(id) ON DELETE CASCADE
+    FOREIGN KEY (id_account) REFERENCES account(id) ON DELETE CASCADE
 );
 
 CREATE TABLE IF NOT EXISTS historic(

@@ -3,6 +3,7 @@ from controller.branch_creator import BranchCreator
 from database.customer_db import find_customer_token
 from controller.customer_creator import CustomerCreator
 from classes.Account import Account
+from classes.SavignAccount import SavignAccount
 
 
 class AccountCreator:
@@ -58,3 +59,18 @@ class AccountCreator:
         account = Account(password, branch, customer)
 
         return account
+
+    @staticmethod
+    def get_instance_savign_account():
+        print("########## ABRIR CONTA POUPANÇA ##########")
+
+        password = input("Senha: ")
+        branch_record = AccountCreator._find_branch_database()
+        branch = BranchCreator.from_db_record(branch_record)
+
+        customer_record = AccountCreator._find_individual_token()
+        customer = CustomerCreator.from_db_record(customer_record)
+
+        savign_account = SavignAccount(password, branch, customer)
+
+        return savign_account

@@ -16,9 +16,7 @@ from database.individual_db import insert_invidual, list_individual
 from controller.company_creator import CompanyCreator
 from database.company_db import insert_company, list_company
 from controller.account_creator import AccountCreator
-from database.account_db import insert_business_account
-from controller.historic_creator import HistoricCreator
-from database.historic_db import insert_historic
+from database.account_db import insert_business_account, insert_savign_account
 
 
 def admin_operations():
@@ -59,6 +57,12 @@ def admin_operations():
 
                         if menu_option == "1":
                             # Conta Poupança
+                            savign_account = (
+                                AccountCreator.get_instance_savign_account()
+                            )
+
+                            insert_savign_account(savign_account)
+
                             # savign_account = return_savign_account()
                             # id_account = DatabaseOperations.insert_account(
                             #     savign_account.super_to_tuple()
@@ -89,10 +93,10 @@ def admin_operations():
                             pass
                         elif menu_option == "3":
                             # Conta Comercial
+
                             account = AccountCreator.get_instance_business_account()
                             insert_business_account(account)
 
-                            pass
                         elif menu_option == "0":
                             break
 

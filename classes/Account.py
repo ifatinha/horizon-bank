@@ -88,25 +88,3 @@ class Account:
             self.branch.id_branch,
             self.customer.customer_id,
         )
-
-    def withdraw(self, value):
-
-        if value > self.balance:
-            print("@@@ Operação falhou! Você não tem saldo suficiente! @@@")
-            return False
-        elif value > 0:
-            self.balance -= value
-            print("\n=== Saque efetuado com sucesso! ===")
-            return True
-        else:
-            print("@@@ Operação falhou! O valor informado é inválido. @@@")
-            return False
-
-    def deposit(self, value):
-        if value <= 0:
-            print("@@@ Operação falhou! O valor informado é inválido! @@@")
-            return False
-        else:
-            self.balance += value
-            print("=== Depósito efetuado com sucesso! ===")
-            return True
