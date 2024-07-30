@@ -7,7 +7,3 @@ class Transaction(ABC):
     @abstractmethod
     def value(self):
         pass
-
-    @abstractmethod
-    def register(self, historic_id):
-        pass

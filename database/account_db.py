@@ -229,3 +229,36 @@ def find_account(number_account, password):
         if conn:
             conn.close()
             logging.info("Conexão fechada!")
+
+
+def find_balance_account(account_number):
+    """
+    Retorna o saldo da conta para o número de conta fornecido.
+
+    Args:
+    account_number (int): O número da conta cujo saldo deve ser retornado.
+
+    Returns:
+    float: O saldo da conta.
+    """
+
+    try:
+        query = """
+            SELECT
+            A.balance
+            FROM account A
+            WHERE A.number = %s
+        """
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (account_number,))
+        return cursor.fetchone()
+
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+        return None
+    finally:
+        if conn:
+            conn.close()
+            cursor.close()
+            logging.info("Conexão fechada!")

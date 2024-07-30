@@ -1,6 +1,6 @@
 from util.menu import client_menu
 from util.menu import menu_banking_operations
-from database.account_db import list_accounts_customer
+from database.account_db import list_accounts_customer, find_balance_account
 from controller.account_creator import AccountCreator
 from admin.banking_operations import BankingOperations
 
@@ -22,16 +22,24 @@ def customer_operations(token):
             while True:
 
                 banking_operations = menu_banking_operations()
+                account_balance = find_balance_account(account.number)
 
                 if banking_operations == "1":
-                    pass
+                    # Deposito
+                    BankingOperations.deposit(
+                        account.number, account.balance, historic[0]
+                    )
                 elif banking_operations == "2":
-                    pass
+                    # Saque
+                    BankingOperations.withdrawal(
+                        account.number, account.balance, historic[0]
+                    )
                 elif banking_operations == "3":
                     pass
                 elif banking_operations == "4":
 
                     BankingOperations.transactions_account(account.number)
+                    print(f"Saldo: R$ {float(account_balance[0]):.2f}\n")
 
                 elif banking_operations == "0":
                     break

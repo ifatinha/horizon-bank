@@ -47,11 +47,60 @@ def insert_deposit(account_number, value, account_balance):
         cursor = conn.cursor()
         cursor.execute(query, (new_balance, account_number))
         conn.commit()
-        print("\n=== Deposito efetuado com sucesso! ===")
+
         logging.info("Deposito efetuado com sucesso!")
         return True
     except Error as err:
         logging.error(f"Erro ao executar SQL: {err}")
+    finally:
+        if conn:
+            conn.close()
+            logging.info("Conexão fechada!")
+
+
+def insert_withdraw(account_number, value, account_balance):
+    """
+    Faz um saque na conta especificada.
+
+    :param account_number: Número da conta.
+    :param value: Valor do depósito.
+    :param account_balance: Saldo atual da conta.
+    :return: True se o depósito foi efetuado com sucesso, False caso contrário.
+    """
+
+    qtd_transactions_day = number_transactions_day(account_number)
+
+    if qtd_transactions_day >= 10:
+        print("@@@ Operação falhou! Limite de transações diárias excedido. @@@")
+        return False
+
+    if value <= 0:
+        print("@@@ Operação falhou! O valor informado é inválido! @@@")
+        return False
+
+    if value > account_balance:
+        print("@@@ Operação falhou! Você não tem saldo suficiente! @@@")
+        return False
+
+    new_balance = float(account_balance) - value
+
+    query = """
+        UPDATE account A
+        SET A.balance = %s
+        WHERE A.number = %s
+        """
+
+    try:
+        conn = Connection().connect()
+        cursor = conn.cursor()
+        cursor.execute(query, (new_balance, account_number))
+        conn.commit()
+
+        logging.info("Saque efetuado com sucesso!")
+        return True
+    except Error as err:
+        logging.error(f"Erro ao executar SQL: {err}")
+        return False
     finally:
         if conn:
             conn.close()

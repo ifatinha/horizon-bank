@@ -4,9 +4,11 @@ from database.transaction_db import (
     list_transactions_account,
     insert_deposit,
     insert_transaction,
+    insert_withdraw,
 )
 from controller.transaction_creator import TransactionCreator
 from classes.Withdraw import Withdraw
+from classes.Deposit import Deposit
 
 
 class BankingOperations:
@@ -43,9 +45,39 @@ class BankingOperations:
             print("@@@ Conta não possui movimentações. @@@")
 
     @staticmethod
-    def deposit(account_number, value, account_balance, historic_id):
+    def deposit(account_number, account_balance, historic_id):
+        while True:
+            try:
+                value = float(input("Valor do depósito: "))
+                break
+            except ValueError:
+                print("Por favor, insira um valor numérico válido.")
+
         status = insert_deposit(account_number, value, account_balance)
+
+        if status:
+            transaction = Deposit(value)
+            insert_transaction(transaction.to_tuple(historic_id))
+            print(f"==== Depósito de R$ {value:.2f} efetuado com sucesso. ====")
+            return True
+        else:
+            print("@@@ Falha ao efetuar o depósito. Tente novamente. @@@")
+            return True
+
+    @staticmethod
+    def withdrawal(account_number, account_balance, historic_id):
+        while True:
+            try:
+                value = float(input("Valor do saque: "))
+                break
+            except ValueError:
+                print("Por favor, insira um valor numérico válido.")
+
+        status = insert_withdraw(account_number, value, account_balance)
 
         if status:
             transaction = Withdraw(value)
             insert_transaction(transaction.to_tuple(historic_id))
+            print(f"==== Saque de R$ {value:.2f} efetuado com sucesso. ====")
+        else:
+            print("@@@ Falha ao efetuar o saque. Tente novamente. @@@")
