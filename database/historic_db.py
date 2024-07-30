@@ -65,30 +65,3 @@ def find_historic(account_number):
             conn.close()
             cursor.close()
             logging.info("Conexão fechada!")
-
-
-def list_historic(account_number):
-
-    try:
-        query = """
-            SELECT T.amount, T.transaction_type, T.created_at 
-            FROM account A
-            INNER JOIN historic H
-            ON A.id = H.id_account
-            INNER JOIN transactions T
-            ON T.historic_id = H.id
-            WHERE A.number = %s"""
-
-        conn = Connection().connect()
-        cursor = conn.cursor()
-        cursor.execute(query, (account_number,))
-        record = cursor.fetchall()
-        return record
-
-    except Error as err:
-        logging.error(f"Erro ao executar SQL: {err}")
-    finally:
-        if conn:
-            conn.close()
-            cursor.close()
-            logging.info("Conexão fechada!")

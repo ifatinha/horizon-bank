@@ -15,12 +15,28 @@ class Withdraw(Transaction):
     def value(self):
         return self.__value
 
+    @value.setter
+    def value(self, value):
+        self.__value = value
+        self.__updated_at = datetime.now()  # Atualiza a data de modificação
+
     @property
     def transaction_type(self):
         return self.__transaction_type
 
-    def register(self, historic_id):
-        return super().register(historic_id)
+    @property
+    def created_at(self):
+        return self.__created_at
 
-    def to_tuple(self):
-        return (self.value, self.transaction_type)
+    @property
+    def updated_at(self):
+        return self.__updated_at
+
+    def to_tuple(self, historic_id):
+        return (
+            self.value,
+            self.transaction_type,
+            historic_id,
+            self.created_at,
+            self.updated_at,
+        )

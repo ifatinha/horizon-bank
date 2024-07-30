@@ -30,7 +30,9 @@ def customer_operations(token):
                 elif banking_operations == "3":
                     pass
                 elif banking_operations == "4":
-                    pass
+
+                    BankingOperations.transactions_account(account.number)
+
                 elif banking_operations == "0":
                     break
                 else:

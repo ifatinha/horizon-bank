@@ -106,49 +106,6 @@ class DatabaseOperations:
             print("@@@ Operação falhou! Limite de transações diárias excedido. @@@")
 
     @staticmethod
-    def insert_transaction(transaction):
-        query = """
-                INSERT INTO transactions(amount, transaction_type, historic_id) 
-                VALUES(%s, %s, %s)
-        """
-
-        try:
-            conn = DatabaseOperations.getConnect().connect()
-            cursor = conn.cursor()
-            cursor.execute(query, transaction)
-            conn.commit()
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
-
-    @staticmethod
-    def list_historic(account_number):
-        query = """
-            SELECT T.amount, T.transaction_type, T.created_at 
-            FROM account A
-            INNER JOIN historic H
-            ON A.id = H.id_account
-            INNER JOIN transactions T
-            ON T.historic_id = H.id
-            WHERE A.number = %s"""
-
-        try:
-            conn = DatabaseOperations.getConnect().connect()
-            cursor = conn.cursor()
-            cursor.execute(query, (account_number,))
-            resultado = cursor.fetchall()
-            return resultado
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
-
-    @staticmethod
     def insert_withdraw(account_number, value, account_balance):
 
         qtd_transactions_day = DatabaseOperations.number_transactions_day(
@@ -185,30 +142,6 @@ class DatabaseOperations:
                 print("@@@ Operação falhou! O valor informado é inválido! @@@")
         else:
             print("@@@ Operação falhou! Limite de transações diárias excedido. @@@")
-
-    @staticmethod
-    def number_transactions_day(account_number):
-        query = """
-            SELECT COUNT(transaction_type) AS qtd_transactions
-            FROM account A
-            INNER JOIN historic H
-            ON A.id = H.id_account
-            INNER JOIN transactions T
-            ON T.historic_id = H.id
-            WHERE A.number = %s AND DATE(T.created_at) = CURDATE();"""
-
-        try:
-            conn = DatabaseOperations.getConnect().connect()
-            cursor = conn.cursor()
-            cursor.execute(query, (account_number,))
-            resultado = cursor.fetchone()
-            return resultado
-        except Error as err:
-            logging.error(f"Erro ao executar SQL: {err}")
-        finally:
-            if conn:
-                conn.close()
-                logging.info("Conexão fechada!")
 
     @staticmethod
     def find_account(number):
