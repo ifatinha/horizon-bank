@@ -48,4 +48,4 @@ class BankingOperations:
 
         if status:
             transaction = Withdraw(value)
-            insert_transaction(transaction)
+            insert_transaction(transaction.to_tuple(historic_id))
