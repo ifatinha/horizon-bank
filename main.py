@@ -1,5 +1,4 @@
-from sql.script_create_tables import create_database, create_tables, insert_default_user
-
+from database.create_db import CreateDatabase
 from util.menu import main_menu
 from database.users_db import login_user
 from admin.admin import admin_operations
@@ -8,16 +7,16 @@ from admin.customer_operations import customer_operations
 
 def main():
 
-    # create_database()
-    # create_tables()
-    # insert_default_user()
+    # CreateDatabase()
     # SET SQL_SAFE_UPDATES=0;
-
-    # f8d76506 4545
 
     # banco de casa
     # e2828d07 5656
     # 7643713067 1515
+
+    # transfert account
+    # f8d76506 4545
+    # 6620287101 1515
 
     # Banco do posto
     # 5d98a027 1212

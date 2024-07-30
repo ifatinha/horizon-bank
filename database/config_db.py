@@ -15,18 +15,12 @@ logging.basicConfig(
 )
 
 
-class DatabaseOperations:
-
-    @staticmethod
-    def getConnect():
-        conn = Connection()
-        return conn
+class ConfigDatabase:
 
     @staticmethod
     def create_table(table_creation_query):
         try:
-            conn = DatabaseOperations.getConnect()
-            conn.connect()
+            conn = Connection().connect()
             conn.cursor.execute(table_creation_query)
             logging.info("Tabela Criada!")
         except Error as err:
@@ -39,8 +33,7 @@ class DatabaseOperations:
     @staticmethod
     def execute_sql_procedure(sql_procedure):
         try:
-            conn = DatabaseOperations.getConnect()
-            conn.connect()
+            conn = Connection().connect()
             conn.cursor.execute(sql_procedure)
             logging.info("Procedure Criada!")
         except Error as err:
